@@ -121,8 +121,8 @@ const JeSuisNouveauPage = () => {
           </p>
         </div>
 
-        {/* Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        {/* Cards Grid - 4 colonnes sans photos */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {sections.map((section) => {
             const IconComponent = section.icon;
             return (
@@ -132,38 +132,26 @@ const JeSuisNouveauPage = () => {
                 className="group"
                 data-testid={`section-card-${section.id}`}
               >
-                <article className="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-500 h-full border border-slate-100 flex flex-col">
-                  {/* Image */}
-                  <div className="relative aspect-[16/9] overflow-hidden">
-                    <img
-                      src={section.image}
-                      alt={section.title}
-                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                    />
-                    <div className={`absolute inset-0 bg-gradient-to-t ${section.color} opacity-60`}></div>
-                    <div className="absolute inset-0 flex items-start justify-end p-4">
-                      <div className="w-14 h-14 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center">
-                        <IconComponent className="w-7 h-7 text-white" strokeWidth={1.5} />
-                      </div>
-                    </div>
+                <article className={`bg-gradient-to-br ${section.color} rounded-2xl p-6 shadow-md hover:shadow-xl transition-all duration-500 h-full border border-white/20 flex flex-col text-white hover:-translate-y-1`}>
+                  {/* Icon */}
+                  <div className="w-14 h-14 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center mb-4">
+                    <IconComponent className="w-7 h-7 text-white" strokeWidth={1.5} />
                   </div>
 
                   {/* Content */}
-                  <div className="p-6 flex flex-col flex-grow">
-                    <span className="text-gold text-sm font-medium mb-1">{section.subtitle}</span>
-                    <h3 className="font-serif text-2xl text-slate-deep mb-3 group-hover:text-gold transition-colors">
-                      {section.title}
-                    </h3>
-                    <p className="text-slate-600 leading-relaxed flex-grow">
-                      {section.description}
-                    </p>
-                    
-                    <div className="mt-4 flex items-center text-gold text-sm font-medium group-hover:text-gold-dark transition-colors">
-                      <span>Découvrir</span>
-                      <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                      </svg>
-                    </div>
+                  <span className="text-white/80 text-sm font-medium mb-1">{section.subtitle}</span>
+                  <h3 className="font-serif text-xl text-white mb-3">
+                    {section.title}
+                  </h3>
+                  <p className="text-white/90 text-sm leading-relaxed flex-grow">
+                    {section.description}
+                  </p>
+                  
+                  <div className="mt-4 flex items-center text-white text-sm font-medium">
+                    <span>Découvrir</span>
+                    <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
                   </div>
                 </article>
               </Link>
