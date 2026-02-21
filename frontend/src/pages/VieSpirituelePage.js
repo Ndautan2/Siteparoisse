@@ -1,24 +1,70 @@
 import { Link } from 'react-router-dom';
-import { Heart } from 'lucide-react';
+import { Heart, Droplets, Sparkles, HandHeart, Cross } from 'lucide-react';
 
 const sections = [
   {
     id: 'demander-sacrement',
     title: 'Demander un Sacrement',
-    subtitle: 'Baptême, Communion, Confirmation...',
+    subtitle: 'Toutes les démarches',
     description: 'Les sacrements jalonnent les grandes étapes de la vie chrétienne',
     icon: Heart,
     image: 'https://images.unsplash.com/photo-1544006659-f0b21884ce1d?w=600',
     path: '/demander-sacrement'
   },
   {
-    id: 'mariage',
-    title: 'Le Mariage',
-    subtitle: 'Préparation & célébration',
-    description: 'S\'engager dans l\'amour et la fidélité, soutenu par la grâce de Dieu',
+    id: 'bapteme',
+    title: 'Baptême',
+    subtitle: 'Devenir enfant de Dieu',
+    description: 'Premier sacrement de l\'initiation chrétienne',
+    icon: Droplets,
+    image: 'https://customer-assets.emergentagent.com/job_c9a89358-b983-4f0b-8ec4-b48d0db621c4/artifacts/gj75c74d_Bapteme.png',
+    path: '/sacrements/bapteme'
+  },
+  {
+    id: 'premiere-communion',
+    title: 'Première Communion',
+    subtitle: 'Recevoir le Corps du Christ',
+    description: 'Recevoir pour la première fois l\'Eucharistie',
     icon: Heart,
-    image: 'https://images.unsplash.com/photo-1519741497674-611481863552?w=600',
-    path: '/mariage'
+    image: 'https://customer-assets.emergentagent.com/job_957f9676-dd26-4dee-97f5-494fc015f420/artifacts/qqm1rjkh_Premiere-communion.png',
+    path: '/sacrements/premiere-communion'
+  },
+  {
+    id: 'confirmation',
+    title: 'Confirmation',
+    subtitle: 'Recevoir l\'Esprit Saint',
+    description: 'Sacrement de la maturité chrétienne',
+    icon: Sparkles,
+    image: 'https://customer-assets.emergentagent.com/job_957f9676-dd26-4dee-97f5-494fc015f420/artifacts/e13l6wpl_Confirmation.png',
+    path: '/sacrements/confirmation'
+  },
+  {
+    id: 'reconciliation',
+    title: 'Réconciliation',
+    subtitle: 'Le pardon de Dieu',
+    description: 'Recevoir le pardon et se réconcilier avec Dieu',
+    icon: HandHeart,
+    image: 'https://customer-assets.emergentagent.com/job_957f9676-dd26-4dee-97f5-494fc015f420/artifacts/qhnerpwc_Reconciliation-confession.png',
+    path: '/sacrements/reconciliation'
+  },
+  {
+    id: 'mariage',
+    title: 'Mariage',
+    subtitle: 'S\'unir dans l\'amour du Christ',
+    description: 'S\'engager dans l\'amour et la fidélité',
+    icon: Heart,
+    image: 'https://customer-assets.emergentagent.com/job_957f9676-dd26-4dee-97f5-494fc015f420/artifacts/5tik9jhg_Mariage.png',
+    path: '/sacrements/mariage',
+    imageStyle: { objectPosition: 'left bottom' }
+  },
+  {
+    id: 'malades',
+    title: 'Sacrement des Malades',
+    subtitle: 'Force et réconfort',
+    description: 'Réconfort pour les personnes malades ou âgées',
+    icon: Cross,
+    image: 'https://customer-assets.emergentagent.com/job_c9a89358-b983-4f0b-8ec4-b48d0db621c4/artifacts/3dt57dtp_Sacreement-des-malades.png',
+    path: '/sacrements/malades'
   }
 ];
 
