@@ -69,26 +69,40 @@ const sections = [
 
 const NotreDameAutanPage = () => {
   return (
-    <div className="min-h-screen bg-paper py-20" data-testid="notre-dame-autan-page">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header */}
-        <div className="text-center mb-16">
+    <div className="min-h-screen bg-paper" data-testid="notre-dame-autan-page">
+      {/* Hero Section with Image */}
+      <section className="relative h-[50vh] flex items-center justify-center">
+        {/* Background Image */}
+        <div className="absolute inset-0 z-0">
+          <img
+            src="https://customer-assets.emergentagent.com/job_c3efae68-56d0-4924-8ecf-4f7502ce3630/artifacts/54f2vm3r_Eglise-Castanet-Tolosan.jpg"
+            alt="Église Notre Dame d'Autan"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-black/20"></div>
+        </div>
+
+        {/* Content */}
+        <div className="relative z-10 text-center text-white px-4">
           <div className="flex justify-center mb-6">
-            <div className="w-20 h-20 rounded-full bg-gold flex items-center justify-center shadow-lg">
+            <div className="w-20 h-20 rounded-full bg-gold/90 backdrop-blur-sm flex items-center justify-center shadow-lg">
               <Church className="w-10 h-10 text-white" strokeWidth={1.5} />
             </div>
           </div>
-          <h1 className="font-serif text-4xl md:text-5xl font-medium tracking-tight text-slate-deep mb-4">
+          <h1 className="font-serif text-4xl md:text-6xl font-medium tracking-tight mb-4">
             Notre Dame d'Autan
           </h1>
-          <p className="text-gold font-medium mb-4">L'identité de notre paroisse</p>
-          <p className="text-base md:text-lg text-slate-600 max-w-2xl mx-auto">
+          <p className="text-gold-light font-medium mb-4 text-lg">L'identité de notre paroisse</p>
+          <p className="text-base md:text-lg text-white/90 max-w-2xl mx-auto">
             Découvrez qui nous sommes, notre équipe, notre organisation et notre patrimoine
           </p>
         </div>
+      </section>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
 
         {/* Sections Grid - 4 colonnes */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
           {sections.map((section) => {
             const IconComponent = section.icon;
             return (
@@ -126,7 +140,7 @@ const NotreDameAutanPage = () => {
         </div>
 
         {/* Info Box */}
-        <div className="mt-16 bg-gradient-to-r from-gold/10 to-gold/5 rounded-2xl p-8 border border-gold/20">
+        <div className="bg-gradient-to-r from-gold/10 to-gold/5 rounded-2xl p-8 border border-gold/20">
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div>
               <h2 className="font-serif text-2xl text-slate-deep mb-4">Une paroisse vivante</h2>
