@@ -1,11 +1,22 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Menu, X, Church, Heart, Users, BookOpen, HandHeart } from 'lucide-react';
+import { Menu, X, Church, Heart, Users, BookOpen, HandHeart, ChevronDown } from 'lucide-react';
 
 export const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState(null);
   const [closeTimeout, setCloseTimeout] = useState(null);
+  const [showJeVeuxMenu, setShowJeVeuxMenu] = useState(false);
+
+  const jeVeuxOptions = [
+    { label: 'Aller à la messe', path: '/horaires-messes' },
+    { label: 'Demander le baptême', path: '/sacrements/bapteme' },
+    { label: 'Recevoir la confirmation', path: '/sacrements/confirmation' },
+    { label: 'Faire ma première communion', path: '/sacrements/premiere-communion' },
+    { label: 'Me marier à l\'église', path: '/sacrements/mariage' },
+    { label: 'Rejoindre Alpha', path: '/alpha-catechumenat' },
+    { label: 'Rejoindre un petit groupe', path: '/groupes-partage' },
+  ];
 
   const menuItems = [
     {
