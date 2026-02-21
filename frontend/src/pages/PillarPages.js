@@ -132,7 +132,7 @@ const pillarData = {
     subtitle: "Cheminer ensemble",
     description: "Parcours de formation et groupes de partage pour approfondir sa foi",
     icon: BookOpen,
-    color: "bg-amber-500",
+    color: "bg-[#d0ada6]",
     items: [
       {
         title: "Parcours Alpha & Catéchuménat",
