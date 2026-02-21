@@ -8,7 +8,15 @@ import Secretariat from '@/pages/Secretariat';
 import AdminLogin from '@/pages/AdminLogin';
 import AdminDashboard from '@/pages/AdminDashboard';
 import ContentPage from '@/pages/ContentPage';
-import PillarPage from '@/pages/PillarPages';
+
+// New pillar pages with cards
+import NotreDameAutanPage from '@/pages/NotreDameAutanPage';
+import FamillesJeunessePage from '@/pages/FamillesJeunessePage';
+import VieSpirituelePage from '@/pages/VieSpirituelePage';
+import GrandirFoiPage from '@/pages/GrandirFoiPage';
+import SolidaritePage from '@/pages/SolidaritePage';
+
+// Sub-pages with cards
 import EquipePastoralePage from '@/pages/EquipePastoralePage';
 import NosClochersPage from '@/pages/NosClochersPage';
 import DemanderSacrementPage from '@/pages/DemanderSacrementPage';
@@ -36,14 +44,14 @@ function App() {
                       <Route path="/horaires-messes" element={<HorairesMesses />} />
                       <Route path="/secretariat" element={<Secretariat />} />
                       
-                      {/* Pillar landing pages */}
-                      <Route path="/notre-dame-autan" element={<PillarPage pillarKey="notre-dame-autan" />} />
-                      <Route path="/familles-jeunesse" element={<PillarPage pillarKey="familles-jeunesse" />} />
-                      <Route path="/vie-spirituelle" element={<PillarPage pillarKey="vie-spirituelle" />} />
-                      <Route path="/grandir-foi" element={<PillarPage pillarKey="grandir-foi" />} />
-                      <Route path="/solidarite" element={<PillarPage pillarKey="solidarite" />} />
+                      {/* Pillar landing pages with cards */}
+                      <Route path="/notre-dame-autan" element={<NotreDameAutanPage />} />
+                      <Route path="/familles-jeunesse" element={<FamillesJeunessePage />} />
+                      <Route path="/vie-spirituelle" element={<VieSpirituelePage />} />
+                      <Route path="/grandir-foi" element={<GrandirFoiPage />} />
+                      <Route path="/solidarite" element={<SolidaritePage />} />
                       
-                      {/* Pillar 1: Notre Dame d'Autan - Pages with cards */}
+                      {/* Pillar 1: Notre Dame d'Autan - Sub-pages */}
                       <Route path="/equipe-pastorale" element={<EquipePastoralePage />} />
                       <Route path="/equipe-pastorale/:memberId" element={<ContentPage section="equipe-detail" />} />
                       <Route path="/vie-economique" element={<ContentPage section="economique" />} />
@@ -51,27 +59,27 @@ function App() {
                       <Route path="/nos-clochers/:clocherId" element={<ContentPage section="clocher-detail" />} />
                       <Route path="/services-transverses" element={<ContentPage section="services" />} />
                       
-                      {/* Pillar 2: Familles & Jeunesse */}
+                      {/* Pillar 2: Familles & Jeunesse - Sub-pages */}
                       <Route path="/eveil-foi" element={<ContentPage section="eveil" />} />
                       <Route path="/catechisme" element={<ContentPage section="catechisme" />} />
                       <Route path="/aumonerie" element={<ContentPage section="aumonerie" />} />
                       <Route path="/mouvements" element={<ContentPage section="mouvements" />} />
                       <Route path="/servants-vocations" element={<ContentPage section="servants" />} />
                       
-                      {/* Pillar 3: Vie Spirituelle - Sacrements */}
+                      {/* Pillar 3: Vie Spirituelle - Sub-pages */}
                       <Route path="/demander-sacrement" element={<DemanderSacrementPage />} />
                       <Route path="/sacrements/:sacrementId" element={<SacrementDetailPage />} />
                       <Route path="/mariage" element={<ContentPage section="mariage" />} />
                       <Route path="/liturgie-musique" element={<ContentPage section="liturgie" />} />
                       <Route path="/funerailles" element={<ContentPage section="funerailles" />} />
                       
-                      {/* Pillar 4: Grandir dans la Foi */}
+                      {/* Pillar 4: Grandir dans la Foi - Sub-pages */}
                       <Route path="/alpha-catechumenat" element={<ContentPage section="alpha" />} />
                       <Route path="/groupes-partage" element={<ContentPage section="groupes" />} />
                       <Route path="/meditation" element={<ContentPage section="meditation" />} />
                       <Route path="/ressources" element={<ContentPage section="ressources" />} />
                       
-                      {/* Pillar 5: Solidarité */}
+                      {/* Pillar 5: Solidarité - Sub-pages */}
                       <Route path="/service-ecoute" element={<ContentPage section="ecoute" />} />
                       <Route path="/visite-malades" element={<ContentPage section="malades" />} />
                       <Route path="/entraide" element={<ContentPage section="entraide" />} />
