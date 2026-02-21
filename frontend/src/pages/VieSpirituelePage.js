@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Heart, Flower2, Cross, Music } from 'lucide-react';
+import { Heart } from 'lucide-react';
 
 const sections = [
   {
@@ -19,24 +19,6 @@ const sections = [
     icon: Heart,
     image: 'https://images.unsplash.com/photo-1519741497674-611481863552?w=600',
     path: '/mariage'
-  },
-  {
-    id: 'liturgie',
-    title: 'Liturgie & Musique',
-    subtitle: 'Chorale, Art Floral, Sacristains',
-    description: 'Embellir les célébrations par le chant, la musique et les fleurs',
-    icon: Music,
-    image: 'https://images.unsplash.com/photo-1514320291840-2e0a9bf2a9ae?w=600',
-    path: '/liturgie-musique'
-  },
-  {
-    id: 'funerailles',
-    title: 'Funérailles',
-    subtitle: 'Accompagnement des familles',
-    description: 'Accompagner les familles en deuil avec compassion et espérance',
-    icon: Cross,
-    image: 'https://images.unsplash.com/photo-1501820434261-5bb046afcf6b?w=600',
-    path: '/funerailles'
   }
 ];
 
