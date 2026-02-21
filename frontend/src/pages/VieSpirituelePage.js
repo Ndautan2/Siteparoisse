@@ -3,22 +3,14 @@ import { Heart, Droplets, Sparkles, HandHeart, Cross } from 'lucide-react';
 
 const sections = [
   {
-    id: 'demander-sacrement',
-    title: 'Demander un Sacrement',
-    subtitle: 'Toutes les démarches',
-    description: 'Les sacrements jalonnent les grandes étapes de la vie chrétienne',
-    icon: Heart,
-    image: 'https://images.unsplash.com/photo-1544006659-f0b21884ce1d?w=600',
-    path: '/demander-sacrement'
-  },
-  {
     id: 'bapteme',
     title: 'Baptême',
     subtitle: 'Devenir enfant de Dieu',
     description: 'Premier sacrement de l\'initiation chrétienne',
     icon: Droplets,
     image: 'https://customer-assets.emergentagent.com/job_c9a89358-b983-4f0b-8ec4-b48d0db621c4/artifacts/gj75c74d_Bapteme.png',
-    path: '/sacrements/bapteme'
+    path: '/sacrements/bapteme',
+    color: 'from-blue-400 to-blue-600'
   },
   {
     id: 'premiere-communion',
@@ -27,7 +19,8 @@ const sections = [
     description: 'Recevoir pour la première fois l\'Eucharistie',
     icon: Heart,
     image: 'https://customer-assets.emergentagent.com/job_957f9676-dd26-4dee-97f5-494fc015f420/artifacts/qqm1rjkh_Premiere-communion.png',
-    path: '/sacrements/premiere-communion'
+    path: '/sacrements/premiere-communion',
+    color: 'from-gold to-amber-600'
   },
   {
     id: 'confirmation',
@@ -36,7 +29,8 @@ const sections = [
     description: 'Sacrement de la maturité chrétienne',
     icon: Sparkles,
     image: 'https://customer-assets.emergentagent.com/job_957f9676-dd26-4dee-97f5-494fc015f420/artifacts/e13l6wpl_Confirmation.png',
-    path: '/sacrements/confirmation'
+    path: '/sacrements/confirmation',
+    color: 'from-red-400 to-orange-500'
   },
   {
     id: 'reconciliation',
@@ -45,7 +39,8 @@ const sections = [
     description: 'Recevoir le pardon et se réconcilier avec Dieu',
     icon: HandHeart,
     image: 'https://customer-assets.emergentagent.com/job_957f9676-dd26-4dee-97f5-494fc015f420/artifacts/qhnerpwc_Reconciliation-confession.png',
-    path: '/sacrements/reconciliation'
+    path: '/sacrements/reconciliation',
+    color: 'from-purple-400 to-purple-600'
   },
   {
     id: 'mariage',
@@ -55,6 +50,7 @@ const sections = [
     icon: Heart,
     image: 'https://customer-assets.emergentagent.com/job_957f9676-dd26-4dee-97f5-494fc015f420/artifacts/5tik9jhg_Mariage.png',
     path: '/sacrements/mariage',
+    color: 'from-pink-400 to-rose-500',
     imageStyle: { objectPosition: 'left bottom' }
   },
   {
@@ -64,7 +60,8 @@ const sections = [
     description: 'Réconfort pour les personnes malades ou âgées',
     icon: Cross,
     image: 'https://customer-assets.emergentagent.com/job_c9a89358-b983-4f0b-8ec4-b48d0db621c4/artifacts/3dt57dtp_Sacreement-des-malades.png',
-    path: '/sacrements/malades'
+    path: '/sacrements/malades',
+    color: 'from-green-400 to-emerald-600'
   }
 ];
 
