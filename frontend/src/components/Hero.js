@@ -15,17 +15,6 @@ export const Hero = () => {
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
       </div>
 
-      {/* Don Button - Top Right */}
-      <div className="absolute top-4 sm:top-6 right-3 sm:right-6 lg:right-10 xl:right-16 z-20">
-        <Link
-          to="/vie-economique"
-          className="bg-gold backdrop-blur-sm border-2 border-gold text-white hover:bg-gold-dark hover:border-gold-dark rounded-full px-4 sm:px-6 py-2 sm:py-2.5 font-medium transition-all duration-300 shadow-lg text-sm sm:text-base"
-          data-testid="don-button"
-        >
-          Faire un don
-        </Link>
-      </div>
-
       {/* Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white pt-16 sm:pt-20">
         <h1 className="font-serif text-5xl md:text-7xl font-medium tracking-tight leading-tight mb-6" data-testid="hero-title">

@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Toaster } from 'sonner';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
+import { FloatingDonateButton } from '@/components/FloatingDonateButton';
 import HomePage from '@/pages/HomePage';
 import HorairesMesses from '@/pages/HorairesMesses';
 import Secretariat from '@/pages/Secretariat';
@@ -39,6 +40,7 @@ function App() {
               element={
                 <>
                   <Header />
+                  <FloatingDonateButton />
                   <main className="flex-grow">
                     <Routes>
                       <Route path="/" element={<HomePage />} />
