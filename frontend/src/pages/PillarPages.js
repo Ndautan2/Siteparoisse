@@ -7,7 +7,7 @@ const pillarData = {
     subtitle: "L'identité de notre paroisse",
     description: "Découvrez qui nous sommes, notre équipe, notre organisation et notre patrimoine",
     icon: Church,
-    color: "bg-blue-500",
+    color: "bg-[#d0ada6]",
     items: [
       {
         title: "Secrétariat & Coordonnées",
@@ -51,7 +51,7 @@ const pillarData = {
     subtitle: "Pôle éducation et formation",
     description: "Accompagnement des enfants et des jeunes dans leur cheminement de foi",
     icon: Users,
-    color: "bg-green-500",
+    color: "bg-[#d0ada6]",
     items: [
       {
         title: "Éveil à la Foi",
@@ -95,7 +95,7 @@ const pillarData = {
     subtitle: "Les grandes étapes de la vie chrétienne",
     description: "Recevoir les sacrements et vivre la liturgie en communauté",
     icon: Heart,
-    color: "bg-rose-500",
+    color: "bg-[#d0ada6]",
     items: [
       {
         title: "Demander un Sacrement",
@@ -169,7 +169,7 @@ const pillarData = {
     subtitle: "Vivre la charité",
     description: "Services d'accompagnement et actions de solidarité au service des plus fragiles",
     icon: HandHeart,
-    color: "bg-emerald-500",
+    color: "bg-[#d0ada6]",
     items: [
       {
         title: "Service d'Écoute Louis et Zélie",
