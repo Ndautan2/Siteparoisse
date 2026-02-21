@@ -16,8 +16,16 @@ code {
 }
 
 /* Hide Emergent badge */
-#emergent-badge {
+#emergent-badge,
+[class*="emergent"],
+[id*="emergent"],
+a[href*="emergent"],
+div[style*="position: fixed"][style*="bottom"],
+.emergent-badge {
     display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
 }
 
 @layer base {
