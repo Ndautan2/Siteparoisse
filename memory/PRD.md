@@ -1,23 +1,19 @@
-# Notre Dame d'Autan - Website PRD
+# Notre Dame d'Autan - Site Web Paroissial
 
-## Problem Statement
-Refonte complète du site web de la paroisse "Notre Dame d'Autan" avec une approche moderne, spirituelle et accueillante.
+## Description du Projet
+Refonte complète du site web de la paroisse "Notre Dame d'Autan" avec une approche spirituelle, accueillante et moderne.
 
-## Tech Stack
-- **Frontend**: React, Tailwind CSS, Lucide React icons
-- **Backend**: FastAPI, MongoDB (motor)
-- **Auth**: JWT-based authentication
+## Stack Technique
+- **Frontend**: React, Tailwind CSS, Lucide-React, Embla Carousel
+- **Backend**: FastAPI, Motor (MongoDB async)
+- **Base de données**: MongoDB
 
-## Design Guidelines
-- **Style**: Spirituel, accueillant, lumineux, épuré
-- **Typography**: Playfair Display (titres), Inter (corps)
-- **Colors**:
-  - Primary accent: `#d0ada6` (rose poudré)
-  - Background: `#FDFCF8` (off-white)
-  - Text: `#1E293B` (slate deep)
-  - Paper: `#F9F9F7`
+## Style Visuel
+- **Palette**: Couleur accent rose poudré `#d0ada6`, fond blanc cassé `#fdfbf8`, bleu ardoise `#475569`
+- **Typographie**: Serif pour les titres
+- **Design**: Épuré, lumineux, beaucoup d'espaces blancs, responsive
 
-## Navigation Structure (5 Pillars)
+## Structure de Navigation (5 piliers)
 1. Notre Dame d'Autan
 2. Familles & Jeunesse
 3. Vie Spirituelle & Sacrements
@@ -26,77 +22,53 @@ Refonte complète du site web de la paroisse "Notre Dame d'Autan" avec une appro
 
 ---
 
-## Completed Features (Phase 1) - Dec 2025
+## Fonctionnalités Implémentées
 
-### ✅ Core Structure
-- Full-stack app setup (React + FastAPI + MongoDB)
-- Responsive navigation with multi-level menus
-- Design system implementation (fonts, colors, spacing)
-
-### ✅ Homepage
-- Hero section with church background
-- Dynamic action buttons ("Je veux...", "Je suis nouveau", "Faire un don")
-- News section with 3 latest articles
-- Footer with contact info, quick links, newsletter
-
-### ✅ Content Pages
-- Generic ContentPage component for all static pages
-- PillarPage component for landing pages
-- Secretariat & Contact page
-- Horaires des Messes page
-
-### ✅ Admin Foundation
-- Login page (`/admin/login`)
-- Basic dashboard shell (`/admin/dashboard`)
-- JWT authentication backend
-
-### ✅ Bug Fixes
-- Mobile menu navigation fixed
-- Submenu accessibility improved
-- "Made with Emergent" badge removed
-- Color scheme updated to rose poudré (#d0ada6)
+### Décembre 2025
+- [x] Page d'accueil avec section Hero et carrousel d'actualités
+- [x] Navigation avec 5 piliers principaux
+- [x] Bouton "Horaires des Messes" très visible
+- [x] Footer avec liens et réseaux sociaux
+- [x] Pages piliers avec vignettes cliquables et icônes
+- [x] Page "Demander un Sacrement" avec 6 sacrements
+- [x] Pages de détail pour chaque sacrement
+- [x] Carrousel d'actualités automatique (3 vignettes visibles)
+- [x] 9 actualités avec images
+- [x] Page "Équipe Pastorale" avec vignettes
+- [x] Page "Nos Clochers" avec vignettes
+- [x] **Images personnalisées pour les 6 sacrements** (Baptême, Communion, Confirmation, Réconciliation, Mariage, Sacrement des Malades)
 
 ---
 
-## Phase 2 - Backlog
+## Tâches Prochaines (Backlog Priorisé)
 
-### P0 - Critical
-- [ ] **CMS Admin Dashboard**
-  - [ ] News management (CRUD)
-  - [ ] Mass schedules management (CRUD)
-
+### P0 - Critique
+- [ ] **CMS Admin** : Implémenter le tableau de bord `/admin` pour gérer :
+  - Actualités (CRUD)
+  - Horaires des messes
+  
 ### P1 - Important
-- [ ] **Sacrament Request Forms**
-  - [ ] Baptism, Marriage, Confirmation forms
-  - [ ] Email notifications
-- [ ] **Editable Page Content**
-  - [ ] Migrate hardcoded content to MongoDB
-  - [ ] Admin interface for page editing
+- [ ] **Migration du contenu** : Migrer le contenu codé en dur dans `server.py` vers MongoDB
+- [ ] **Formulaires de sacrements** : Créer les formulaires de demande avec notifications email
 
-### P2 - Future
-- [ ] **Newsletter Signup**
-  - [ ] Functional subscription form
-  - [ ] Email list management
-- [ ] **Media Features**
-  - [ ] Photo galleries
-  - [ ] Testimonials section
+### P2 - Améliorations futures
+- [ ] Inscription à la newsletter (footer)
+- [ ] Chatbot IA (Gemini Flash suggéré)
+- [ ] Galeries photos
+- [ ] Témoignages
 
 ---
 
-## Key Files Reference
-- `backend/server.py` - Main API, contains hardcoded page content
-- `frontend/src/App.js` - Router configuration
-- `frontend/src/pages/PillarPages.js` - Pillar landing pages
-- `frontend/src/components/Header.js` - Navigation
-- `frontend/tailwind.config.js` - Color definitions
+## URLs des Images des Sacrements
+- Baptême: `https://customer-assets.emergentagent.com/job_c9a89358-b983-4f0b-8ec4-b48d0db621c4/artifacts/gj75c74d_Bapteme.png`
+- Première Communion: `https://customer-assets.emergentagent.com/job_957f9676-dd26-4dee-97f5-494fc015f420/artifacts/qqm1rjkh_Premiere-communion.png`
+- Confirmation: `https://customer-assets.emergentagent.com/job_957f9676-dd26-4dee-97f5-494fc015f420/artifacts/e13l6wpl_Confirmation.png`
+- Réconciliation: `https://customer-assets.emergentagent.com/job_957f9676-dd26-4dee-97f5-494fc015f420/artifacts/qhnerpwc_Reconciliation-confession.png`
+- Mariage: `https://customer-assets.emergentagent.com/job_957f9676-dd26-4dee-97f5-494fc015f420/artifacts/5tik9jhg_Mariage.png`
+- Sacrement des Malades: `https://customer-assets.emergentagent.com/job_c9a89358-b983-4f0b-8ec4-b48d0db621c4/artifacts/3dt57dtp_Sacreement-des-malades.png`
 
-## Admin Credentials (Dev)
-- Username: `admin`
-- Password: `password`
-- Seed script: `scripts/seed_admin.py`
+---
 
-## API Endpoints
-- `GET /api/news` - Latest news
-- `GET /api/mass-schedules` - Mass schedules
-- `GET /api/content/{path}` - Page content
-- `POST /api/token` - Admin login
+## Credentials
+- **Admin**: username: `admin`, password: `password`
+- **URL**: `/admin`
