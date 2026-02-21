@@ -1,305 +1,311 @@
-import { Users, Heart, BookOpen, Church, GraduationCap, Baby, Cross, MessagesSquare, Flower2, HandHeart, Stethoscope, Building2, Sparkles } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { 
+  Users, Heart, BookOpen, Church, GraduationCap, Baby, Cross, MessagesSquare, 
+  Flower2, HandHeart, Stethoscope, Building2, Sparkles, Music, Coffee, 
+  Compass, Tent, Star, BookMarked, Radio, Tv, Globe, Home, Phone,
+  HeartHandshake, Glasses, Landmark, CalendarHeart, UserCircle, Shield,
+  Palmtree, Smile, Mic, PenTool, DoorOpen, FileText, Wallet, Gift, 
+  CircleDollarSign, Wrench, Megaphone, UserPlus, Lightbulb, MessageCircle
+} from 'lucide-react';
 
-const contentData = {
-  equipe: {
-    title: 'Équipe Pastorale',
-    description: 'Une équipe au service de la communauté pour l\'accompagner dans sa vie de foi.',
-    icon: Users,
-    content: `Notre équipe pastorale est au service de la communauté paroissiale.
-
-**Curé :** Père [Nom]
-**Diacres :** [Noms]
-**Équipe d'Animation Pastorale (EAP) :** Composée de paroissiens engagés qui accompagnent la vie de la paroisse.
-
-N'hésitez pas à nous contacter pour toute question ou besoin spirituel.`,
-  },
+// Configuration des sections avec vignettes
+const contentConfig = {
   economique: {
     title: 'Vie Économique',
+    subtitle: 'Gestion financière et matérielle',
     description: 'Une gestion transparente et responsable au service de notre mission.',
     icon: Building2,
-    content: `La vie économique de la paroisse est gérée avec transparence et responsabilité.
-
-**Conseil des Finances :** Assure la gestion financière de la paroisse
-**Commission des Travaux :** Veille à l'entretien de nos églises
-**Denier de l'Église :** Votre générosité permet de financer la mission de l'Église
-**Legs et donations :** Pour soutenir durablement notre communauté`,
-  },
-  clochers: {
-    title: 'Nos Clochers',
-    description: 'Un patrimoine architectural témoin de la foi de nos ancêtres.',
-    icon: Church,
-    content: `Notre paroisse compte plusieurs églises, chacune avec son histoire unique.
-
-**Église Notre-Dame d'Autan**
-Architecture remarquable, point de repère de notre communauté.
-
-**Chapelles et oratoires**
-Dispersés sur le territoire paroissial, ils témoignent de la foi de nos aînés.`,
+    items: [
+      { title: 'Conseil des Finances', description: 'Gestion financière de la paroisse', icon: Wallet },
+      { title: 'Commission des Travaux', description: 'Entretien de nos églises', icon: Wrench },
+      { title: 'Denier de l\'Église', description: 'Soutenir la mission de l\'Église', icon: CircleDollarSign },
+      { title: 'Legs et Donations', description: 'Soutenir durablement notre communauté', icon: Gift },
+    ]
   },
   services: {
     title: 'Services Transverses',
+    subtitle: 'Communication & accueil',
     description: 'Des équipes au service de la communication et de l\'accueil.',
     icon: Sparkles,
-    content: `**Service Communication**
-Gestion du site web, réseaux sociaux, bulletin paroissial
-
-**Service Accueil**
-Équipe de bénévoles qui accueillent chaleureusement tous les visiteurs`,
+    items: [
+      { title: 'Service Communication', description: 'Site web, réseaux sociaux, bulletin', icon: Megaphone },
+      { title: 'Service Accueil', description: 'Accueil chaleureux des visiteurs', icon: DoorOpen },
+      { title: 'Secrétariat', description: 'Gestion administrative', icon: FileText },
+    ]
   },
   eveil: {
     title: 'Éveil à la Foi',
+    subtitle: '3-7 ans',
     description: 'Premiers pas dans la foi chrétienne pour les tout-petits et leurs familles.',
     icon: Baby,
-    content: `Pour les enfants de 3 à 7 ans, découverte de la foi chrétienne en famille.
-
-Rencontres mensuelles le dimanche après la messe, avec contes, chants et activités ludiques.`,
+    items: [
+      { title: 'Rencontres mensuelles', description: 'Le dimanche après la messe', icon: CalendarHeart },
+      { title: 'Contes et histoires', description: 'Découvrir la Bible en s\'amusant', icon: BookOpen },
+      { title: 'Chants et prières', description: 'Apprendre à prier ensemble', icon: Music },
+      { title: 'Activités manuelles', description: 'Créations et bricolages', icon: PenTool },
+    ]
   },
   catechisme: {
     title: 'Catéchisme',
+    subtitle: 'CE2 à 6ème',
     description: 'Découvrir Jésus et grandir dans la foi en communauté.',
     icon: BookOpen,
-    content: `Pour les enfants du CE2 à la 6ème.
-
-Rencontres hebdomadaires en petits groupes pour découvrir la vie de Jésus, les sacrements et vivre en communauté.
-
-**Inscriptions :** Se renseigner au secrétariat`,
+    items: [
+      { title: 'CE2', description: 'Découverte de Jésus', icon: Star },
+      { title: 'CM1', description: 'Préparation à la communion', icon: Heart },
+      { title: 'CM2', description: 'Approfondissement', icon: BookMarked },
+      { title: '6ème', description: 'Profession de foi', icon: Cross },
+    ]
   },
   aumonerie: {
     title: 'Aumônerie',
-    description: 'Un lieu pour les jeunes collégiens et lycéens de grandir ensemble dans la foi.',
+    subtitle: 'Collégiens & lycéens',
+    description: 'Un lieu pour les jeunes de grandir ensemble dans la foi.',
     icon: GraduationCap,
-    content: `Pour les collégiens et lycéens.
-
-Rencontres, temps de partage, activités, camps... Un lieu pour grandir dans la foi avec d'autres jeunes.
-
-**Contact :** aumonerie@notredamedautan.fr`,
+    items: [
+      { title: 'Aumônerie Collège', description: '5ème - 3ème', icon: Users },
+      { title: 'Aumônerie Lycée', description: 'Seconde - Terminale', icon: GraduationCap },
+      { title: 'Camps et retraites', description: 'Temps forts et activités', icon: Tent },
+      { title: 'Confirmation', description: 'Préparation au sacrement', icon: Sparkles },
+    ]
   },
   mouvements: {
     title: 'Mouvements de Jeunesse',
+    subtitle: 'Scouts, MEJ, Patronage',
     description: 'Activités, partage et service dans un esprit chrétien.',
-    icon: Users,
-    content: `**Scouts et Guides de France**
-Activités de plein air, camps, service
-
-**Mouvement Eucharistique des Jeunes (MEJ)**
-Groupes de partage et de prière
-
-**Patronage**
-Activités ludiques et sportives dans un esprit chrétien`,
+    icon: Compass,
+    items: [
+      { title: 'Scouts et Guides de France', description: 'Activités de plein air, camps, service', icon: Tent },
+      { title: 'MEJ', description: 'Mouvement Eucharistique des Jeunes', icon: Heart },
+      { title: 'Patronage', description: 'Activités ludiques et sportives', icon: Smile },
+    ]
   },
   servants: {
-    title: "Servants d'autel et Vocations",
-    description: 'Se mettre au service de la liturgie et répondre à l\'appel du Seigneur.',
+    title: 'Servants d\'autel & Vocations',
+    subtitle: 'Service liturgique',
+    description: 'Se mettre au service de la liturgie et répondre à l\'appel.',
     icon: Cross,
-    content: `**Servants d'autel**
-Enfants et jeunes qui servent à l'autel pendant la messe. Formation assurée.
-
-**Accompagnement des vocations**
-Pour ceux qui s'interrogent sur un appel à la vie consacrée ou sacerdotale.`,
-  },
-  sacrement: {
-    title: 'Demander un Sacrement',
-    description: 'Les sacrements jalonnent les grandes étapes de la vie chrétienne.',
-    icon: Heart,
-    content: `**Baptême**
-Premier sacrement de l'initiation chrétienne, le baptême fait entrer dans la famille des enfants de Dieu. Pour les enfants et les adultes. Préparation assurée par l'équipe de préparation au baptême.
-
-**Première Communion**
-Recevoir pour la première fois le Corps du Christ lors de l'Eucharistie. Préparation au cours du catéchisme (après 2 ans de catéchisme minimum).
-
-**Confirmation**
-Sacrement de la maturité chrétienne qui achève l'initiation commencée au baptême. Préparation spécifique pour jeunes et adultes. Recevoir les dons de l'Esprit Saint pour être témoin du Christ.
-
-**Réconciliation (Confession)**
-Sacrement du pardon et de la miséricorde de Dieu. Permanences régulières à l'église et possibilité de rendez-vous individuels. Préparation pour la première confession lors du catéchisme.
-
-**Sacrement des Malades**
-Pour les personnes gravement malades, âgées ou en fin de vie. Ce sacrement apporte réconfort, force et paix. Célébration communautaire une fois par an et onction individuelle sur demande.
-
-**Pour toute demande, contactez le secrétariat de la paroisse.**`,
+    items: [
+      { title: 'Servants d\'autel', description: 'Service à l\'autel pendant la messe', icon: Star },
+      { title: 'Formation', description: 'Apprentissage du service liturgique', icon: BookOpen },
+      { title: 'Accompagnement vocations', description: 'Discernement et accompagnement', icon: Lightbulb },
+    ]
   },
   mariage: {
     title: 'Le Mariage',
+    subtitle: 'Préparation & célébration',
     description: 'S\'engager dans l\'amour et la fidélité, soutenu par la grâce de Dieu.',
     icon: Heart,
-    content: `Se marier à l'Église est un engagement profond et joyeux.
-
-**Préparation au mariage**
-Parcours de préparation avec des couples accompagnateurs.
-
-**Équipes Notre-Dame**
-Mouvement de spiritualité conjugale
-
-**Cana**
-Formation à la vie de couple
-
-**Prendre contact au moins 6 mois avant la date souhaitée.**`,
+    items: [
+      { title: 'Préparation au mariage', description: 'Parcours avec couples accompagnateurs', icon: HeartHandshake },
+      { title: 'Équipes Notre-Dame', description: 'Spiritualité conjugale', icon: Users },
+      { title: 'Cana', description: 'Formation à la vie de couple', icon: Heart },
+      { title: 'Session CPM', description: 'Centre de Préparation au Mariage', icon: CalendarHeart },
+    ]
   },
   liturgie: {
     title: 'Liturgie & Musique',
+    subtitle: 'Chorale, Art Floral, Sacristains',
     description: 'Embellir les célébrations par le chant, la musique et l\'art floral.',
-    icon: Flower2,
-    content: `**Chorale paroissiale**
-Répétitions hebdomadaires, tous niveaux bienvenus
-
-**Art Floral**
-Équipe de bénévoles qui fleurissent l'église
-
-**Sacristains**
-Service discret et essentiel pour la liturgie`,
+    icon: Music,
+    items: [
+      { title: 'Chorale paroissiale', description: 'Chants et musique liturgique', icon: Mic },
+      { title: 'Art Floral', description: 'Fleurir l\'église avec beauté', icon: Flower2 },
+      { title: 'Sacristains', description: 'Service discret et essentiel', icon: Cross },
+      { title: 'Lecteurs', description: 'Proclamer la Parole de Dieu', icon: BookOpen },
+    ]
   },
   funerailles: {
     title: 'Funérailles',
+    subtitle: 'Accompagnement des familles',
     description: 'Accompagner les familles en deuil avec compassion et espérance.',
     icon: Cross,
-    content: `Accompagnement des familles en deuil.
-
-**Équipe funérailles**
-Préparation de la célébration, soutien et écoute.
-
-**Contact en urgence via le secrétariat ou les pompes funèbres.**`,
+    items: [
+      { title: 'Équipe funérailles', description: 'Préparation de la célébration', icon: Users },
+      { title: 'Accompagnement du deuil', description: 'Soutien et écoute', icon: Heart },
+      { title: 'Messes anniversaire', description: 'Se souvenir des défunts', icon: CalendarHeart },
+    ]
   },
   alpha: {
     title: 'Parcours Alpha & Catéchuménat',
+    subtitle: 'Découvrir la foi',
     description: 'Découvrir ou redécouvrir la foi chrétienne dans un esprit de partage.',
     icon: MessagesSquare,
-    content: `**Parcours Alpha**
-Découvrir ou redécouvrir la foi chrétienne dans la convivialité. Repas, vidéo, échanges.
-
-**Catéchuménat**
-Pour les adultes souhaitant recevoir le baptême, la confirmation ou l'eucharistie. Accompagnement personnalisé sur plusieurs mois.`,
+    items: [
+      { title: 'Parcours Alpha', description: 'Repas, vidéo, échanges conviviaux', icon: MessageCircle },
+      { title: 'Catéchuménat', description: 'Pour adultes souhaitant le baptême', icon: Cross },
+      { title: 'Recommençants', description: 'Renouer avec la foi', icon: Heart },
+    ]
   },
   groupes: {
     title: 'Groupes de Partage',
+    subtitle: 'Fraternités & groupes',
     description: 'Échanger, prier et grandir ensemble autour de la Parole.',
     icon: Users,
-    content: `**Fraternités**
-Petits groupes de partage de la Parole et de la vie
-
-**Groupes Pros**
-Réflexion sur la foi et le travail
-
-**Groupe Biblique**
-Étude approfondie de la Bible`,
+    items: [
+      { title: 'Fraternités', description: 'Partage de la Parole et de la vie', icon: Users },
+      { title: 'Groupes Pros', description: 'Foi et monde du travail', icon: Building2 },
+      { title: 'Groupe Biblique', description: 'Étude approfondie de la Bible', icon: BookOpen },
+      { title: 'Groupe de prière', description: 'Prière et louange', icon: Heart },
+    ]
   },
   meditation: {
     title: 'Méditation Chrétienne',
+    subtitle: 'Silence & prière',
     description: 'Entrer dans le silence et la prière contemplative.',
     icon: Sparkles,
-    content: `Temps de silence et de prière contemplatif.
-
-Rencontres hebdomadaires ouvertes à tous.
-
-**Initiation possible pour les débutants.**`,
+    items: [
+      { title: 'Méditation silencieuse', description: 'Temps de silence hebdomadaire', icon: Sparkles },
+      { title: 'Lectio Divina', description: 'Méditation de la Parole', icon: BookOpen },
+      { title: 'Adoration', description: 'Temps devant le Saint-Sacrement', icon: Star },
+    ]
   },
   ressources: {
     title: 'Ressources',
+    subtitle: 'Livres, médias, liens',
     description: 'Livres, médias et outils pour nourrir votre vie spirituelle.',
     icon: BookOpen,
-    content: `**Librairie religieuse**
-Livres, chapelets, icônes, objets de piété
-
-**Radio Présence**
-Émissions spirituelles et culturelles
-
-**Liens utiles**
-- Diocèse de Toulouse
-- Vatican
-- Aleteia`,
+    items: [
+      { title: 'Librairie religieuse', description: 'Livres, chapelets, icônes', icon: BookOpen },
+      { title: 'Médiathèque', description: 'DVD, CD, revues', icon: Tv },
+      { title: 'Sites recommandés', description: 'Ressources en ligne', icon: Globe },
+      { title: 'Podcasts', description: 'Émissions spirituelles', icon: Radio },
+    ]
   },
   ecoute: {
-    title: "Service d'Écoute Louis et Zélie",
+    title: 'Service d\'Écoute Louis et Zélie',
+    subtitle: 'Présence bienveillante',
     description: 'Une présence bienveillante pour ceux qui traversent une épreuve.',
     icon: Heart,
-    content: `Service d'écoute téléphonique et en personne pour ceux qui traversent une épreuve.
-
-**Confidentialité assurée**
-
-Contact via le secrétariat.`,
+    items: [
+      { title: 'Écoute individuelle', description: 'Rendez-vous confidentiels', icon: UserCircle },
+      { title: 'Accompagnement', description: 'Soutien dans les épreuves', icon: HeartHandshake },
+      { title: 'Orientation', description: 'Vers des professionnels si besoin', icon: Compass },
+    ]
   },
   malades: {
     title: 'Visite des Malades (SEM)',
+    subtitle: 'Service évangélique',
     description: 'Porter la présence du Christ auprès des personnes malades et âgées.',
     icon: Stethoscope,
-    content: `**Service Évangélique des Malades**
-
-Équipe de bénévoles qui visitent les personnes malades ou âgées à domicile ou en maison de retraite.
-
-Sacrement des malades sur demande.`,
+    items: [
+      { title: 'Visites à domicile', description: 'Auprès des personnes isolées', icon: Home },
+      { title: 'Visites en EHPAD', description: 'Présence en maison de retraite', icon: Building2 },
+      { title: 'Communion aux malades', description: 'Porter l\'Eucharistie', icon: Heart },
+      { title: 'Sacrement des malades', description: 'Sur demande', icon: Cross },
+    ]
   },
   entraide: {
     title: 'Entraide et Solidarité',
+    subtitle: 'Vivre la charité',
     description: 'Vivre la charité du Christ au service des plus fragiles.',
     icon: HandHeart,
-    content: `**Secours Catholique**
-Aide matérielle et accompagnement
-
-**Café Amitié**
-Lieu de rencontre convivial
-
-**Hospitalité de Lourdes**
-Pèlerinages pour personnes malades ou handicapées
-
-**Famille Bartimée**
-Accueil des personnes handicapées
-
-**Lourdes Cancer Espérance**
-Soutien aux malades du cancer`,
+    items: [
+      { title: 'Secours Catholique', description: 'Aide matérielle et accompagnement', icon: HandHeart },
+      { title: 'Café Amitié', description: 'Lieu de rencontre convivial', icon: Coffee },
+      { title: 'Hospitalité de Lourdes', description: 'Pèlerinages pour personnes malades', icon: Palmtree },
+      { title: 'Famille Bartimée', description: 'Accompagnement des personnes handicapées', icon: HeartHandshake },
+      { title: 'Lourdes Cancer Espérance', description: 'Soutien aux malades du cancer', icon: Heart },
+    ]
   },
+  'equipe-detail': {
+    title: 'Détail membre',
+    subtitle: '',
+    description: '',
+    icon: Users,
+    items: []
+  },
+  'clocher-detail': {
+    title: 'Détail clocher',
+    subtitle: '',
+    description: '',
+    icon: Church,
+    items: []
+  }
 };
 
 const ContentPage = ({ section }) => {
-  const data = contentData[section] || { 
-    title: 'Page en construction', 
-    description: 'Contenu à venir prochainement.',
-    icon: Sparkles,
-    content: 'Cette page sera bientôt disponible.' 
-  };
-  
-  const IconComponent = data.icon;
+  const config = contentConfig[section];
+
+  if (!config) {
+    return (
+      <div className="min-h-screen bg-paper py-20 flex items-center justify-center">
+        <div className="text-center">
+          <h1 className="font-serif text-3xl text-slate-deep mb-4">Page en construction</h1>
+          <Link to="/" className="text-gold hover:text-gold-dark">
+            Retour à l'accueil
+          </Link>
+        </div>
+      </div>
+    );
+  }
+
+  const IconComponent = config.icon;
 
   return (
-    <div className="min-h-screen bg-paper py-24" data-testid={`content-page-${section}`}>
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Icon */}
-        <div className="flex justify-center mb-8">
-          <div className="w-24 h-24 rounded-full bg-gold flex items-center justify-center shadow-lg">
-            <IconComponent className="w-12 h-12 text-white" strokeWidth={1.5} />
+    <div className="min-h-screen bg-paper py-20" data-testid={`content-page-${section}`}>
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Header */}
+        <div className="text-center mb-14">
+          <div className="flex justify-center mb-6">
+            <div className="w-20 h-20 rounded-full bg-gold flex items-center justify-center shadow-lg">
+              <IconComponent className="w-10 h-10 text-white" strokeWidth={1.5} />
+            </div>
           </div>
+          <h1 className="font-serif text-4xl md:text-5xl font-medium tracking-tight text-slate-deep mb-3">
+            {config.title}
+          </h1>
+          {config.subtitle && (
+            <p className="text-gold font-medium mb-4">{config.subtitle}</p>
+          )}
+          <p className="text-base md:text-lg text-slate-600 max-w-2xl mx-auto">
+            {config.description}
+          </p>
         </div>
 
-        {/* Title */}
-        <h1 className="font-serif text-5xl md:text-7xl font-medium tracking-tight leading-tight text-slate-deep mb-6 text-center">
-          {data.title}
-        </h1>
-
-        {/* Description */}
-        <p className="text-base md:text-lg leading-relaxed text-slate-600 text-center mb-12 max-w-2xl mx-auto">
-          {data.description}
-        </p>
-
-        {/* Content */}
-        <div className="bg-white rounded-xl p-8 shadow-sm border border-slate-100">
-          <div className="prose prose-slate max-w-none">
-            {data.content.split('\n').map((paragraph, index) => {
-              // Remove ** markers
-              const cleanParagraph = paragraph.replace(/\*\*/g, '');
-              
-              // Check if it was a heading (started and ended with **)
-              if (paragraph.startsWith('**') && paragraph.endsWith('**')) {
-                return (
-                  <h3 key={index} className="font-serif text-2xl text-slate-deep mt-6 mb-3 first:mt-0">
-                    {cleanParagraph}
-                  </h3>
-                );
-              }
-              return cleanParagraph ? (
-                <p key={index} className="text-slate-600 leading-relaxed mb-4">
-                  {cleanParagraph}
-                </p>
-              ) : null;
+        {/* Items Grid - Vignettes avec icônes */}
+        {config.items && config.items.length > 0 && (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+            {config.items.map((item, index) => {
+              const ItemIcon = item.icon;
+              return (
+                <div
+                  key={index}
+                  className="group bg-white rounded-xl p-6 shadow-sm hover:shadow-md border border-slate-100 hover:border-gold/30 transition-all duration-300"
+                  data-testid={`item-card-${index}`}
+                >
+                  <div className="flex items-start space-x-4">
+                    <div className="flex-shrink-0 w-12 h-12 rounded-full bg-gold/10 flex items-center justify-center group-hover:bg-gold/20 transition-colors">
+                      <ItemIcon className="w-6 h-6 text-gold" strokeWidth={1.5} />
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <h3 className="font-serif text-lg text-slate-deep mb-1 group-hover:text-gold transition-colors">
+                        {item.title}
+                      </h3>
+                      <p className="text-slate-500 text-sm leading-relaxed">
+                        {item.description}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              );
             })}
           </div>
+        )}
+
+        {/* Contact Section */}
+        <div className="bg-gradient-to-r from-gold/10 to-gold/5 rounded-2xl p-8 border border-gold/20 text-center">
+          <h2 className="font-serif text-2xl text-slate-deep mb-4">Vous souhaitez en savoir plus ?</h2>
+          <p className="text-slate-600 mb-6 max-w-xl mx-auto">
+            Contactez le secrétariat paroissial pour toute information complémentaire ou pour rejoindre une équipe.
+          </p>
+          <Link
+            to="/secretariat"
+            className="inline-flex items-center bg-gold hover:bg-gold-dark text-white px-6 py-3 rounded-full font-medium transition-colors"
+          >
+            <Phone className="w-4 h-4 mr-2" />
+            Contacter le secrétariat
+          </Link>
         </div>
       </div>
     </div>
