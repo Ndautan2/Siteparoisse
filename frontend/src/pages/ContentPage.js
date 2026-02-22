@@ -482,6 +482,14 @@ const ContentPage = ({ section }) => {
           </div>
         )}
 
+        {/* Funerals Agenda - Only for funerailles section */}
+        {section === 'funerailles' && (
+          <div className="mb-16">
+            <h2 className="font-serif text-3xl text-slate-deep mb-6 text-center">Agenda des célébrations</h2>
+            <FuneralsAgenda />
+          </div>
+        )}
+
         {/* Contact Section */}
         <div className="bg-gradient-to-r from-gold/10 to-gold/5 rounded-2xl p-8 border border-gold/20 text-center mb-16">
           <h2 className="font-serif text-2xl text-slate-deep mb-4">Vous souhaitez en savoir plus ?</h2>
