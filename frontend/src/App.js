@@ -41,7 +41,6 @@ function App() {
               element={
                 <>
                   <Header />
-                  <FloatingDonateButton />
                   <FloatingContactButton />
                   <main className="flex-grow">
                     <Routes>
