@@ -215,6 +215,44 @@ async def delete_mass_time(mass_id: str, username: str = Depends(get_current_use
         raise HTTPException(status_code=404, detail="Mass time not found")
     return {"message": "Mass time deleted"}
 
+# FUNERALS
+@api_router.get("/funerals", response_model=List[Funeral])
+async def get_funerals():
+    funerals = await db.funerals.find({}, {"_id": 0}).sort("funeral_date", 1).to_list(100)
+    return funerals
+
+@api_router.post("/funerals", response_model=Funeral)
+async def create_funeral(funeral: FuneralCreate, username: str = Depends(get_current_user)):
+    funeral_dict = funeral.model_dump()
+    funeral_obj = Funeral(
+        id=str(uuid.uuid4()),
+        created_at=datetime.now(timezone.utc).isoformat(),
+        **funeral_dict
+    )
+    doc = funeral_obj.model_dump()
+    await db.funerals.insert_one(doc)
+    return funeral_obj
+
+@api_router.put("/funerals/{funeral_id}", response_model=Funeral)
+async def update_funeral(funeral_id: str, funeral_update: FuneralUpdate, username: str = Depends(get_current_user)):
+    existing = await db.funerals.find_one({"id": funeral_id}, {"_id": 0})
+    if not existing:
+        raise HTTPException(status_code=404, detail="Funeral not found")
+    
+    update_data = {k: v for k, v in funeral_update.model_dump().items() if v is not None}
+    if update_data:
+        await db.funerals.update_one({"id": funeral_id}, {"$set": update_data})
+    
+    updated = await db.funerals.find_one({"id": funeral_id}, {"_id": 0})
+    return Funeral(**updated)
+
+@api_router.delete("/funerals/{funeral_id}")
+async def delete_funeral(funeral_id: str, username: str = Depends(get_current_user)):
+    result = await db.funerals.delete_one({"id": funeral_id})
+    if result.deleted_count == 0:
+        raise HTTPException(status_code=404, detail="Funeral not found")
+    return {"message": "Funeral deleted"}
+
 app.include_router(api_router)
 
 app.add_middleware(
