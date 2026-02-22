@@ -15,6 +15,7 @@ const contentConfig = {
     subtitle: 'Gestion financière et matérielle',
     description: 'Une gestion transparente et responsable au service de notre mission.',
     icon: Building2,
+    heroImage: 'https://customer-assets.emergentagent.com/job_scroll-donate-pages/artifacts/lqmcs9y0_Vie-economique.png',
     items: [
       { title: 'Conseil des Finances', description: 'Gestion financière de la paroisse', icon: Wallet },
       { title: 'Commission des Travaux', description: 'Entretien de nos églises', icon: Wrench },
@@ -27,6 +28,7 @@ const contentConfig = {
     subtitle: 'Communication & accueil',
     description: 'Des équipes au service de la communication et de l\'accueil.',
     icon: Sparkles,
+    heroImage: 'https://customer-assets.emergentagent.com/job_scroll-donate-pages/artifacts/k5e6s4rg_Services-transverses.png',
     items: [
       { title: 'Service Communication', description: 'Site web, réseaux sociaux, bulletin', icon: Megaphone },
       { title: 'Service Accueil', description: 'Accueil chaleureux des visiteurs', icon: DoorOpen },
