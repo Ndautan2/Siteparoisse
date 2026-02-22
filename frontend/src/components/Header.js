@@ -221,23 +221,14 @@ export const Header = () => {
 
           {/* CTA Buttons Desktop + Mobile action buttons */}
           <div className="flex items-center space-x-2 sm:space-x-4">
-            {/* Desktop: Stacked buttons (Horaires + Faire un don) */}
-            <div className="hidden lg:flex flex-col items-center gap-2">
-              <Link
-                to="/horaires-messes"
-                className="bg-gold hover:bg-gold-dark text-white font-medium px-6 py-2.5 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-0.5"
-                data-testid="mass-times-button"
-              >
-                Horaires des messes
-              </Link>
-              <Link
-                to="/vie-economique"
-                className="bg-gold hover:bg-gold-dark text-white font-medium px-6 py-2.5 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-0.5"
-                data-testid="donate-button-header"
-              >
-                Faire un don
-              </Link>
-            </div>
+            {/* Desktop: Horaires des messes button in header */}
+            <Link
+              to="/horaires-messes"
+              className="hidden lg:block bg-gold hover:bg-gold-dark text-white font-medium px-6 py-2.5 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-0.5"
+              data-testid="mass-times-button"
+            >
+              Horaires des messes
+            </Link>
 
             {/* Mobile: Phone + Donate + Horaires buttons */}
             <div className="flex items-center gap-2 lg:hidden">
