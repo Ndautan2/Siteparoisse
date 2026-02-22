@@ -340,7 +340,7 @@ const ContentPage = ({ section }) => {
 
       {/* Scroll to Agenda Button - Only for funerailles */}
       {section === 'funerailles' && (
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 -mt-8 mb-8 relative z-20">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-4 relative z-20">
           <div className="flex justify-center">
             <button
               onClick={() => {
