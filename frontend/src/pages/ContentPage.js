@@ -481,7 +481,7 @@ const ContentPage = ({ section }) => {
         )}
 
         {/* Contact Section */}
-        <div className="bg-gradient-to-r from-gold/10 to-gold/5 rounded-2xl p-8 border border-gold/20 text-center">
+        <div className="bg-gradient-to-r from-gold/10 to-gold/5 rounded-2xl p-8 border border-gold/20 text-center mb-16">
           <h2 className="font-serif text-2xl text-slate-deep mb-4">Vous souhaitez en savoir plus ?</h2>
           <p className="text-slate-600 mb-6 max-w-xl mx-auto">
             Contactez le secrétariat paroissial pour toute information complémentaire ou pour rejoindre une équipe.
@@ -494,6 +494,16 @@ const ContentPage = ({ section }) => {
             Contacter le secrétariat
           </Link>
         </div>
+
+        {/* Citation biblique */}
+        {biblicalQuotes[section] && (
+          <div className="bg-gradient-to-r from-gold/10 to-gold/5 rounded-2xl p-8 border border-gold/20 text-center">
+            <blockquote className="font-serif text-2xl text-slate-deep italic mb-4">
+              "{biblicalQuotes[section].quote}"
+            </blockquote>
+            <p className="text-gold font-medium">{biblicalQuotes[section].reference}</p>
+          </div>
+        )}
       </div>
     </div>
   );
