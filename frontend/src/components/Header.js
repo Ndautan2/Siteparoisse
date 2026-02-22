@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Menu, X, Church, Heart, Users, BookOpen, HandHeart, ChevronDown } from 'lucide-react';
+import { Menu, X, Church, Heart, Users, BookOpen, HandHeart, ChevronDown, Phone } from 'lucide-react';
 
 export const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
