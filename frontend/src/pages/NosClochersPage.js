@@ -104,7 +104,7 @@ const NosClochersPage = () => {
   return (
     <div className="min-h-screen bg-paper" data-testid="nos-clochers-page">
       {/* Hero Section with Image */}
-      <section className="relative h-[50vh] flex items-center justify-center">
+      <section className="relative h-[55vh] flex items-center justify-center">
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
           <img
