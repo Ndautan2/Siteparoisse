@@ -299,6 +299,7 @@ const ContentPage = ({ section }) => {
             {config.description}
           </p>
         </div>
+        )}
 
         {/* Items Grid - Vignettes avec icônes */}
         {config.items && config.items.length > 0 && (
