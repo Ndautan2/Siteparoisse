@@ -226,18 +226,39 @@ export const Header = () => {
         {/* Mobile Menu */}
         {isMenuOpen && (
           <div className="lg:hidden py-4 border-t border-slate-100" data-testid="mobile-menu">
+            {/* Je veux... menu on mobile */}
+            <div className="mb-4">
+              <div className="font-medium text-gold mb-2">Je veux...</div>
+              <div className="pl-4 space-y-1">
+                {jeVeuxOptions.map((option) => (
+                  <Link
+                    key={option.path + option.label}
+                    to={option.path}
+                    className="block py-1 text-slate-600 hover:text-gold transition-colors text-sm"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    {option.label}
+                  </Link>
+                ))}
+              </div>
+            </div>
+
             {menuItems.map((item) => (
               <div key={item.title} className="mb-4">
-                <div className="font-medium text-slate-700 mb-2 flex items-center space-x-2">
+                <Link
+                  to={item.path}
+                  className="font-medium text-slate-700 mb-2 flex items-center space-x-2 hover:text-gold transition-colors"
+                  onClick={() => setIsMenuOpen(false)}
+                >
                   <item.icon className="w-4 h-4" />
                   <span>{item.title}</span>
-                </div>
-                <div className="pl-6 space-y-1">
+                </Link>
+                <div className="pl-6 space-y-1 mt-2">
                   {item.items.map((subItem) => (
                     <Link
                       key={subItem.path}
                       to={subItem.path}
-                      className="block py-1 text-slate-600 hover:text-gold transition-colors"
+                      className="block py-1 text-slate-600 hover:text-gold transition-colors text-sm"
                       onClick={() => setIsMenuOpen(false)}
                     >
                       {subItem.label}
