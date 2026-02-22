@@ -293,7 +293,7 @@ const ContentPage = ({ section }) => {
             <img
               src={config.heroImage}
               alt={config.title}
-              className="w-full h-full object-cover object-center"
+              className={`w-full h-full object-cover ${config.heroPosition || 'object-center'}`}
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-black/20"></div>
           </div>
