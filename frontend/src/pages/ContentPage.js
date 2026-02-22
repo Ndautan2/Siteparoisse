@@ -336,7 +336,6 @@ const ContentPage = ({ section }) => {
               {config.description}
             </p>
           </div>
-        </div>
 
         {/* Social Media Links - Bottom Right */}
         <div className="absolute bottom-6 right-6 z-10 flex gap-3">
