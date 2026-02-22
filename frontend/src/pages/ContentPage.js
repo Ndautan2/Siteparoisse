@@ -246,10 +246,44 @@ const ContentPage = ({ section }) => {
   const IconComponent = config.icon;
 
   return (
-    <div className="min-h-screen bg-paper py-20" data-testid={`content-page-${section}`}>
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header */}
-        <div className="text-center mb-14">
+    <div className="min-h-screen bg-paper" data-testid={`content-page-${section}`}>
+      {/* Hero Section - if heroImage exists */}
+      {config.heroImage && (
+        <section className="relative h-[50vh] flex items-center justify-center">
+          {/* Background Image */}
+          <div className="absolute inset-0 z-0">
+            <img
+              src={config.heroImage}
+              alt={config.title}
+              className="w-full h-full object-cover object-center"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-black/20"></div>
+          </div>
+
+          {/* Content */}
+          <div className="relative z-10 text-center text-white px-4">
+            <div className="flex justify-center mb-6">
+              <div className="w-20 h-20 rounded-full bg-gold/90 backdrop-blur-sm flex items-center justify-center shadow-lg">
+                <IconComponent className="w-10 h-10 text-white" strokeWidth={1.5} />
+              </div>
+            </div>
+            <h1 className="font-serif text-4xl md:text-6xl font-medium tracking-tight mb-4">
+              {config.title}
+            </h1>
+            {config.subtitle && (
+              <p className="text-gold-light font-medium mb-4 text-lg">{config.subtitle}</p>
+            )}
+            <p className="text-base md:text-lg text-white/90 max-w-2xl mx-auto">
+              {config.description}
+            </p>
+          </div>
+        </section>
+      )}
+
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        {/* Header - only if no hero image */}
+        {!config.heroImage && (
+          <div className="text-center mb-14">
           <div className="flex justify-center mb-6">
             <div className="w-20 h-20 rounded-full bg-gold flex items-center justify-center shadow-lg">
               <IconComponent className="w-10 h-10 text-white" strokeWidth={1.5} />
