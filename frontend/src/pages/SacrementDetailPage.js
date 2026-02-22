@@ -8,7 +8,7 @@ const biblicalQuotes = {
   'confirmation': { quote: "L'Esprit Saint descendra sur vous, et vous recevrez une force.", reference: "Actes 1, 8" },
   'reconciliation': { quote: "Tes péchés sont pardonnés, va en paix.", reference: "Luc 7, 48" },
   'mariage': { quote: "Que l'homme ne sépare pas ce que Dieu a uni.", reference: "Matthieu 19, 6" },
-  'sacrement-malades': { quote: "Le Seigneur est mon berger : je ne manque de rien.", reference: "Psaume 22, 1" }
+  'malades': { quote: "Le Seigneur est mon berger : je ne manque de rien.", reference: "Psaume 22, 1" }
 };
 
 const sacrementsData = {
