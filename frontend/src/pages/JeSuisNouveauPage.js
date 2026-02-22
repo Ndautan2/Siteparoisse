@@ -48,35 +48,34 @@ const JeSuisNouveauPage = () => {
   return (
     <div className="min-h-screen bg-paper" data-testid="je-suis-nouveau-page">
       {/* Hero Section with Image */}
-      <div className="relative h-[55vh] overflow-hidden flex items-center justify-center">
+      <section className="relative h-[55vh] flex items-center justify-center">
         {/* Background Image */}
-        <img
-          src="https://customer-assets.emergentagent.com/job_5166d458-aa97-495f-97c0-2fdcfaf2d885/artifacts/4pgv62xu_Nouveau.png"
-          alt="Je suis nouveau"
-          className="absolute inset-0 w-full h-full object-cover"
-        />
-        {/* Gradient Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/40 to-black/60"></div>
-        
-        {/* Content */}
-        <div className="relative h-full flex items-center justify-center">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <div className="flex justify-center mb-6">
-              <div className="w-20 h-20 rounded-full bg-gold/90 flex items-center justify-center shadow-xl backdrop-blur-sm">
-                <Church className="w-10 h-10 text-white" strokeWidth={1.5} />
-              </div>
-            </div>
-            <h1 className="font-serif text-4xl md:text-5xl font-medium tracking-tight text-white mb-4">
-              Bienvenue parmi nous !
-            </h1>
-            <p className="text-white font-medium mb-4 text-lg">Vous êtes nouveau ? Vous êtes chez vous.</p>
-            <p className="text-base md:text-lg text-white/90 max-w-3xl mx-auto leading-relaxed">
-              Quelle que soit votre histoire, votre parcours ou vos questions, notre communauté vous accueille 
-              à bras ouverts. Ici, chacun trouve sa place et peut cheminer à son rythme.
-            </p>
-          </div>
+        <div className="absolute inset-0 z-0">
+          <img
+            src="https://customer-assets.emergentagent.com/job_5166d458-aa97-495f-97c0-2fdcfaf2d885/artifacts/4pgv62xu_Nouveau.png"
+            alt="Je suis nouveau"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-black/20"></div>
         </div>
-      </div>
+
+        {/* Content - with padding to avoid search button overlap */}
+        <div className="relative z-10 text-center text-white px-4 pt-8">
+          <div className="flex justify-center mb-6">
+            <div className="w-20 h-20 rounded-full bg-gold/90 backdrop-blur-sm flex items-center justify-center shadow-lg">
+              <Church className="w-10 h-10 text-white" strokeWidth={1.5} />
+            </div>
+          </div>
+          <h1 className="font-serif text-4xl md:text-6xl font-medium tracking-tight mb-4">
+            Bienvenue parmi nous !
+          </h1>
+          <p className="text-gold-light font-medium mb-4 text-lg">Vous êtes nouveau ? Vous êtes chez vous.</p>
+          <p className="text-base md:text-lg text-white/90 max-w-2xl mx-auto">
+            Quelle que soit votre histoire, votre parcours ou vos questions, notre communauté vous accueille 
+            à bras ouverts. Ici, chacun trouve sa place et peut cheminer à son rythme.
+          </p>
+        </div>
+      </section>
 
       {/* Welcome Message */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
