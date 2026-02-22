@@ -214,6 +214,7 @@ Dans la foi en la résurrection du Christ, nous exprimons notre espérance de pa
     subtitle: 'Présence bienveillante',
     description: 'Une présence bienveillante pour ceux qui traversent une épreuve.',
     icon: Heart,
+    heroImage: 'https://customer-assets.emergentagent.com/job_5e9a982a-920d-4533-b39d-5b30481bb0da/artifacts/ges0bdnn_Service-ecoute.png',
     items: [
       { title: 'Écoute individuelle', description: 'Rendez-vous confidentiels', icon: UserCircle },
       { title: 'Accompagnement', description: 'Soutien dans les épreuves', icon: HeartHandshake },
@@ -225,6 +226,7 @@ Dans la foi en la résurrection du Christ, nous exprimons notre espérance de pa
     subtitle: 'Service évangélique',
     description: 'Porter la présence du Christ auprès des personnes malades et âgées.',
     icon: Stethoscope,
+    heroImage: 'https://customer-assets.emergentagent.com/job_5e9a982a-920d-4533-b39d-5b30481bb0da/artifacts/b1uzu3oc_Visite-malades.png',
     items: [
       { title: 'Visites à domicile', description: 'Auprès des personnes isolées', icon: Home },
       { title: 'Visites en EHPAD', description: 'Présence en maison de retraite', icon: Building2 },
@@ -237,6 +239,7 @@ Dans la foi en la résurrection du Christ, nous exprimons notre espérance de pa
     subtitle: 'Vivre la charité',
     description: 'Vivre la charité du Christ au service des plus fragiles.',
     icon: HandHeart,
+    heroImage: 'https://customer-assets.emergentagent.com/job_5e9a982a-920d-4533-b39d-5b30481bb0da/artifacts/qcuurzop_Entraide.png',
     items: [
       { title: 'Secours Catholique', description: 'Aide matérielle et accompagnement', icon: HandHeart },
       { title: 'Café Amitié', description: 'Lieu de rencontre convivial', icon: Coffee },
