@@ -181,7 +181,7 @@ const NotreDameAutanPage = () => {
         </div>
 
         {/* Info Box */}
-        <div className="bg-gradient-to-r from-gold/10 to-gold/5 rounded-2xl p-8 border border-gold/20">
+        <div className="bg-gradient-to-r from-gold/10 to-gold/5 rounded-2xl p-8 border border-gold/20 mb-16">
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div>
               <h2 className="font-serif text-2xl text-slate-deep mb-4">Une paroisse vivante</h2>
@@ -199,6 +199,14 @@ const NotreDameAutanPage = () => {
               </Link>
             </div>
           </div>
+        </div>
+
+        {/* Citation */}
+        <div className="bg-gradient-to-r from-gold/10 to-gold/5 rounded-2xl p-8 border border-gold/20 text-center">
+          <blockquote className="font-serif text-2xl text-slate-deep italic mb-4">
+            "Comme des pierres vivantes, entrez dans la construction de la demeure de Dieu."
+          </blockquote>
+          <p className="text-gold font-medium">1 Pierre 2, 5</p>
         </div>
       </div>
     </div>
