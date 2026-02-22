@@ -24,23 +24,38 @@ const HorairesMesses = () => {
   };
 
   return (
-    <div className="min-h-screen bg-paper py-24" data-testid="mass-times-page">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Icon */}
-        <div className="flex justify-center mb-8">
-          <div className="w-24 h-24 rounded-full bg-gold flex items-center justify-center shadow-lg">
-            <Bell className="w-12 h-12 text-white" strokeWidth={1.5} />
+    <div className="min-h-screen bg-paper" data-testid="mass-times-page">
+      {/* Hero Section with Image */}
+      <div className="relative h-[400px] md:h-[500px] overflow-hidden">
+        {/* Background Image */}
+        <img
+          src="https://customer-assets.emergentagent.com/job_5166d458-aa97-495f-97c0-2fdcfaf2d885/artifacts/dzqa5mxr_Horaires-messes.png"
+          alt="Horaires des Messes"
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+        {/* Gradient Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/40 to-black/60"></div>
+        
+        {/* Content */}
+        <div className="relative h-full flex items-center justify-center">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div className="flex justify-center mb-6">
+              <div className="w-20 h-20 rounded-full bg-gold/90 flex items-center justify-center shadow-xl backdrop-blur-sm">
+                <Bell className="w-10 h-10 text-white" strokeWidth={1.5} />
+              </div>
+            </div>
+            <h1 className="font-serif text-4xl md:text-6xl font-medium tracking-tight leading-tight text-white mb-4" data-testid="page-title">
+              Horaires des Messes
+            </h1>
+            <p className="text-base md:text-lg leading-relaxed text-white/90 max-w-2xl mx-auto">
+              Venez rejoindre notre communauté pour célébrer l'eucharistie
+            </p>
           </div>
         </div>
+      </div>
 
-        <div className="text-center mb-16">
-          <h1 className="font-serif text-5xl md:text-7xl font-medium tracking-tight leading-tight text-slate-deep mb-6" data-testid="page-title">
-            Horaires des Messes
-          </h1>
-          <p className="text-base md:text-lg leading-relaxed text-slate-600 max-w-2xl mx-auto">
-            Venez rejoindre notre communauté pour célébrer l'eucharistie
-          </p>
-        </div>
+      {/* Content Section */}
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
 
         {loading ? (
           <p className="text-center text-slate-500">Chargement...</p>
