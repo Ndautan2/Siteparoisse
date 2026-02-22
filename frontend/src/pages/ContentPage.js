@@ -110,6 +110,7 @@ const contentConfig = {
     subtitle: 'Chorale, Art Floral, Sacristains',
     description: 'Embellir les célébrations par le chant, la musique et l\'art floral.',
     icon: Music,
+    heroImage: 'https://customer-assets.emergentagent.com/job_scroll-donate-pages/artifacts/svoox7vw_Liturgie-musique.png',
     items: [
       { title: 'Chorale paroissiale', description: 'Chants et musique liturgique', icon: Mic },
       { title: 'Art Floral', description: 'Fleurir l\'église avec beauté', icon: Flower2 },
