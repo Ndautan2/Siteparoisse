@@ -123,6 +123,7 @@ const contentConfig = {
     subtitle: 'Accompagnement des familles',
     description: 'Accompagner les familles en deuil avec compassion et espérance.',
     icon: Cross,
+    heroImage: 'https://customer-assets.emergentagent.com/job_scroll-donate-pages/artifacts/m6yxyydm_Funerailles.png',
     items: [
       { title: 'Équipe funérailles', description: 'Préparation de la célébration', icon: Users },
       { title: 'Accompagnement du deuil', description: 'Soutien et écoute', icon: Heart },
