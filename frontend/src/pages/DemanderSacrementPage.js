@@ -75,7 +75,7 @@ const DemanderSacrementPage = () => {
           <img
             src="https://customer-assets.emergentagent.com/job_scroll-donate-pages/artifacts/b0vmxtgf_Demander-sacrement.png"
             alt="Demander un Sacrement"
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover object-[center_30%]"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-black/20"></div>
         </div>
