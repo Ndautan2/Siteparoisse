@@ -2,23 +2,36 @@ import { MapPin, Phone, Mail, Clock, Home } from 'lucide-react';
 
 const Secretariat = () => {
   return (
-    <div className="min-h-screen bg-paper py-24" data-testid="secretariat-page">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Icon */}
-        <div className="flex justify-center mb-8">
-          <div className="w-24 h-24 rounded-full bg-gold flex items-center justify-center shadow-lg">
-            <Home className="w-12 h-12 text-white" strokeWidth={1.5} />
-          </div>
+    <div className="min-h-screen bg-paper" data-testid="secretariat-page">
+      {/* Hero Section with Image */}
+      <section className="relative h-[50vh] flex items-center justify-center">
+        {/* Background Image */}
+        <div className="absolute inset-0 z-0">
+          <img
+            src="https://customer-assets.emergentagent.com/job_scroll-donate-pages/artifacts/03c30vdd_Secretariat.png"
+            alt="Secrétariat"
+            className="w-full h-full object-cover object-center"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-black/20"></div>
         </div>
 
-        <div className="text-center mb-16">
-          <h1 className="font-serif text-5xl md:text-7xl font-medium tracking-tight leading-tight text-slate-deep mb-6">
+        {/* Content */}
+        <div className="relative z-10 text-center text-white px-4">
+          <div className="flex justify-center mb-6">
+            <div className="w-20 h-20 rounded-full bg-gold/90 backdrop-blur-sm flex items-center justify-center shadow-lg">
+              <Home className="w-10 h-10 text-white" strokeWidth={1.5} />
+            </div>
+          </div>
+          <h1 className="font-serif text-4xl md:text-6xl font-medium tracking-tight mb-4">
             Secrétariat & Contact
           </h1>
-          <p className="text-base md:text-lg leading-relaxed text-slate-600 max-w-2xl mx-auto">
+          <p className="text-base md:text-lg text-white/90 max-w-2xl mx-auto">
             Nous sommes à votre écoute pour toute demande ou renseignement
           </p>
         </div>
+      </section>
+
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
           <div className="bg-white rounded-xl p-8 shadow-sm border border-slate-100">
