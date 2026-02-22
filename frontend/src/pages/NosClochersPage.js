@@ -6,73 +6,73 @@ const clochers = [
     id: 'auzeville-tolosane',
     name: 'Auzeville-Tolosane',
     description: 'Église paroissiale au cœur du village',
-    image: 'https://images.unsplash.com/photo-1548625149-fc4a29cf7092?w=400'
+    image: 'https://customer-assets.emergentagent.com/job_c3efae68-56d0-4924-8ecf-4f7502ce3630/artifacts/54f2vm3r_Eglise-Castanet-Tolosan.jpg'
   },
   {
     id: 'auzielle',
     name: 'Auzielle',
     description: 'Chapelle historique du XIIe siècle',
-    image: 'https://images.unsplash.com/photo-1543349689-9a4d426bee8e?w=400'
+    image: 'https://customer-assets.emergentagent.com/job_c3efae68-56d0-4924-8ecf-4f7502ce3630/artifacts/54f2vm3r_Eglise-Castanet-Tolosan.jpg'
   },
   {
     id: 'belberaud',
     name: 'Belberaud',
     description: 'Église romane au patrimoine remarquable',
-    image: 'https://images.unsplash.com/photo-1508669232496-137b159c1cdb?w=400'
+    image: 'https://customer-assets.emergentagent.com/job_c3efae68-56d0-4924-8ecf-4f7502ce3630/artifacts/54f2vm3r_Eglise-Castanet-Tolosan.jpg'
   },
   {
     id: 'castanet-tolosan',
     name: 'Castanet-Tolosan',
     description: 'Église principale de Notre Dame d\'Autan',
-    image: 'https://images.unsplash.com/photo-1490644658840-3f2e3f8c5625?w=400'
+    image: 'https://customer-assets.emergentagent.com/job_c3efae68-56d0-4924-8ecf-4f7502ce3630/artifacts/54f2vm3r_Eglise-Castanet-Tolosan.jpg'
   },
   {
     id: 'corronsac',
     name: 'Corronsac',
     description: 'Petite église de charme au cadre paisible',
-    image: 'https://images.unsplash.com/photo-1572276596237-5db2c3e16c5d?w=400'
+    image: 'https://customer-assets.emergentagent.com/job_c3efae68-56d0-4924-8ecf-4f7502ce3630/artifacts/54f2vm3r_Eglise-Castanet-Tolosan.jpg'
   },
   {
     id: 'deyme',
     name: 'Deyme',
     description: 'Église villageoise accueillante',
-    image: 'https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=400'
+    image: 'https://customer-assets.emergentagent.com/job_c3efae68-56d0-4924-8ecf-4f7502ce3630/artifacts/54f2vm3r_Eglise-Castanet-Tolosan.jpg'
   },
   {
     id: 'escalquens',
     name: 'Escalquens',
     description: 'Belle église au clocher caractéristique',
-    image: 'https://images.unsplash.com/photo-1528819622765-d6bcf132f793?w=400'
+    image: 'https://customer-assets.emergentagent.com/job_c3efae68-56d0-4924-8ecf-4f7502ce3630/artifacts/54f2vm3r_Eglise-Castanet-Tolosan.jpg'
   },
   {
     id: 'labege',
     name: 'Labège',
     description: 'Église moderne et dynamique',
-    image: 'https://images.unsplash.com/photo-1515542622106-78bda8ba0e5b?w=400'
+    image: 'https://customer-assets.emergentagent.com/job_c3efae68-56d0-4924-8ecf-4f7502ce3630/artifacts/54f2vm3r_Eglise-Castanet-Tolosan.jpg'
   },
   {
     id: 'lauzerville',
     name: 'Lauzerville',
     description: 'Chapelle rurale au charme authentique',
-    image: 'https://images.unsplash.com/photo-1504697570352-47c3bbc60b1a?w=400'
+    image: 'https://customer-assets.emergentagent.com/job_c3efae68-56d0-4924-8ecf-4f7502ce3630/artifacts/54f2vm3r_Eglise-Castanet-Tolosan.jpg'
   },
   {
     id: 'mervilla',
     name: 'Mervilla',
     description: 'Petite église au cœur de la campagne',
-    image: 'https://images.unsplash.com/photo-1517638851339-a711cfcf3279?w=400'
+    image: 'https://customer-assets.emergentagent.com/job_c3efae68-56d0-4924-8ecf-4f7502ce3630/artifacts/54f2vm3r_Eglise-Castanet-Tolosan.jpg'
   },
   {
     id: 'odars',
     name: 'Odars',
     description: 'Église pittoresque avec vue panoramique',
-    image: 'https://images.unsplash.com/photo-1518998053901-5348d3961a04?w=400'
+    image: 'https://customer-assets.emergentagent.com/job_c3efae68-56d0-4924-8ecf-4f7502ce3630/artifacts/54f2vm3r_Eglise-Castanet-Tolosan.jpg'
   },
   {
     id: 'pechabou',
     name: 'Pechabou',
     description: 'Église au patrimoine préservé',
-    image: 'https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=400'
+    image: 'https://customer-assets.emergentagent.com/job_c3efae68-56d0-4924-8ecf-4f7502ce3630/artifacts/54f2vm3r_Eglise-Castanet-Tolosan.jpg'
   },
   {
     id: 'pompertuzat',
