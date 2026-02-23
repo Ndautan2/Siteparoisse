@@ -37,6 +37,10 @@ Refonte complète du site web de la paroisse "Notre Dame d'Autan" avec une appro
 - [x] Page "Équipe Pastorale" avec vignettes
 - [x] Page "Nos Clochers" avec vignettes
 - [x] **Images personnalisées pour les 6 sacrements** (Baptême, Communion, Confirmation, Réconciliation, Mariage, Sacrement des Malades)
+- [x] Agenda des funérailles avec interface admin CRUD
+- [x] Icônes réseaux sociaux (Facebook, Instagram) sur toutes les sections Hero
+- [x] Modales de ressources sur la page "Ressources"
+- [x] **Fix z-index**: La modale s'affiche correctement au-dessus du bouton de recherche global
 
 ---
 
