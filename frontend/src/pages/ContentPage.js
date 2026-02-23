@@ -6,7 +6,8 @@ import {
   Compass, Tent, Star, BookMarked, Radio, Tv, Globe, Home, Phone,
   HeartHandshake, Glasses, Landmark, CalendarHeart, UserCircle, Shield,
   Palmtree, Smile, Mic, PenTool, DoorOpen, FileText, Wallet, Gift, 
-  CircleDollarSign, Wrench, Megaphone, UserPlus, Lightbulb, MessageCircle
+  CircleDollarSign, Wrench, Megaphone, UserPlus, Lightbulb, MessageCircle,
+  ExternalLink
 } from 'lucide-react';
 import FuneralsAgenda from '@/components/FuneralsAgenda';
 import { SocialIcons } from '@/components/SocialIcons';
