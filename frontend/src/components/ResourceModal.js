@@ -1,4 +1,4 @@
-import { X, ExternalLink, Clock } from 'lucide-react';
+import { X, ExternalLink, Clock, Tv, Film, Award } from 'lucide-react';
 import { useEffect } from 'react';
 
 const ResourceModal = ({ isOpen, onClose, resource }) => {
@@ -14,6 +14,16 @@ const ResourceModal = ({ isOpen, onClose, resource }) => {
   }, [isOpen]);
 
   if (!isOpen || !resource) return null;
+
+  // Helper function to get section icon
+  const getSectionIcon = (iconName) => {
+    switch(iconName) {
+      case 'tv': return Tv;
+      case 'film': return Film;
+      case 'award': return Award;
+      default: return Film;
+    }
+  };
 
   return (
     <div className="fixed inset-0 z-[70] flex items-center justify-center p-4 bg-black/30" onClick={onClose}>
@@ -44,6 +54,31 @@ const ResourceModal = ({ isOpen, onClose, resource }) => {
           {resource.modalDescription && (
             <div className="text-slate-600 leading-relaxed">
               {resource.modalDescription}
+            </div>
+          )}
+
+          {/* Sections (for médiathèque with series, films, docs) */}
+          {resource.sections && resource.sections.length > 0 && (
+            <div className="space-y-6">
+              {resource.sections.map((section, sectionIndex) => {
+                const SectionIcon = getSectionIcon(section.icon);
+                return (
+                  <div key={sectionIndex} className="space-y-3">
+                    <div className="flex items-center space-x-2">
+                      <SectionIcon className="w-5 h-5 text-gold" />
+                      <h3 className="font-serif text-lg text-slate-deep">{section.title}</h3>
+                    </div>
+                    <div className="space-y-3">
+                      {section.items.map((item, itemIndex) => (
+                        <div key={itemIndex} className="bg-slate-50 rounded-xl p-4 hover:bg-slate-100 transition-colors">
+                          <h4 className="font-semibold text-slate-deep mb-1">{item.name}</h4>
+                          <p className="text-sm text-slate-600">{item.description}</p>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                );
+              })}
             </div>
           )}
 
