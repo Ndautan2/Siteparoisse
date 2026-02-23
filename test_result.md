@@ -179,15 +179,18 @@ frontend:
   
   - task: "Entraide Modals - Styled Components"
     implemented: true
-    working: "NA"
+    working: true
     file: "/app/frontend/src/components/ResourceModal.js"
     stuck_count: 0
     priority: "high"
-    needs_retesting: true
+    needs_retesting: false
     status_history:
       - working: "NA"
         agent: "main"
         comment: "Testing needed to verify modal styling: gradient dark header (slate-700 to slate-600) with white text, pink/rose tinted description box (from-[#fdf6f5] to-[#f9f1ef]), team cards with dark headers, testimonial quotes with large decorative quote marks, contact cards with avatar initials."
+      - working: true
+        agent: "testing"
+        comment: "COLOR VERIFICATION COMPLETE: All entraide modals now display TEAL (#93B5B7) color correctly. Tested 3 modals (Secours Catholique, Famille Bartimée, Lourdes Cancer Espérance). Verified: ✓ Modal headers are teal (bg-gradient-to-r from-[#93B5B7] to-[#7da4a6]) instead of dark gray ✓ Team cards headers are teal (Secours Catholique has 2 team cards with teal headers) ✓ Delegation blocks are teal (visible in Secours Catholique modal) ✓ Location blocks are teal ✓ 'Parole de l'Archevêque' citation block is teal (visible at bottom of Famille Bartimée modal). Pink/rose description boxes, testimonial quotes, and contact cards with avatar initials all rendering correctly."
 
 backend:
   []
