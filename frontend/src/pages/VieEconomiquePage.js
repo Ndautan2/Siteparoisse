@@ -17,6 +17,8 @@ const VieEconomiquePage = () => {
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-black/20"></div>
         </div>
 
+        <SocialIcons />
+
         {/* Content */}
         <div className="relative z-10 text-center text-white px-4 pt-8">
           <div className="flex justify-center mb-6">
