@@ -702,6 +702,16 @@ const ContentPage = ({ section }) => {
           </div>
         )}
       </div>
+
+      {/* Resource Modal */}
+      <ResourceModal
+        isOpen={isModalOpen}
+        onClose={() => {
+          setIsModalOpen(false);
+          setSelectedResource(null);
+        }}
+        resource={selectedResource}
+      />
     </div>
   );
 };
