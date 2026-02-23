@@ -870,7 +870,8 @@ const ContentPage = ({ section }) => {
               } gap-6 mb-12`}>
             {config.items.map((item, index) => {
               const ItemIcon = item.icon;
-              const isClickable = section === 'ressources' || section === 'alpha';
+              const isClickable = section === 'ressources' || section === 'alpha' || section === 'groupes';
+              const hasLink = item.linkTo;
               
               const cardContent = (
                 <div className="flex items-start space-x-4">
@@ -887,6 +888,20 @@ const ContentPage = ({ section }) => {
                   </div>
                 </div>
               );
+
+              // If item has a link to another page
+              if (hasLink) {
+                return (
+                  <Link
+                    key={index}
+                    to={item.linkTo}
+                    className="group bg-white rounded-xl p-6 shadow-sm hover:shadow-md border border-slate-100 hover:border-gold/30 transition-all duration-300"
+                    data-testid={`item-card-${index}`}
+                  >
+                    {cardContent}
+                  </Link>
+                );
+              }
 
               if (isClickable) {
                 return (
