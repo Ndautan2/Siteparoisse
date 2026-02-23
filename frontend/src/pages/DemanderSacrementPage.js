@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { Heart, Droplets, Sparkles, BookOpen, HandHeart, Cross } from 'lucide-react';
+import { SocialIcons } from '@/components/SocialIcons';
 
 const sacrements = [
   {
@@ -79,6 +80,8 @@ const DemanderSacrementPage = () => {
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-black/20"></div>
         </div>
+
+        <SocialIcons />
 
         {/* Content - with padding to avoid search button overlap */}
         <div className="relative z-10 text-center text-white px-4 pt-8">
