@@ -119,6 +119,37 @@ const ResourceModal = ({ isOpen, onClose, resource }) => {
             </div>
           )}
 
+          {/* Alpha Content (for parcours alpha, catéchuménat, recommençants) */}
+          {alphaContent && (
+            <div className="space-y-5">
+              {/* Format */}
+              {alphaContent.format && (
+                <div className="bg-slate-50 rounded-xl p-5">
+                  <p className="text-slate-600 leading-relaxed">{alphaContent.format}</p>
+                </div>
+              )}
+
+              {/* Pour qui */}
+              {alphaContent.pour_qui && (
+                <div className="bg-gold/5 rounded-xl p-5 border border-gold/20">
+                  <h4 className="font-semibold text-slate-deep mb-2 flex items-center">
+                    <Users className="w-4 h-4 mr-2 text-gold" />
+                    Pour qui ?
+                  </h4>
+                  <p className="text-slate-600 leading-relaxed">{alphaContent.pour_qui}</p>
+                </div>
+              )}
+
+              {/* Contact */}
+              {alphaContent.contact && (
+                <div className="bg-slate-50 rounded-xl p-5 flex items-start space-x-3">
+                  <Phone className="w-5 h-5 text-gold mt-0.5 flex-shrink-0" />
+                  <p className="text-slate-600">{alphaContent.contact}</p>
+                </div>
+              )}
+            </div>
+          )}
+
           {/* Podcasts list */}
           {resource.podcasts && resource.podcasts.length > 0 && (
             <div className="space-y-4">
