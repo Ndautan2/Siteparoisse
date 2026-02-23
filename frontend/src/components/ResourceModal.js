@@ -33,6 +33,9 @@ const ResourceModal = ({ isOpen, onClose, resource }) => {
   
   // Check if this is a groupe content
   const groupeContent = resource.groupeContent;
+  
+  // Check if this is a meditation content
+  const meditationContent = resource.meditationContent;
 
   return (
     <div className="fixed inset-0 z-[70] flex items-center justify-center p-4 bg-black/30" onClick={onClose}>
