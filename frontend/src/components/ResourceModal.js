@@ -46,7 +46,7 @@ const ResourceModal = ({ isOpen, onClose, resource }) => {
       >
         {/* Header */}
         <div className="sticky top-0 z-10 rounded-t-2xl overflow-hidden">
-          <div className={`p-6 flex items-center justify-between ${entraideContent ? 'bg-gradient-to-r from-slate-700 to-slate-600' : 'bg-white border-b border-gold/20 shadow-sm'}`}>
+          <div className={`p-6 flex items-center justify-between ${entraideContent ? 'bg-gradient-to-r from-[#93B5B7] to-[#7da4a6]' : 'bg-white border-b border-gold/20 shadow-sm'}`}>
             <div className="flex items-center space-x-3">
               <div className={`w-12 h-12 rounded-full flex items-center justify-center ${entraideContent ? 'bg-white/15' : 'bg-gold/10'}`}>
                 {resource.icon && <resource.icon className={`w-6 h-6 ${entraideContent ? 'text-white' : 'text-gold'}`} />}
