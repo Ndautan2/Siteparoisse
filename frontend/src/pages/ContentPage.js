@@ -809,7 +809,7 @@ const ContentPage = ({ section }) => {
               } gap-6 mb-12`}>
             {config.items.map((item, index) => {
               const ItemIcon = item.icon;
-              const isClickable = section === 'ressources';
+              const isClickable = section === 'ressources' || section === 'alpha';
               
               const cardContent = (
                 <div className="flex items-start space-x-4">
