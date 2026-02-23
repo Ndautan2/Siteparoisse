@@ -39,33 +39,35 @@ const ResourceModal = ({ isOpen, onClose, resource }) => {
   const meditationContent = resource.meditationContent;
 
   return (
-    <div className="fixed inset-0 z-[70] flex items-center justify-center p-4 bg-black/30" onClick={onClose}>
+    <div className="fixed inset-0 z-[70] flex items-center justify-center p-4 bg-black/40 backdrop-blur-sm" onClick={onClose}>
       <div 
         className="bg-white rounded-2xl shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Header */}
-        <div className="sticky top-0 z-10 bg-white border-b border-gold/20 p-6 flex items-center justify-between shadow-sm">
-          <div className="flex items-center space-x-3">
-            <div className="w-12 h-12 rounded-full bg-gold/10 flex items-center justify-center">
-              {resource.icon && <resource.icon className="w-6 h-6 text-gold" />}
+        <div className="sticky top-0 z-10 rounded-t-2xl overflow-hidden">
+          <div className={`p-6 flex items-center justify-between ${entraideContent ? 'bg-gradient-to-r from-slate-700 to-slate-600' : 'bg-white border-b border-gold/20 shadow-sm'}`}>
+            <div className="flex items-center space-x-3">
+              <div className={`w-12 h-12 rounded-full flex items-center justify-center ${entraideContent ? 'bg-white/15' : 'bg-gold/10'}`}>
+                {resource.icon && <resource.icon className={`w-6 h-6 ${entraideContent ? 'text-white' : 'text-gold'}`} />}
+              </div>
+              <h2 className={`font-serif text-2xl ${entraideContent ? 'text-white' : 'text-slate-deep'}`}>{resource.modalTitle || resource.title}</h2>
             </div>
-            <h2 className="font-serif text-2xl text-slate-deep">{resource.modalTitle || resource.title}</h2>
+            <button
+              onClick={onClose}
+              className={`w-10 h-10 rounded-full flex items-center justify-center transition-colors ${entraideContent ? 'hover:bg-white/15' : 'hover:bg-slate-100'}`}
+              aria-label="Fermer"
+            >
+              <X className={`w-5 h-5 ${entraideContent ? 'text-white' : 'text-slate-600'}`} />
+            </button>
           </div>
-          <button
-            onClick={onClose}
-            className="w-10 h-10 rounded-full hover:bg-slate-100 flex items-center justify-center transition-colors"
-            aria-label="Fermer"
-          >
-            <X className="w-5 h-5 text-slate-600" />
-          </button>
         </div>
 
         {/* Content */}
         <div className="p-6 space-y-6">
           {/* Description */}
           {resource.modalDescription && (
-            <div className="text-slate-600 leading-relaxed">
+            <div className={`leading-relaxed rounded-xl p-4 ${entraideContent ? 'bg-gradient-to-br from-[#fdf6f5] to-[#f9f1ef] text-slate-700 border border-gold/20 text-[15px]' : 'text-slate-600'}`}>
               {resource.modalDescription}
             </div>
           )}
