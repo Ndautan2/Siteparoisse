@@ -179,6 +179,196 @@ const ResourceModal = ({ isOpen, onClose, resource }) => {
             </div>
           )}
 
+          {/* Entraide Content (for solidarity items) */}
+          {entraideContent && (
+            <div className="space-y-6">
+              {/* Intro text */}
+              {entraideContent.intro && (
+                <p className="text-slate-600 leading-relaxed">{entraideContent.intro}</p>
+              )}
+
+              {/* Mission */}
+              {entraideContent.mission && (
+                <p className="text-slate-600 leading-relaxed">{entraideContent.mission}</p>
+              )}
+
+              {/* Temoignage simple */}
+              {entraideContent.temoignage && !entraideContent.projet && (
+                <blockquote className="border-l-4 border-gold pl-4 py-2 italic text-slate-600 bg-gold/5 rounded-r-lg">
+                  {entraideContent.temoignage}
+                </blockquote>
+              )}
+
+              {/* Actions */}
+              {entraideContent.actions && (
+                <p className="text-slate-600 leading-relaxed">{entraideContent.actions}</p>
+              )}
+
+              {/* Aide */}
+              {entraideContent.aide && (
+                <div className="bg-slate-50 rounded-xl p-4">
+                  <div className="flex items-start space-x-3">
+                    <Heart className="w-5 h-5 text-gold mt-0.5 flex-shrink-0" />
+                    <p className="text-sm text-slate-600">{entraideContent.aide}</p>
+                  </div>
+                </div>
+              )}
+
+              {/* Revue */}
+              {entraideContent.revue && (
+                <p className="text-sm text-slate-600">{entraideContent.revue}</p>
+              )}
+
+              {/* Teams (Secours Catholique) */}
+              {entraideContent.teams && entraideContent.teams.length > 0 && (
+                <div className="space-y-4">
+                  {entraideContent.teams.map((team, index) => (
+                    <div key={index} className="bg-slate-50 rounded-xl p-4">
+                      <h4 className="font-semibold text-slate-deep mb-2 flex items-center">
+                        <Users className="w-4 h-4 mr-2 text-gold" />
+                        {team.name}
+                      </h4>
+                      <p className="text-sm text-slate-600 mb-3">{team.description}</p>
+                      {team.phone && (
+                        <p className="text-sm text-slate-600 flex items-center">
+                          <Phone className="w-4 h-4 mr-2 text-gold" />
+                          {team.phone}
+                        </p>
+                      )}
+                      {team.responsables && (
+                        <p className="text-sm text-slate-500 mt-1">Responsables : {team.responsables}</p>
+                      )}
+                    </div>
+                  ))}
+                </div>
+              )}
+
+              {/* Delegation */}
+              {entraideContent.delegation && (
+                <div className="bg-gold/5 rounded-xl p-4 border border-gold/20">
+                  <h4 className="font-semibold text-slate-deep mb-2">{entraideContent.delegation.name}</h4>
+                  <p className="text-sm text-slate-600 flex items-center mb-1">
+                    <MapPin className="w-4 h-4 mr-2 text-gold" />
+                    {entraideContent.delegation.address}
+                  </p>
+                  <p className="text-sm text-slate-600 flex items-center">
+                    <Phone className="w-4 h-4 mr-2 text-gold" />
+                    {entraideContent.delegation.phone}
+                  </p>
+                </div>
+              )}
+
+              {/* Lieu et Permanences (Café Amitié) */}
+              {entraideContent.lieu && (
+                <div className="bg-slate-50 rounded-xl p-4">
+                  <h4 className="font-semibold text-slate-deep mb-2 flex items-center">
+                    <MapPin className="w-4 h-4 mr-2 text-gold" />
+                    Lieu
+                  </h4>
+                  <p className="text-sm text-slate-600">{entraideContent.lieu}</p>
+                </div>
+              )}
+
+              {entraideContent.permanences && (
+                <div className="bg-slate-50 rounded-xl p-4">
+                  <h4 className="font-semibold text-slate-deep mb-2 flex items-center">
+                    <Calendar className="w-4 h-4 mr-2 text-gold" />
+                    Permanences
+                  </h4>
+                  <ul className="text-sm text-slate-600 space-y-1">
+                    {entraideContent.permanences.map((perm, idx) => (
+                      <li key={idx}>• {perm}</li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+
+              {/* Projet (Bartimée) */}
+              {entraideContent.projet && (
+                <div className="space-y-4">
+                  <h3 className="font-serif text-lg text-slate-deep">{entraideContent.projet.title}</h3>
+                  <p className="text-slate-600">{entraideContent.projet.description}</p>
+                  {entraideContent.projet.objectifs && (
+                    <ul className="space-y-2">
+                      {entraideContent.projet.objectifs.map((obj, idx) => (
+                        <li key={idx} className="flex items-start text-sm text-slate-600">
+                          <span className="text-gold mr-2">•</span>
+                          {obj}
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                </div>
+              )}
+
+              {/* Témoignage avec projet */}
+              {entraideContent.temoignage && entraideContent.projet && (
+                <blockquote className="border-l-4 border-gold pl-4 py-2 italic text-slate-600 bg-gold/5 rounded-r-lg">
+                  {entraideContent.temoignage}
+                </blockquote>
+              )}
+
+              {/* Comment (Bartimée) */}
+              {entraideContent.comment && (
+                <div className="space-y-4">
+                  <h3 className="font-serif text-lg text-slate-deep">{entraideContent.comment.title}</h3>
+                  <div className="space-y-3">
+                    {entraideContent.comment.activites.map((act, idx) => (
+                      <div key={idx} className="bg-slate-50 rounded-xl p-4">
+                        <h4 className="font-semibold text-slate-deep mb-1">{act.nom}</h4>
+                        <p className="text-sm text-slate-600">{act.description}</p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {/* Contacts (multiple) */}
+              {entraideContent.contacts && entraideContent.contacts.length > 0 && (
+                <div className="space-y-3">
+                  <h3 className="font-serif text-lg text-slate-deep">Contacts</h3>
+                  {entraideContent.contacts.map((contact, idx) => (
+                    <div key={idx} className="bg-slate-50 rounded-xl p-4 flex items-start space-x-3">
+                      <Phone className="w-5 h-5 text-gold mt-0.5 flex-shrink-0" />
+                      <div>
+                        <p className="font-semibold text-slate-deep">{contact.nom} : {contact.phone}</p>
+                        <p className="text-sm text-slate-600">{contact.description}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              )}
+
+              {/* Single contact */}
+              {entraideContent.contact && !entraideContent.contacts && (
+                <div className="bg-slate-50 rounded-xl p-4 flex items-start space-x-3">
+                  <Phone className="w-5 h-5 text-gold mt-0.5 flex-shrink-0" />
+                  <p className="text-slate-600">{entraideContent.contact}</p>
+                </div>
+              )}
+
+              {/* Citation évêque */}
+              {entraideContent.citationEveque && (
+                <blockquote className="border-l-4 border-gold pl-4 py-3 text-sm italic text-slate-600 bg-gold/5 rounded-r-lg">
+                  {entraideContent.citationEveque}
+                </blockquote>
+              )}
+
+              {/* URL */}
+              {entraideContent.url && (
+                <a
+                  href={entraideContent.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center bg-gold hover:bg-gold-dark text-white px-6 py-3 rounded-full font-medium transition-colors shadow-lg hover:shadow-xl"
+                >
+                  <ExternalLink className="w-5 h-5 mr-2" />
+                  En savoir plus
+                </a>
+              )}
+            </div>
+          )}
+
           {/* Single link */}
           {resource.url && !resource.items && (
             <a
