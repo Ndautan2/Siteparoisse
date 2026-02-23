@@ -39,7 +39,7 @@ export const Header = () => {
     { title: 'Funérailles', path: '/funerailles', keywords: 'funérailles obsèques décès' },
     { title: 'Grandir dans la Foi', path: '/grandir-foi', keywords: 'foi formation spiritualité' },
     { title: 'Parcours Alpha', path: '/alpha-catechumenat', keywords: 'alpha catéchuménat découvrir foi' },
-    { title: 'Groupes de partage', path: '/groupes-partage', keywords: 'groupes partage fraternité' },
+    { title: 'Groupes de partage et de prière', path: '/groupes-partage', keywords: 'groupes partage fraternité prière' },
     { title: 'Méditation chrétienne', path: '/meditation', keywords: 'méditation prière silence' },
     { title: 'Ressources', path: '/ressources', keywords: 'ressources livres médias' },
     { title: 'Solidarité & Écoute', path: '/solidarite', keywords: 'solidarité écoute entraide' },
@@ -140,7 +140,7 @@ export const Header = () => {
       path: '/grandir-foi',
       items: [
         { label: 'Parcours Alpha & Catéchuménat', path: '/alpha-catechumenat' },
-        { label: 'Groupes de partage', path: '/groupes-partage' },
+        { label: 'Groupes de partage et de prière', path: '/groupes-partage' },
         { label: 'Méditation chrétienne', path: '/meditation' },
         { label: 'Ressources', path: '/ressources' },
       ],
