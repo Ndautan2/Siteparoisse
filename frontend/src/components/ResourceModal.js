@@ -113,6 +113,34 @@ const ResourceModal = ({ isOpen, onClose, resource }) => {
             </div>
           )}
 
+          {/* Podcasts list */}
+          {resource.podcasts && resource.podcasts.length > 0 && (
+            <div className="space-y-4">
+              {resource.podcasts.map((podcast, index) => (
+                <div key={index} className="bg-slate-50 rounded-xl p-5 hover:bg-slate-100 transition-colors">
+                  <div className="flex items-start space-x-4">
+                    <div className="w-12 h-12 rounded-full bg-gold/10 flex items-center justify-center flex-shrink-0">
+                      <Headphones className="w-6 h-6 text-gold" />
+                    </div>
+                    <div className="flex-grow">
+                      <h3 className="font-serif text-lg text-slate-deep mb-1">{podcast.name}</h3>
+                      <p className="text-sm text-slate-600 mb-3">{podcast.description}</p>
+                      <a
+                        href={podcast.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center bg-green-600 hover:bg-green-700 text-white px-5 py-2.5 rounded-full font-medium transition-colors shadow-md hover:shadow-lg"
+                      >
+                        <Headphones className="w-4 h-4 mr-2" />
+                        Écouter le podcast
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          )}
+
           {/* Items list (for sites recommandés) */}
           {resource.items && resource.items.length > 0 && (
             <div className="space-y-4">
