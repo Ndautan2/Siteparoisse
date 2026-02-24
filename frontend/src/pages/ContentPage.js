@@ -136,7 +136,30 @@ const contentConfig = {
     heroImage: 'https://customer-assets.emergentagent.com/job_5e9a982a-920d-4533-b39d-5b30481bb0da/artifacts/4ufmdwhr_Mouvements.png',
     items: [
       { title: 'Scouts et Guides de France', description: 'Activités de plein air, camps, service', icon: Tent },
-      { title: 'MEJ', description: 'Mouvement Eucharistique des Jeunes', icon: Heart },
+      { 
+        title: 'MEJ', 
+        description: 'Mouvement Eucharistique des Jeunes', 
+        icon: Heart,
+        modalTitle: 'Mouvement Eucharistique des Jeunes',
+        modalDescription: 'Pour chaque jeune, le MEJ se propose comme un chemin de croissance humaine et spirituelle. Au fil des ans, chacun peut développer petit à petit ses capacités à faire équipe, à apprendre à mieux écouter et mieux s\'exprimer, à découvrir la vie ensemble avec ses richesses et ses difficultés.',
+        mejContent: {
+          paragraphes: [
+            'En équipe et à partir du thème d\'année commun à tous les âges, les jeunes apprennent à découvrir et « goûter Dieu en toute chose » (comme le dit Saint Ignace). Ils cheminent avec leur accompagnateur en apprenant à « relire leur vie pour la relier au Christ ».'
+          ],
+          tranches: {
+            titre: 'Le MEJ invite les jeunes de 10 à 18 ans',
+            groupes: [
+              { nom: 'Jeunes Témoins (JT)', age: '10-13 ans' },
+              { nom: 'Témoins Aujourd\'hui (TA)', age: '13-15 ans' },
+              { nom: 'Équipes Espérance (ES)', age: '15-18 ans' }
+            ]
+          },
+          lienExterne: {
+            texte: 'Pour en savoir plus sur le mouvement',
+            url: 'https://www.mej.fr'
+          }
+        }
+      },
       { title: 'Patronage', description: 'Activités ludiques et sportives', icon: Smile },
     ]
   },
