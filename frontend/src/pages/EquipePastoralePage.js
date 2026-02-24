@@ -109,26 +109,30 @@ const EquipePastoralePage = () => {
               className="group"
               data-testid={`team-card-${member.id}`}
             >
-              <article className="bg-white rounded-2xl p-6 shadow-md hover:shadow-xl transition-all duration-500 h-full border border-slate-100 flex flex-col hover:-translate-y-1">
-                {/* Icon */}
-                <div className="w-14 h-14 rounded-full bg-gold/10 flex items-center justify-center mb-4">
-                  <Users className="w-7 h-7 text-gold" strokeWidth={1.5} />
+              <article className="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-500 h-full border border-slate-100 flex flex-col hover:-translate-y-1">
+                {/* Photo */}
+                <div className="aspect-square overflow-hidden">
+                  <img 
+                    src={member.image} 
+                    alt={member.name}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
                 </div>
 
                 {/* Content */}
-                <span className="text-gold text-sm font-medium mb-1">{member.role}</span>
-                <h3 className="font-serif text-lg text-slate-deep mb-2 group-hover:text-gold transition-colors">
-                  {member.title}
-                </h3>
-                <p className="text-slate-600 text-sm leading-relaxed flex-grow">
-                  {member.description}
-                </p>
-                
-                <div className="mt-4 flex items-center text-gold text-sm font-medium group-hover:text-gold-dark transition-colors">
-                  <span>Découvrir</span>
-                  <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
+                <div className="p-5 flex flex-col flex-grow">
+                  <span className="text-gold text-xs font-medium mb-1 uppercase tracking-wide">{member.role}</span>
+                  <h3 className="font-serif text-lg text-slate-deep mb-1 group-hover:text-gold transition-colors">
+                    {member.title}
+                  </h3>
+                  <p className="text-slate-500 text-sm mb-2">{member.name}</p>
+                  
+                  <div className="mt-auto flex items-center text-gold text-sm font-medium group-hover:text-gold-dark transition-colors">
+                    <span>Découvrir</span>
+                    <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </div>
                 </div>
               </article>
             </Link>
