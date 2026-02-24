@@ -21,7 +21,6 @@ import VieEconomiquePage from '@/pages/VieEconomiquePage';
 
 // Sub-pages with cards
 import EquipePastoralePage from '@/pages/EquipePastoralePage';
-import PriestDetailPage from '@/pages/PriestDetailPage';
 import NosClochersPage from '@/pages/NosClochersPage';
 import DemanderSacrementPage from '@/pages/DemanderSacrementPage';
 import SacrementDetailPage from '@/pages/SacrementDetailPage';
