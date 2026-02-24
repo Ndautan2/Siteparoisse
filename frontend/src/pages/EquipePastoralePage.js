@@ -6,20 +6,34 @@ const teamMembers = [
   {
     id: 'cure',
     title: 'Le Curé',
-    name: 'Père Jean-Marie Dupont',
+    name: 'Père Daniel',
     role: 'Curé de la paroisse',
     description: 'Responsable de la communauté paroissiale',
-    image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400',
+    image: 'https://customer-assets.emergentagent.com/job_513c9844-285f-4857-a7dc-ddd6dae9e1cf/artifacts/izar22oi_pere-daniel.webp',
     path: '/equipe-pastorale/cure'
   },
   {
     id: 'pretres',
     title: 'Les Prêtres',
-    name: 'Prêtres auxiliaires',
+    name: 'Père Donald, Père Anthony, Père Arnaud',
     role: 'Au service de la communauté',
     description: 'Accompagnement spirituel et sacrements',
-    image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400',
-    path: '/equipe-pastorale/pretres'
+    image: 'https://customer-assets.emergentagent.com/job_513c9844-285f-4857-a7dc-ddd6dae9e1cf/artifacts/mrvxn6kf_pere-anthony.webp',
+    path: '/equipe-pastorale/pretres',
+    priests: [
+      {
+        name: 'Père Donald',
+        image: 'https://customer-assets.emergentagent.com/job_513c9844-285f-4857-a7dc-ddd6dae9e1cf/artifacts/bwicpjkm_pere-donald.webp'
+      },
+      {
+        name: 'Père Anthony',
+        image: 'https://customer-assets.emergentagent.com/job_513c9844-285f-4857-a7dc-ddd6dae9e1cf/artifacts/mrvxn6kf_pere-anthony.webp'
+      },
+      {
+        name: 'Père Arnaud',
+        image: 'https://customer-assets.emergentagent.com/job_513c9844-285f-4857-a7dc-ddd6dae9e1cf/artifacts/parx1ojm_pere-arnaud.webp'
+      }
+    ]
   },
   {
     id: 'diacres',
