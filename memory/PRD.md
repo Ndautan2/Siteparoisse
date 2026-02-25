@@ -75,8 +75,6 @@ Refonte complète du site web de la paroisse "Notre Dame d'Autan" avec une appro
 - [ ] **Numéro de téléphone** : Remplacer le placeholder `05 XX XX XX XX` par le vrai numéro
 
 ### P1 - Important
-- [ ] **Photos des clochers** : Obtenir les 10 photos manquantes pour les églises restantes
-  - Escalquens, Labège, Lauzerville, Mervilla, Odars, Pechabou, Pompertuzat, Rebigue, Saint-Orens-Gameville, Saint-Orens (Catala)
 - [ ] **CMS Horaires des messes** : Permettre la gestion des horaires par église
 - [ ] **Boutons "Lire la suite"** : Rendre fonctionnels les liens des actualités
 - [ ] **Newsletter** : Implémenter la fonctionnalité d'inscription
