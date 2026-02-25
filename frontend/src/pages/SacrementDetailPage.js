@@ -23,7 +23,6 @@ const sacrementsData = {
     sections: [
       {
         title: 'Baptême des petits enfants',
-        icon: '👶',
         paragraphs: [
           'Faire baptiser un petit enfant est un acte important pour les parents. Elle engage leur foi et celles des parrains et marraines. Cette démarche demande réflexion et préparation.',
           'Les parents s\'adressent au presbytère, le plus tôt possible. Le prêtre et les parents font le point sur les motivations de la demande et sur ses conséquences. Ils déterminent ensemble une date de célébration.',
@@ -34,7 +33,6 @@ const sacrementsData = {
       },
       {
         title: 'Baptême des enfants en âge scolaire',
-        icon: '🎒',
         paragraphs: [
           'Les parents qui le souhaitent peuvent demander le baptême pour leur enfant en âge scolaire, quand l\'enfant le désire. Pour cela, il faut contacter un prêtre de la paroisse ou le catéchiste de l\'enfant.',
           'La préparation se fait en trois étapes : accueil et signe de la croix, rite pénitentiel au cours de messes pour les enfants et leurs familles, puis baptême.',
@@ -43,7 +41,6 @@ const sacrementsData = {
       },
       {
         title: 'Baptême des adultes',
-        icon: '🕊️',
         paragraphs: [
           'Les adultes qui demandent le baptême sont invités à le préparer par un cheminement qui dure souvent deux ans, mais qui peut être plus rapide ou plus long en fonction des situations.',
           'Le candidat est accompagné individuellement par des baptisés de la paroisse, en lien avec le prêtre et le service diocésain du catéchuménat.',
