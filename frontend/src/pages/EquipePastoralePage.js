@@ -155,28 +155,28 @@ const eapCarouselMembers = [
     role: 'Membre EAP',
     image: 'https://customer-assets.emergentagent.com/job_513c9844-285f-4857-a7dc-ddd6dae9e1cf/artifacts/dzxc4z93_anne.webp',
     city: 'Saint-Orens',
-    cityColor: 'gold'
+    cityColor: 'rose'
   },
   {
     name: 'Jean-Michel DEROIN',
     role: 'Membre EAP',
     image: 'https://customer-assets.emergentagent.com/job_513c9844-285f-4857-a7dc-ddd6dae9e1cf/artifacts/caj7zc9q_jean-michel.webp',
     city: 'Saint-Orens',
-    cityColor: 'gold'
+    cityColor: 'rose'
   },
   {
     name: 'Carole MATTHIA',
     role: 'Membre EAP',
     image: 'https://customer-assets.emergentagent.com/job_church-community-16/artifacts/hgj44udx_Carole.webp',
     city: 'Saint-Orens',
-    cityColor: 'gold'
+    cityColor: 'rose'
   },
   {
     name: 'Arnaud CEYTE',
     role: 'Membre EAP',
     image: 'https://customer-assets.emergentagent.com/job_church-community-16/artifacts/x1mip634_Arnaud.webp',
     city: 'Saint-Orens',
-    cityColor: 'gold'
+    cityColor: 'rose'
   }
 ];
 
