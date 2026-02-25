@@ -87,49 +87,14 @@ const NosClochersPage = () => {
                   <Map className="w-6 h-6 text-gold mr-3" />
                   <div>
                     <h2 className="font-serif text-xl text-slate-deep">Carte des 16 clochers</h2>
-                    <p className="text-slate-500 text-sm">Cliquez sur une église dans la liste pour voir sa fiche</p>
+                    <p className="text-slate-500 text-sm">Cliquez sur un marqueur pour voir les détails de l'église</p>
                   </div>
                 </div>
               </div>
             </div>
-            {/* Map with all churches */}
-            <div className="h-[500px] w-full relative">
-              {/* Google Maps with search showing parish area */}
-              <iframe
-                title="Carte des églises de Notre Dame d'Autan"
-                src="https://maps.google.com/maps?q=Paroisse+Notre+Dame+d'Autan,+Castanet-Tolosan,+France&z=11&output=embed"
-                width="100%"
-                height="100%"
-                style={{ border: 0 }}
-                allowFullScreen=""
-                loading="lazy"
-                className="w-full h-full"
-              ></iframe>
-              {/* Overlay with church list */}
-              <div className="absolute top-4 left-4 bg-white/95 backdrop-blur-sm rounded-xl shadow-lg p-4 max-h-[460px] overflow-y-auto w-72 hidden lg:block">
-                <h3 className="font-serif text-sm font-medium text-slate-deep mb-3 sticky top-0 bg-white/95 pb-2 border-b">
-                  Nos 16 clochers
-                </h3>
-                <div className="space-y-1">
-                  {Object.values(clochersData).map((clocher, index) => (
-                    <Link
-                      key={clocher.id}
-                      to={`/nos-clochers/${clocher.id}`}
-                      className="flex items-start gap-2 p-2 rounded-lg hover:bg-gold/10 transition-colors group"
-                    >
-                      <span className="w-5 h-5 rounded-full bg-gold text-white text-xs flex items-center justify-center flex-shrink-0 mt-0.5">
-                        {index + 1}
-                      </span>
-                      <div className="min-w-0">
-                        <p className="text-sm font-medium text-slate-deep group-hover:text-gold truncate">
-                          {clocher.name}
-                        </p>
-                        <p className="text-xs text-slate-500 truncate">{clocher.churchName}</p>
-                      </div>
-                    </Link>
-                  ))}
-                </div>
-              </div>
+            {/* Map with all churches markers */}
+            <div className="h-[500px] w-full">
+              <ClochersMap clochers={clochersData} height="500px" />
             </div>
           </div>
         </section>
