@@ -6,7 +6,7 @@ import { SocialIcons } from '@/components/SocialIcons';
 const biblicalQuotes = {
   'bapteme': { quote: "Tu es mon fils bien-aimé ; en toi, j'ai mis tout mon amour.", reference: "Marc 1, 11" },
   'premiere-communion': { quote: "Moi, je suis le pain de la vie. Celui qui vient à moi n'aura jamais faim.", reference: "Jean 6, 35" },
-  'confirmation': { quote: "L'Esprit Saint descendra sur vous, et vous recevrez une force.", reference: "Actes 1, 8" },
+  'confirmation': { quote: "Vous allez recevoir une Force, celle de l'Esprit saint, qui descendra sur vous. Vous serez alors mes témoins à Jérusalem, dans toute la Judée et la Samarie, et jusqu'aux extrémités de la terre.", reference: "Actes 1, 8" },
   'reconciliation': { quote: "Tes péchés sont pardonnés, va en paix.", reference: "Luc 7, 48" },
   'mariage': { quote: "Que l'homme ne sépare pas ce que Dieu a uni.", reference: "Matthieu 19, 6" },
   'malades': { quote: "Le Seigneur est mon berger : je ne manque de rien.", reference: "Psaume 22, 1" }
@@ -18,25 +18,26 @@ const sacrementsData = {
     subtitle: 'Devenir enfant de Dieu',
     icon: Droplets,
     image: 'https://customer-assets.emergentagent.com/job_c9a89358-b983-4f0b-8ec4-b48d0db621c4/artifacts/gj75c74d_Bapteme.png',
-    intro: 'Le baptême est le premier des sacrements. Il nous fait entrer dans la famille de Dieu et nous ouvre les portes de la vie éternelle.',
+    intro: 'Premier des sacrements, le baptême est le fondement de toute la vie chrétienne, la porte qui ouvre l\'accès aux autres sacrements. Par le baptême nous sommes libérés du péché et régénérés comme filles et fils de Dieu ; nous devenons membres du Christ et de son Église, témoins de sa Bonne Nouvelle.',
+    introSecondary: 'Baptiser (du grec "baptizein") signifie "plonger" ou "immerger" ; la plongée dans l\'eau signifie l\'ensevelissement du catéchumène dans la mort du Christ d\'où il sort par la résurrection avec lui, comme nouvelle créature. Chez tous les baptisés, enfants ou adultes, la foi doit croître après le baptême. C\'est pour cela que l\'Église célèbre chaque année, dans la nuit de Pâques, le renouvellement des promesses du baptême.',
     sections: [
       {
-        title: 'Pour les enfants',
-        content: 'Le baptême des petits enfants (0-3 ans) est célébré après une préparation des parents. Plusieurs rencontres sont prévues avec l\'équipe de préparation au baptême pour approfondir le sens de ce sacrement et préparer la célébration.'
+        title: 'Baptême des petits enfants',
+        content: 'Faire baptiser un petit enfant est un acte important pour les parents. Elle engage leur foi et celles des parrains et marraines. Cette démarche demande réflexion et préparation.\n\nLes parents s\'adressent au presbytère, le plus tôt possible. Le prêtre et les parents font le point sur les motivations de la demande et sur ses conséquences. Ils déterminent ensemble une date de célébration.\n\nLes parents participent ensuite à des rencontres de réflexion et de préparation.\n\n**Responsables des rencontres : Florie et Vianney Languille**\n\nQuelques jours avant le baptême, les parents rencontrent à nouveau le prêtre pour organiser la célébration.'
       },
       {
-        title: 'Pour les enfants en âge scolaire',
-        content: 'Les enfants de plus de 3 ans qui n\'ont pas été baptisés peuvent recevoir le baptême après une préparation adaptée à leur âge, souvent en lien avec le catéchisme.'
+        title: 'Baptême des enfants en âge scolaire',
+        content: 'Les parents qui le souhaitent peuvent demander le baptême pour leur enfant en âge scolaire, quand l\'enfant le désire. Pour cela, il faut contacter un prêtre de la paroisse ou le catéchiste de l\'enfant.\n\nLa préparation se fait en trois étapes : accueil et signe de la croix, rite pénitentiel au cours de messes pour les enfants et leurs familles, puis baptême. Avant chaque étape une rencontre est organisée avec les parents pour approfondir le sens de la démarche. Le baptême est préparé avec le prêtre, les parents et l\'enfant.'
       },
       {
-        title: 'Pour les adultes (Catéchuménat)',
-        content: 'Les adultes qui souhaitent recevoir le baptême suivent un parcours appelé catéchuménat. Ce chemin de foi dure généralement deux ans et culmine lors de la Veillée Pascale.'
+        title: 'Baptême des adultes',
+        content: 'Les adultes qui demandent le baptême sont invités à le préparer par un cheminement qui dure souvent deux ans, mais qui peut être plus rapide ou plus long en fonction des situations. Le candidat est accompagné individuellement par des baptisés de la paroisse, en lien avec le prêtre et le service diocésain du catéchuménat.\n\nLe cheminement vers le baptême d\'adultes comprend plusieurs étapes, qui ont lieu en paroisse ou avec les autres catéchumènes du diocèse. Le baptême est le plus souvent célébré dans la nuit de Pâques, fête de la Résurrection. Il peut être accompagné des deux autres sacrements de l\'initiation chrétienne, la confirmation et l\'Eucharistie.'
       }
     ],
     steps: [
       'Contacter le secrétariat paroissial',
-      'Rencontre avec l\'équipe de préparation',
-      'Sessions de préparation (2 à 3 rencontres)',
+      'Rencontre avec un prêtre',
+      'Sessions de préparation',
       'Choix du parrain et de la marraine',
       'Célébration du baptême'
     ]
@@ -46,26 +47,22 @@ const sacrementsData = {
     subtitle: 'Recevoir le Corps du Christ',
     icon: Heart,
     image: 'https://customer-assets.emergentagent.com/job_5166d458-aa97-495f-97c0-2fdcfaf2d885/artifacts/jrek2lhj_Premiere-communion.png',
-    intro: 'La première communion est le moment où l\'enfant reçoit pour la première fois le Corps du Christ dans l\'Eucharistie.',
+    intro: 'Les « premières communions » se déroulent en mai et juin.',
     sections: [
       {
-        title: 'Préparation au catéchisme',
-        content: 'La préparation à la première communion se fait dans le cadre du catéchisme. Après au moins deux années de catéchisme, l\'enfant peut demander à recevoir ce sacrement.'
+        title: 'Pour les enfants',
+        content: 'Les enfants qui en sont à leur troisième année de catéchisme peuvent demander à recevoir le sacrement de l\'eucharistie. Cela se passe plutôt en CM2, mais peut se demander à tout âge. La demande est à faire en début d\'année.\n\nUne première rencontre concerne uniquement les parents. Au cours d\'une soirée nous présentons l\'itinéraire que vont vivre les enfants.\n\nPuis les enfants suivent une préparation spécifique :\n• trois rencontres ont lieu le dimanche matin avant les messes des familles ;\n• une matinée pour se préparer et vivre le sacrement de la réconciliation ;\n• une journée de retraite avec les parents.\n\nPour ce qui est la cérémonie elle-même, le père Daniel propose aux parents une rencontre pour expliquer le sacrement de l\'eucharistie. Nous vous proposons de nous retrouver pour préparer ensemble la célébration.\n\nUne rencontre de relecture est organisée après la cérémonie, un dimanche matin, avant la messe des familles.'
       },
       {
-        title: 'Une démarche personnelle',
-        content: 'L\'enfant doit exprimer lui-même son désir de communier. C\'est une étape importante dans sa vie de foi, qu\'il franchit accompagné de sa famille et de la communauté.'
-      },
-      {
-        title: 'La retraite de communion',
-        content: 'Avant la célébration, les enfants participent à une retraite pour se préparer spirituellement à ce grand jour.'
+        title: 'Pour les adultes',
+        content: 'Vous avez été baptisé enfant mais n\'avez jamais fait votre première communion ? Sachez qu\'il n\'y a pas d\'âge pour recevoir l\'Eucharistie et nourrir sa vie spirituelle.\n\nCette démarche est une belle étape de foi qui se prépare sereinement. Nous vous proposons un accompagnement adapté à votre vie d\'adulte pour redécouvrir le sens de ce sacrement, approfondir la Bible et échanger sur vos questions.\n\nChaque parcours respecte votre rythme et vos attentes. Si vous ressentez cet appel ou souhaitez simplement des informations, n\'hésitez pas à nous contacter pour une rencontre informelle. Vous êtes les bienvenus !'
       }
     ],
     steps: [
-      'Inscription au catéchisme',
-      'Deux années de catéchisme minimum',
-      'Demande de l\'enfant',
-      'Retraite de préparation',
+      'Inscription au catéchisme (3ème année minimum)',
+      'Rencontre avec les parents',
+      'Sessions de préparation',
+      'Journée de retraite avec les parents',
       'Célébration de la première communion'
     ]
   },
@@ -74,25 +71,26 @@ const sacrementsData = {
     subtitle: 'Recevoir l\'Esprit Saint',
     icon: Sparkles,
     image: 'https://customer-assets.emergentagent.com/job_957f9676-dd26-4dee-97f5-494fc015f420/artifacts/e13l6wpl_Confirmation.png',
-    intro: 'La confirmation est le sacrement qui achève l\'initiation chrétienne. Par ce sacrement, le baptisé reçoit la plénitude des dons de l\'Esprit Saint.',
+    intro: 'La Confirmation vient achever la grâce du Baptême. Ce sacrement est conféré aux personnes, jeunes et adultes, qui ont mûrement réfléchi à leur vie de Foi et à leur engagement dans le monde et dans l\'Eglise.',
+    introSecondary: 'Par la confirmation, le chrétien reçoit les sept dons de l\'Esprit pour fortifier sa foi et décider de témoigner de l\'Évangile auprès des autres.',
     sections: [
       {
+        title: 'Un cheminement accompagné',
+        content: 'Parce qu\'il s\'agit d\'une étape marquante de la vie chrétienne, la réception de ce sacrement demande un temps de préparation et de discernement.'
+      },
+      {
         title: 'Pour les jeunes',
-        content: 'Les jeunes (généralement en 3ème ou lycée) peuvent demander la confirmation après une préparation spécifique qui dure environ une année.'
+        content: 'Les collégiens et lycéens se préparent au sein de l\'aumônerie de l\'enseignement public ou de leur établissement. C\'est un lieu d\'échange et de partage pour grandir ensemble dans la foi.'
       },
       {
         title: 'Pour les adultes',
-        content: 'Les adultes baptisés qui n\'ont pas été confirmés peuvent recevoir ce sacrement après une préparation adaptée.'
-      },
-      {
-        title: 'Les dons de l\'Esprit',
-        content: 'Par la confirmation, le chrétien reçoit les sept dons de l\'Esprit Saint : sagesse, intelligence, conseil, force, science, piété et crainte de Dieu.'
+        content: 'Il n\'y a pas d\'âge pour être confirmé ! Un parcours adapté est proposé aux adultes (baptisés ou non) pour redécouvrir les fondements de la foi et se préparer à recevoir ce souffle nouveau.\n\nCe temps de préparation est une parenthèse de réflexion pour mieux comprendre l\'action de Dieu dans sa vie avant de s\'engager avec confiance.'
       }
     ],
     steps: [
       'Demande auprès du secrétariat ou de l\'aumônerie',
       'Année de préparation',
-      'Choix d\'un parrain ou d\'une marraine de confirmation',
+      'Sessions de préparation',
       'Retraite de préparation',
       'Célébration par l\'évêque'
     ]
@@ -103,14 +101,15 @@ const sacrementsData = {
     icon: HandHeart,
     image: 'https://customer-assets.emergentagent.com/job_957f9676-dd26-4dee-97f5-494fc015f420/artifacts/qhnerpwc_Reconciliation-confession.png',
     intro: 'Le sacrement de réconciliation (ou confession) nous permet de recevoir le pardon de Dieu et de nous réconcilier avec lui et avec l\'Église.',
+    practicalInfo: 'Chaque vendredi soir, après la messe de 18h30, à Saint-Orens et Castanet.',
     sections: [
+      {
+        title: 'Recevoir le Pardon de Dieu',
+        content: 'Recevoir le Pardon de Dieu est une démarche qui peut se faire...\n\n• soit au cours d\'une célébration communautaire, avant Noël et Pâques, en consultant le calendrier pour connaître la date ;\n• soit en rencontrant individuellement un prêtre, en prenant rendez-vous.'
+      },
       {
         title: 'Se préparer',
         content: 'Avant de recevoir ce sacrement, il est bon de prendre un temps de prière et d\'examen de conscience pour reconnaître ses péchés devant Dieu.'
-      },
-      {
-        title: 'La confession',
-        content: 'Dans le secret de la confession, le prêtre accueille le pénitent au nom du Christ. Il écoute, conseille et donne l\'absolution au nom de Dieu.'
       },
       {
         title: 'Première confession',
@@ -119,7 +118,7 @@ const sacrementsData = {
     ],
     steps: [
       'Prendre un temps d\'examen de conscience',
-      'Se présenter aux permanences ou prendre rendez-vous',
+      'Se présenter aux permanences (vendredi après 18h30) ou prendre rendez-vous',
       'Confession individuelle avec un prêtre',
       'Recevoir l\'absolution',
       'Accomplir la pénitence donnée par le prêtre'
@@ -130,25 +129,26 @@ const sacrementsData = {
     subtitle: 'S\'unir dans l\'amour du Christ',
     icon: Heart,
     image: 'https://customer-assets.emergentagent.com/job_957f9676-dd26-4dee-97f5-494fc015f420/artifacts/5tik9jhg_Mariage.png',
-    intro: 'Le mariage chrétien est un sacrement par lequel un homme et une femme s\'engagent l\'un envers l\'autre pour toute leur vie, avec la grâce de Dieu.',
+    intro: 'Le mariage à l\'église, est un évènement majeur de votre vie de couple. Aussi sa préparation nécessite-t-elle du temps et il est donc nécessaire de s\'y prendre au moins une année avant le jour J.',
+    introSecondary: 'Le mariage chrétien suppose de votre part à tous les 2 une décision libre et qui vous lie POUR LA VIE. Vous allez vous préparer à recevoir le sacrement du mariage et l\'équipe chargée de l\'accompagnement des futurs mariés vous aidera à réfléchir ensemble à cet engagement que vous allez prendre devant Dieu.',
     sections: [
       {
-        title: 'Préparation au mariage',
-        content: 'La préparation au mariage dure plusieurs mois et comprend des rencontres avec des couples accompagnateurs et un prêtre ou diacre. C\'est un temps pour approfondir votre relation et votre foi.'
+        title: 'La préparation',
+        content: 'Dans un premier temps, vous contacterez le secrétariat du secteur paroissial pour planifier un rendez-vous avec le prêtre de la paroisse. Il vous guidera dans votre discernement.\n\nPuis, vous partagerez deux journées et une soirée avec d\'autres couples qui, comme vous, sont dans cette démarche de cheminement vers le mariage.\n\nLa célébration du mariage est finalisée avec le prêtre qui sera témoin de votre mariage.'
       },
       {
-        title: 'Les piliers du mariage',
-        content: 'Le mariage chrétien repose sur quatre piliers : la liberté, la fidélité, l\'indissolubilité et l\'ouverture à la vie.'
+        title: 'Offrande',
+        content: 'Il faut prévoir une offrande à la paroisse de 200 € pour un mariage.'
       },
       {
-        title: 'Après le mariage',
-        content: 'Des mouvements comme les Équipes Notre-Dame ou Cana accompagnent les couples mariés dans leur vie conjugale et spirituelle.'
+        title: 'Responsables',
+        content: '**Responsables des préparations au mariage : Françoise et Jean-François Léturgie**'
       }
     ],
     steps: [
-      'Contacter le secrétariat au moins 6 mois à l\'avance',
-      'Rencontre avec un prêtre ou diacre',
-      'Préparation avec des couples accompagnateurs',
+      'Contacter le secrétariat au moins 1 an à l\'avance',
+      'Rencontre avec un prêtre',
+      'Sessions de préparation',
       'Constitution du dossier de mariage',
       'Célébration du mariage'
     ]
@@ -176,10 +176,38 @@ const sacrementsData = {
     steps: [
       'Contacter le secrétariat ou un prêtre',
       'Visite du prêtre au domicile ou à l\'hôpital',
+      'Sessions de préparation',
       'Célébration du sacrement (onction et prières)',
       'Possibilité de recevoir l\'Eucharistie'
     ]
   }
+};
+
+// Helper function to render content with line breaks and bold text
+const renderContent = (content) => {
+  const lines = content.split('\n');
+  return lines.map((line, index) => {
+    // Handle bold text marked with **
+    const parts = line.split(/(\*\*.*?\*\*)/g);
+    const renderedLine = parts.map((part, i) => {
+      if (part.startsWith('**') && part.endsWith('**')) {
+        return <strong key={i} className="text-slate-deep">{part.slice(2, -2)}</strong>;
+      }
+      return part;
+    });
+    
+    if (line.startsWith('•')) {
+      return (
+        <li key={index} className="ml-4 text-slate-600">
+          {renderedLine}
+        </li>
+      );
+    }
+    if (line === '') {
+      return <br key={index} />;
+    }
+    return <p key={index} className="text-slate-600 leading-relaxed">{renderedLine}</p>;
+  });
 };
 
 const SacrementDetailPage = () => {
@@ -241,14 +269,28 @@ const SacrementDetailPage = () => {
         {/* Intro */}
         <div className="bg-white rounded-2xl p-8 shadow-sm border border-slate-100 mb-8">
           <p className="text-lg text-slate-700 leading-relaxed">{sacrement.intro}</p>
+          {sacrement.introSecondary && (
+            <p className="text-lg text-slate-700 leading-relaxed mt-4">{sacrement.introSecondary}</p>
+          )}
         </div>
+
+        {/* Practical Info (for Reconciliation) */}
+        {sacrement.practicalInfo && (
+          <div className="bg-gold/10 rounded-xl p-6 border border-gold/20 mb-8">
+            <p className="text-slate-deep font-medium text-center">
+              {sacrement.practicalInfo}
+            </p>
+          </div>
+        )}
 
         {/* Sections */}
         <div className="space-y-6 mb-12">
           {sacrement.sections.map((section, index) => (
             <div key={index} className="bg-white rounded-xl p-6 shadow-sm border border-slate-100">
-              <h2 className="font-serif text-2xl text-slate-deep mb-3">{section.title}</h2>
-              <p className="text-slate-600 leading-relaxed">{section.content}</p>
+              <h2 className="font-serif text-2xl text-slate-deep mb-4">{section.title}</h2>
+              <div className="space-y-2">
+                {renderContent(section.content)}
+              </div>
             </div>
           ))}
         </div>
