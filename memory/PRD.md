@@ -66,13 +66,15 @@ Refonte complète du site web de la paroisse "Notre Dame d'Autan" avec une appro
 ## Tâches Prochaines (Backlog Priorisé)
 
 ### P0 - Critique
-- [ ] **CMS Admin** : Implémenter le tableau de bord `/admin` pour gérer :
-  - Actualités (CRUD)
-  - Horaires des messes
-  
+- [ ] **Formulaire de contact** : Rendre le formulaire de la page Secrétariat fonctionnel (endpoint backend + envoi email)
+- [ ] **Numéro de téléphone** : Remplacer le placeholder `05 XX XX XX XX` par le vrai numéro
+
 ### P1 - Important
-- [ ] **Migration du contenu** : Migrer le contenu codé en dur dans `server.py` vers MongoDB
-- [ ] **Formulaires de sacrements** : Créer les formulaires de demande avec notifications email
+- [ ] **Photos des clochers** : Obtenir les 10 photos manquantes pour les églises restantes
+  - Escalquens, Labège, Lauzerville, Mervilla, Odars, Pechabou, Pompertuzat, Rebigue, Saint-Orens-Gameville, Saint-Orens (Catala)
+- [ ] **CMS Horaires des messes** : Permettre la gestion des horaires par église
+- [ ] **Boutons "Lire la suite"** : Rendre fonctionnels les liens des actualités
+- [ ] **Newsletter** : Implémenter la fonctionnalité d'inscription
 
 ### P2 - Améliorations futures
 - [ ] Inscription à la newsletter (footer)
