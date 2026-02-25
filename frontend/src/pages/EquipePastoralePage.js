@@ -11,10 +11,10 @@ import {
 
 // Données du curé
 const cureData = {
-  name: 'Père Daniel',
+  name: 'P. Daniel BROUARD-DERVAL',
   role: 'Curé de la paroisse',
   image: 'https://customer-assets.emergentagent.com/job_513c9844-285f-4857-a7dc-ddd6dae9e1cf/artifacts/izar22oi_pere-daniel.webp',
-  description: `Le Père Daniel est le curé de notre paroisse Notre Dame d'Autan. Ordonné prêtre il y a de nombreuses années, il guide notre communauté avec sagesse et bienveillance.
+  description: `Le Père Daniel Brouard-Derval est le curé de notre paroisse Notre Dame d'Autan. Ordonné prêtre il y a de nombreuses années, il guide notre communauté avec sagesse et bienveillance.
 
 Responsable de l'ensemble de la vie paroissiale, il veille à l'animation spirituelle de notre communauté et à la coordination de tous les services pastoraux. Passionné par l'accompagnement des familles et la transmission de la foi, il est à l'écoute de tous les paroissiens.
 
