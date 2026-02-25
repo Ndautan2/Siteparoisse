@@ -364,7 +364,7 @@ Dans la chapelle St-Lizier, le buste en bois doré et un gisant polychrome entou
 **La stèle pour la paix**
 Dans le cimetière qui entoure l'église, une stèle pour la paix a été érigée en 1986, sculptée par M. Monier.`,
     address: 'Église Saint-Lizier, 31320 Rebigue',
-    coordinates: { lat: 43.49, lng: 1.4807 },
+    coordinates: { lat: 43.48968449139622, lng: 1.4806484330796545 },
     massSchedule: [],
     openingHours: null
   },
@@ -396,7 +396,7 @@ L'ascension de saint Orens est représentée sur la voûte de l'église. Le sain
 **La Croix de Saint-Orens**
 La croix est visible au sommet de l'église (XIIe siècle). Sur les bras de la croix, nous voyons le glaive et l'éponge, éléments de la Passion du Christ.`,
     address: 'Église Saint-Orens, 31650 Saint-Orens-de-Gameville',
-    coordinates: { lat: 43.55231, lng: 1.54194 },
+    coordinates: { lat: 43.553557052904104, lng: 1.5445251722267705 },
     massSchedule: [],
     openingHours: null
   },
@@ -411,7 +411,7 @@ Cette chapelle moderne témoigne du développement de la commune et de l'accueil
 
 Voir toute l'histoire de Saint-Orens-de-Gameville sur la page dédiée à son église historique.`,
     address: 'Chapelle Saint-Jean-Bosco, Catala, 31650 Saint-Orens-de-Gameville',
-    coordinates: { lat: 43.551879, lng: 1.533877 },
+    coordinates: { lat: 43.570323856586775, lng: 1.5184479431467626 },
     massSchedule: [],
     openingHours: null
   }
