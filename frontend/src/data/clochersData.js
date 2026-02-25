@@ -173,7 +173,7 @@ Le bas côté de droite et la sacristie sont postérieurs à l'église. Le bas c
 **Étymologie**
 Plusieurs hypothèses sont avancées concernant l'étymologie d'Escalquens : escalis, celui qui se met à table, du latin esca, aliment ; aesculus, chêne consacré au dieu Jupiter ; ou escal désignant en occitan une coque de noix.`,
     address: 'Église Saint-Martin, 31750 Escalquens',
-    coordinates: { lat: 43.5167, lng: 1.5500 },
+    coordinates: { lat: 43.51853, lng: 1.56155 },
     massSchedule: [],
     openingHours: null
   },
@@ -203,7 +203,7 @@ La deuxième église est construite en 1518. Elle est détruite par les Huguenot
 
 L'église actuelle date de 1860. M. Sixte TOULZA, maire de l'époque, a offert le clocher. L'ancienne cloche de 1597 siècle a été remplacée en 2013 par une cloche baptisée « Pape François ».`,
     address: 'Église Saint-Barthélemy, 31670 Labège',
-    coordinates: { lat: 43.5333, lng: 1.5333 },
+    coordinates: { lat: 43.528581, lng: 1.529321 },
     massSchedule: [],
     openingHours: null
   },
@@ -225,7 +225,7 @@ Saint Michel, archange, en araméen Michael, « qui est comme Dieu », est cité
 **Le clocher-mur**
 Le clocher-mur date du XIXe siècle. Il a été construit sur un site stratégique, au point le plus élevé. Il constitue un repère géographique, historique et spirituel. C'est un élément architectural typique de la région. Jusqu'au siècle dernier, il marque le déroulement du temps. Ses cloches scandent les fêtes et les saisons et rythme la vie quotidienne du village. De style gothique, ce clocher à trois baies campanaires est proche du clocher triangulaire de l'église de Lanta.`,
     address: 'Église Saint-Michel, 31650 Lauzerville',
-    coordinates: { lat: 43.5417, lng: 1.5583 },
+    coordinates: { lat: 43.55458, lng: 1.56689 },
     massSchedule: [],
     openingHours: null
   },
@@ -252,7 +252,7 @@ Les deux chapelles latérales sont à l'origine dédiées à saint Jean Baptiste
 
 L'inscription se termine par ces mots : « Afin que, unis dans la tombe comme dans le lit conjugal, ils reposent éternellement ».`,
     address: 'Église Saint-Jean-Baptiste, 31320 Mervilla',
-    coordinates: { lat: 43.4917, lng: 1.5083 },
+    coordinates: { lat: 43.50745, lng: 1.47338 },
     massSchedule: [],
     openingHours: null
   },
@@ -283,7 +283,7 @@ La cloche du XVe siècle, en bronze, est la plus ancienne du canton. Elle provie
 
 C'est en 1853 que l'abbé Adolphe de Juillac (1799–1862) est chargé de ramener de Rome un certain nombre de reliques. Il est autorisé à prélever un fragment de chacune d'elles pour l'église de Notre-Dame d'Odars. Elle est le sanctuaire le plus riche du département avec 212 reliques après l'abbatiale Saint-Sernin et la cathédrale Saint-Étienne.`,
     address: 'Église Saint-Étienne, 31450 Odars',
-    coordinates: { lat: 43.5083, lng: 1.5750 },
+    coordinates: { lat: 43.524, lng: 1.59 },
     massSchedule: [],
     openingHours: null
   },
@@ -312,7 +312,7 @@ Le blason qui surplombe ces éléments pourrait être, selon la commission d'art
 
 Sur le mur qui fait face à l'entrée de l'église, une plaque de marbre porte le nom des hommes morts au champ d'honneur.`,
     address: 'Église Saint-Martin, 31320 Pechabou',
-    coordinates: { lat: 43.4833, lng: 1.5167 },
+    coordinates: { lat: 43.5007, lng: 1.50934 },
     massSchedule: [],
     openingHours: null
   },
@@ -339,7 +339,7 @@ Les croisées d'ogives sont richement décorées ainsi que la voûte constituée
 **Découverte archéologique**
 Dans les fonts baptismaux a été découverte lors de la dernière restauration, une pierre datée du premier siècle après Jésus Christ représentant une gorgone, monstre de la mythologie grecque.`,
     address: 'Église Saint-André Saint-Cloud, 31450 Pompertuzat',
-    coordinates: { lat: 43.4917, lng: 1.5000 },
+    coordinates: { lat: 43.484406, lng: 1.509440 },
     massSchedule: [],
     openingHours: null
   },
@@ -364,7 +364,7 @@ Dans la chapelle St-Lizier, le buste en bois doré et un gisant polychrome entou
 **La stèle pour la paix**
 Dans le cimetière qui entoure l'église, une stèle pour la paix a été érigée en 1986, sculptée par M. Monier.`,
     address: 'Église Saint-Lizier, 31320 Rebigue',
-    coordinates: { lat: 43.4750, lng: 1.5083 },
+    coordinates: { lat: 43.49, lng: 1.4807 },
     massSchedule: [],
     openingHours: null
   },
@@ -396,7 +396,7 @@ L'ascension de saint Orens est représentée sur la voûte de l'église. Le sain
 **La Croix de Saint-Orens**
 La croix est visible au sommet de l'église (XIIe siècle). Sur les bras de la croix, nous voyons le glaive et l'éponge, éléments de la Passion du Christ.`,
     address: 'Église Saint-Orens, 31650 Saint-Orens-de-Gameville',
-    coordinates: { lat: 43.5500, lng: 1.5333 },
+    coordinates: { lat: 43.55231, lng: 1.54194 },
     massSchedule: [],
     openingHours: null
   },
@@ -411,7 +411,7 @@ Cette chapelle moderne témoigne du développement de la commune et de l'accueil
 
 Voir toute l'histoire de Saint-Orens-de-Gameville sur la page dédiée à son église historique.`,
     address: 'Chapelle Saint-Jean-Bosco, Catala, 31650 Saint-Orens-de-Gameville',
-    coordinates: { lat: 43.5450, lng: 1.5417 },
+    coordinates: { lat: 43.551879, lng: 1.533877 },
     massSchedule: [],
     openingHours: null
   }
