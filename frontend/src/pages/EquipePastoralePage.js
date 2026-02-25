@@ -229,8 +229,7 @@ const EquipePastoralePage = () => {
   const [modalType, setModalType] = useState(null);
   const [currentPriestIndex, setCurrentPriestIndex] = useState(0);
   const [currentDeaconIndex, setCurrentDeaconIndex] = useState(0);
-  const [currentEapCastanetIndex, setCurrentEapCastanetIndex] = useState(0);
-  const [currentEapSaintOrensIndex, setCurrentEapSaintOrensIndex] = useState(0);
+  const [currentEapIndex, setCurrentEapIndex] = useState(0);
 
   // Carousel for priests photos - 3 seconds
   useEffect(() => {
@@ -248,19 +247,10 @@ const EquipePastoralePage = () => {
     return () => clearInterval(interval);
   }, []);
 
-  // Carousel for EAP Castanet - 3 seconds
+  // Carousel for EAP - 3 seconds
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentEapCastanetIndex((prev) => (prev + 1) % eapData.castanet.members.length);
-    }, 3000);
-    return () => clearInterval(interval);
-  }, []);
-
-  // Carousel for EAP Saint-Orens - 3 seconds (only members with photos)
-  useEffect(() => {
-    const membersWithPhotos = eapData.saintOrens.members.filter(m => m.image);
-    const interval = setInterval(() => {
-      setCurrentEapSaintOrensIndex((prev) => (prev + 1) % membersWithPhotos.length);
+      setCurrentEapIndex((prev) => (prev + 1) % eapCarouselMembers.length);
     }, 3000);
     return () => clearInterval(interval);
   }, []);
