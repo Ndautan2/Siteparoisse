@@ -347,7 +347,7 @@ Dans les fonts baptismaux a été découverte lors de la dernière restauration,
     id: 'rebigue',
     name: 'Rebigue',
     churchName: 'Église Saint-Lizier',
-    image: 'https://customer-assets.emergentagent.com/job_50e05542-f2db-4ce4-aafc-6abaa8a7ea3e/artifacts/k6wmhqj1_Eglise-Rebigue.jpg',
+    image: 'https://customer-assets.emergentagent.com/job_50e05542-f2db-4ce4-aafc-6abaa8a7ea3e/artifacts/sixuer4p_Eglise-Rebigue.png',
     description: `Fenêtre ouverte sur la chaîne des Pyrénées, Rebigue est un petit village des coteaux du Lauragais. Dans un paysage façonné par l'agriculture se côtoient des anciens et de nouveaux arrivants (504 habitants en 2009).
 
 **Saint Lizier**
