@@ -207,19 +207,38 @@ const ClocherDetailPage = () => {
                   <MapPin className="w-6 h-6 text-gold mr-3 mt-0.5 flex-shrink-0" />
                   <div>
                     <h2 className="font-serif text-xl text-slate-deep mb-1">Localisation</h2>
-                    <p className="text-slate-600">{clocher.address}</p>
+                    <a 
+                      href={getGoogleMapsPlaceUrl()}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-slate-600 hover:text-gold transition-colors"
+                    >
+                      {clocher.address}
+                    </a>
                   </div>
                 </div>
-                <a
-                  href={getDirectionsUrl()}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center bg-gold hover:bg-gold-dark text-white px-5 py-2.5 rounded-full text-sm font-medium transition-colors shadow-lg hover:shadow-xl"
-                  data-testid="directions-button"
-                >
-                  <ExternalLink className="w-4 h-4 mr-2" />
-                  Itinéraire
-                </a>
+                <div className="flex gap-3">
+                  <a
+                    href={getGoogleMapsPlaceUrl()}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center bg-slate-100 hover:bg-slate-200 text-slate-700 px-4 py-2.5 rounded-full text-sm font-medium transition-colors"
+                    data-testid="google-maps-button"
+                  >
+                    <MapPin className="w-4 h-4 mr-2" />
+                    Voir sur Google Maps
+                  </a>
+                  <a
+                    href={getDirectionsUrl()}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center bg-gold hover:bg-gold-dark text-white px-5 py-2.5 rounded-full text-sm font-medium transition-colors shadow-lg hover:shadow-xl"
+                    data-testid="directions-button"
+                  >
+                    <ExternalLink className="w-4 h-4 mr-2" />
+                    Itinéraire
+                  </a>
+                </div>
               </div>
             </div>
             {/* Google Maps Embed with marker */}
