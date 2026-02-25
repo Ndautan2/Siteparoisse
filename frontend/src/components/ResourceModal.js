@@ -71,7 +71,7 @@ const ResourceModal = ({ isOpen, onClose, resource }) => {
               ALPHA CONTENT
           ══════════════════════════════════════ */}
           {alphaContent && (
-            <div className="space-y-4">
+            <div className="flex flex-col" style={{ gap: '1.5rem' }}>
               {/* Format / Déroulement */}
               {alphaContent.format && (
                 <div className="rounded-2xl border border-slate-100 overflow-hidden shadow-sm">
