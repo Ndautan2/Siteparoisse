@@ -372,13 +372,30 @@ Dans le cimetière qui entoure l'église, une stèle pour la paix a été érig�
     id: 'saint-orens-gameville',
     name: 'Saint-Orens-de-Gameville',
     churchName: 'Église Saint-Orens',
-    image: 'https://customer-assets.emergentagent.com/job_c3efae68-56d0-4924-8ecf-4f7502ce3630/artifacts/54f2vm3r_Eglise-Castanet-Tolosan.jpg',
-    description: `L'église Saint-Orens est l'église paroissiale principale de Saint-Orens-de-Gameville. Elle porte le nom de saint Orens, évêque d'Auch au Ve siècle.
+    image: 'https://customer-assets.emergentagent.com/job_50e05542-f2db-4ce4-aafc-6abaa8a7ea3e/artifacts/ztk9i0id_Eglise-Saint-Orens.jpg',
+    description: `La commune de Saint-Orens-de-Gameville compte deux clochers : l'église Saint-Orens et la chapelle Saint-Jean-Bosco dans le quartier Catala.
 
-C'est un lieu de rassemblement important pour la communauté chrétienne de cette commune dynamique de la périphérie toulousaine.
+**Saint Orens, Évêque d'Auch au Ve siècle**
+Orens ou Orient est né à Huesca, en Aragon (Espagne) vers 370, dans une famille noble. Averti par un ange du destin politique que lui réservait sa famille, il se retira dans une grotte de la vallée du Lavedan près de Tarbes.
 
-*Informations détaillées à venir via le CMS.*`,
-    address: 'Place de l\'Église, 31650 Saint-Orens-de-Gameville',
+En 410, une délégation du clergé et du peuple d'Auch vint le chercher pour le proclamer évêque. « Aussitôt, le bâton qu'il tenait à la main prit racine, étendit ses rameaux et se couvrit d'un vert feuillage. » Orens accepta alors sa nouvelle fonction.
+
+**La légende de Toulouse**
+En 438, les Romains assiégèrent Toulouse. Théodoric Ier, roi des Wisigoths, envoya Orens en ambassade. Un nuage épais s'éleva et entoura le général romain Litorius qui fut fait prisonnier. Depuis ce miracle, notre saint fut célébré dans toute la région.
+
+**Histoire de l'église**
+- 1088 : un hôpital et un monastère sont construits dans la vallée de la Marcaissonne
+- 1157 : les Capitouls font bâtir une église gothique en souvenir d'Orens
+- XIIe-XVIe siècle : construction de la voûte, des chapelles et du clocher avec trois cloches
+- 1975 : construction de la chapelle Saint-Jean-Bosco de Catala
+- 2001 : réception des travaux du Centre paroissial de secteur
+
+**L'ascension de saint Orens**
+L'ascension de saint Orens est représentée sur la voûte de l'église. Le saint est figuré sur des nuées, les yeux levés vers Dieu le Père qui l'accueille. Il est soutenu par deux anges accompagnés de cinq angelots tenant la Bible, la mitre et la crosse.
+
+**La Croix de Saint-Orens**
+La croix est visible au sommet de l'église (XIIe siècle). Sur les bras de la croix, nous voyons le glaive et l'éponge, éléments de la Passion du Christ.`,
+    address: 'Église Saint-Orens, 31650 Saint-Orens-de-Gameville',
     coordinates: { lat: 43.5500, lng: 1.5333 },
     massSchedule: [],
     openingHours: null
