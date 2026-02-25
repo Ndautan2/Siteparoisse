@@ -783,9 +783,9 @@ const EquipePastoralePage = () => {
                   { prenom: 'Paul', description: 'Séminariste accompagné par notre communauté paroissiale dans sa vocation.' }
                 ].map((seminariste, idx) => (
                   <div key={idx} className="flex gap-5 p-4 bg-slate-50 rounded-xl items-center">
-                    <div className="w-24 h-24 flex-shrink-0">
+                    <div className="w-32 h-32 flex-shrink-0">
                       <div className="w-full h-full rounded-full bg-gradient-to-br from-slate-100 to-slate-200 border-4 border-[#93B5B7]/20 flex flex-col items-center justify-center gap-1">
-                        <GraduationCap className="w-8 h-8 text-slate-400" strokeWidth={1.5} />
+                        <GraduationCap className="w-10 h-10 text-slate-400" strokeWidth={1.5} />
                         <span className="text-[9px] text-slate-400 font-medium">Photo à venir</span>
                       </div>
                     </div>
