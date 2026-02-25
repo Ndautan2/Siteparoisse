@@ -118,7 +118,6 @@ const sacrementsData = {
       },
       {
         title: 'Pour les adultes',
-        icon: '🕊️',
         paragraphs: [
           'Il n\'y a pas d\'âge pour être confirmé ! Un parcours adapté est proposé aux adultes (baptisés ou non) pour redécouvrir les fondements de la foi et se préparer à recevoir ce souffle nouveau.',
           'Ce temps de préparation est une parenthèse de réflexion pour mieux comprendre l\'action de Dieu dans sa vie avant de s\'engager avec confiance.'
@@ -146,7 +145,6 @@ const sacrementsData = {
     sections: [
       {
         title: 'Recevoir le Pardon de Dieu',
-        icon: '💜',
         paragraphs: [
           'Recevoir le Pardon de Dieu est une démarche qui peut se faire de deux manières :'
         ],
@@ -157,14 +155,12 @@ const sacrementsData = {
       },
       {
         title: 'Se préparer',
-        icon: '📖',
         paragraphs: [
           'Avant de recevoir ce sacrement, il est bon de prendre un temps de prière et d\'examen de conscience pour reconnaître ses péchés devant Dieu.'
         ]
       },
       {
         title: 'Première confession',
-        icon: '🌟',
         paragraphs: [
           'Les enfants préparent leur première confession dans le cadre du catéchisme, généralement avant leur première communion.'
         ]
