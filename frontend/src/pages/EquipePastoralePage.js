@@ -462,6 +462,72 @@ const EquipePastoralePage = () => {
           })}
         </div>
 
+        {/* Mot de bienvenue du Père Daniel */}
+        <div className="mt-12 mb-4 bg-white rounded-2xl shadow-sm border border-slate-100 overflow-hidden">
+          <div className="flex flex-col md:flex-row">
+            {/* Photo */}
+            <div className="md:w-56 flex-shrink-0 relative">
+              <img
+                src="https://customer-assets.emergentagent.com/job_513c9844-285f-4857-a7dc-ddd6dae9e1cf/artifacts/izar22oi_pere-daniel.webp"
+                alt="Père Daniel Brouard-Derval"
+                className="w-full h-64 md:h-full object-cover object-top"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent md:bg-gradient-to-r md:from-transparent md:to-white/20"></div>
+            </div>
+            {/* Texte */}
+            <div className="flex-1 px-8 py-8 md:py-10 flex flex-col justify-center">
+              {/* En-tête */}
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-1 h-12 bg-gradient-to-b from-[#93B5B7] to-[#d0ada6] rounded-full"></div>
+                <div>
+                  <p className="text-[#93B5B7] text-xs font-semibold uppercase tracking-widest mb-0.5">Mot du curé</p>
+                  <h2 className="font-serif text-2xl text-slate-deep leading-tight">Bienvenue dans notre ensemble paroissial</h2>
+                </div>
+              </div>
+
+              {/* Citation d'ouverture */}
+              <blockquote className="font-serif text-lg text-[#93B5B7] italic mb-5 leading-relaxed">
+                « Venez et vous verrez ! »
+                <span className="font-sans text-sm not-italic text-slate-400 ml-2">(Jn 1, 39)</span>
+              </blockquote>
+
+              <div className="space-y-4 text-slate-600 text-sm leading-[1.8]">
+                <p>
+                  Telle est l'invitation que Jésus lance aux premiers « curieux » qui s'intéressent à Lui. En quête de sens et de vérité, croyants en chemin, ils deviendront ses premiers disciples.
+                </p>
+                <p>
+                  Telle est l'invitation que lance la communauté de l'ensemble paroissial Notre Dame d'Autan aux habitants de nos quartiers, de nos villages, à tous ceux également qui en ont franchi la porte intentionnellement ou par hasard, aux visiteurs de notre église, à tous les chercheurs de Dieu… à ceux qui pour la première fois visiteront ce nouveau site !
+                </p>
+                <p>
+                  <span className="font-medium text-slate-deep">Pourquoi venir ? Qui verrons-nous ?</span><br />
+                  Jésus, la joie d'une communauté qui vit et témoigne de son amour, qui célèbre l'eucharistie, prie, annonce l'Évangile, prend soin des plus vulnérables, crée des liens entre tous…
+                </p>
+                <p className="font-serif text-base text-slate-deep">
+                  Soyez les bienvenus !
+                </p>
+                <p className="text-slate-500 text-xs">
+                  Amis/visiteurs, ces quelques mots, écrits pour vous, témoignent de notre désir de poursuivre l'aventure de la rencontre et de la Foi avec vous.
+                </p>
+              </div>
+
+              {/* Signature */}
+              <div className="mt-6 pt-5 border-t border-slate-100 flex items-center gap-3">
+                <div className="w-10 h-10 rounded-full overflow-hidden border-2 border-[#93B5B7]/30">
+                  <img
+                    src="https://customer-assets.emergentagent.com/job_513c9844-285f-4857-a7dc-ddd6dae9e1cf/artifacts/izar22oi_pere-daniel.webp"
+                    alt="Père Daniel"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div>
+                  <p className="font-medium text-slate-deep text-sm">Père Daniel Brouard-Derval</p>
+                  <p className="text-[#93B5B7] text-xs">Curé de Notre Dame d'Autan</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
         {/* Contact Section */}
         <div className="mt-16 bg-white rounded-2xl p-8 shadow-sm border border-slate-100 text-center">
           <h2 className="font-serif text-2xl text-slate-deep mb-4">Contacter l'équipe pastorale</h2>
