@@ -290,14 +290,28 @@ C'est en 1853 que l'abbé Adolphe de Juillac (1799–1862) est chargé de ramene
   'pechabou': {
     id: 'pechabou',
     name: 'Pechabou',
-    churchName: 'Église Saint-André',
-    image: 'https://customer-assets.emergentagent.com/job_c3efae68-56d0-4924-8ecf-4f7502ce3630/artifacts/54f2vm3r_Eglise-Castanet-Tolosan.jpg',
-    description: `L'église Saint-André de Pechabou est un édifice au patrimoine préservé, situé dans ce village viticole réputé.
+    churchName: 'Église Saint-Martin',
+    image: 'https://customer-assets.emergentagent.com/job_50e05542-f2db-4ce4-aafc-6abaa8a7ea3e/artifacts/3ob1lgu3_Eglise-Pechabou.JPG',
+    description: `Dans la deuxième partie du XIXe siècle, l'église se trouvait en triste état. Commença alors un feuilleton à rebondissements qui s'étala sur près de quarante ans. Un siècle après, Pechabou accueillit l'évêque Monseigneur Garrone, à l'occasion d'une cérémonie organisée pour le retour des retables qui venaient d'être restaurés par les Beaux-Arts.
 
-Son architecture traditionnelle s'intègre harmonieusement dans le paysage vallonné du Lauragais.
+**Les cloches**
+Pendant vingt longues années le clocher a été muet. En effet, les cloches se sont tues un jour de 1978, orphelines de leur carillonneur et n'ont été remises en service qu'en mai 1998.
 
-*Informations détaillées à venir via le CMS.*`,
-    address: 'Place de l\'Église, 31320 Pechabou',
+**Restaurations récentes**
+En 2001, l'église a connu un nouveau chantier. La façade a été entièrement restaurée. La croix d'origine a rejoint le sommet du clocher dont elle avait été descendue depuis 1943.
+
+**Les vitraux**
+Actuellement on peut admirer dans le chœur de l'église trois vitraux aux couleurs magnifiques, réalisés par un maître-verrier de Toulouse, Antonin Doumerg. Celui du centre est dédié à Notre-Dame de l'Assomption, patronne de la paroisse. Les deux autres vitraux représentent le Sacré Cœur (à droite) et sainte Germaine de Pibrac (à gauche).
+
+**Patrimoine artistique**
+On peut également admirer deux statues grandeur nature en bois doré :
+- Saint Joseph et l'Enfant Jésus, statue et son retable, bois sculpté doré et polychrome (XVIIe)
+- Saint Anne et la Vierge, groupe et son retable, bois sculpté peint et doré (XVIIe)
+
+Le blason qui surplombe ces éléments pourrait être, selon la commission d'art sacré du diocèse de Toulouse, celui d'un pape d'Avignon, Innocent VI (1352-1362). On voit également dans le chœur une statue de pierre qui date du XIIe ou XIIIe siècle.
+
+Sur le mur qui fait face à l'entrée de l'église, une plaque de marbre porte le nom des hommes morts au champ d'honneur.`,
+    address: 'Église Saint-Martin, 31320 Pechabou',
     coordinates: { lat: 43.4833, lng: 1.5167 },
     massSchedule: [],
     openingHours: null
