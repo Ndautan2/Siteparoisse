@@ -210,14 +210,21 @@ L'église actuelle date de 1860. M. Sixte TOULZA, maire de l'époque, a offert l
   'lauzerville': {
     id: 'lauzerville',
     name: 'Lauzerville',
-    churchName: 'Chapelle de Lauzerville',
-    image: 'https://customer-assets.emergentagent.com/job_c3efae68-56d0-4924-8ecf-4f7502ce3630/artifacts/54f2vm3r_Eglise-Castanet-Tolosan.jpg',
-    description: `La chapelle de Lauzerville est un petit édifice au charme authentique, niché dans ce paisible village de la campagne toulousaine.
+    churchName: 'Église Saint-Michel',
+    image: 'https://customer-assets.emergentagent.com/job_50e05542-f2db-4ce4-aafc-6abaa8a7ea3e/artifacts/lv7ip80d_Eglise-Lauzerville.png',
+    description: `Les documents concernant l'histoire de Lauzerville sont peu nombreux. Le village aurait été créé par les religieux de Cayras et les archives antérieures à 1781 auraient disparu avec eux.
 
-Elle témoigne de la vie religieuse rurale et reste un lieu de recueillement apprécié des habitants.
+**Les seigneurs de Lauzerville**
+La seigneurie de Lauzerville reste longtemps dans la famille LATOUR dont un membre, Georges DE LATOUR, est Capitoul de Toulouse en 1329. Son descendant Pierre DE LATOUR, capitoul en 1510, porte le titre de Seigneur de Lauzerville. Les grandes familles nobles conservent de vastes domaines dans la région, terres à pastel au XVIe siècle puis à blé et à froment aux siècles suivants. En 1554 le Seigneur de Lauzerville se nomme F. PÉLEGRIN. En 1689 la Seigneurie appartient à F. DE CHAMBON, et, en 1722, Y. DE LAFORLADE, ancien Capitoul, s'en dit coseigneur.
 
-*Informations détaillées à venir via le CMS.*`,
-    address: 'Lauzerville, 31650 Lauzerville',
+**L'église Saint-Michel**
+L'église Saint-Michel, en briques, pierres et crépis, a dû être construite à l'âge d'or du pastel entre 1460 et 1562. Mais aucun document ne subsiste de cette époque-là. Elle est de dimension modeste, adaptée aux besoins d'une petite communauté paysanne.
+
+Saint Michel, archange, en araméen Michael, « qui est comme Dieu », est cité à cinq reprises dans la Bible. Dès les premiers siècles, l'Église chrétienne rendit un culte à saint Michel et l'honora le 29 septembre. Il est le patron des soldats.
+
+**Le clocher-mur**
+Le clocher-mur date du XIXe siècle. Il a été construit sur un site stratégique, au point le plus élevé. Il constitue un repère géographique, historique et spirituel. C'est un élément architectural typique de la région. Jusqu'au siècle dernier, il marque le déroulement du temps. Ses cloches scandent les fêtes et les saisons et rythme la vie quotidienne du village. De style gothique, ce clocher à trois baies campanaires est proche du clocher triangulaire de l'église de Lanta.`,
+    address: 'Église Saint-Michel, 31650 Lauzerville',
     coordinates: { lat: 43.5417, lng: 1.5583 },
     massSchedule: [],
     openingHours: null
