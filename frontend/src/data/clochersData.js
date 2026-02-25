@@ -54,6 +54,7 @@ Au XVe siècle, Bernard DE ROQUETTE s'installe à la tête de la Seigneurie et �
     address: 'Église Saint-Pierre, 31650 Auzielle',
     coordinates: { lat: 43.5417021, lng: 1.5658417 },
     placeId: 'ChIJ1aMFaS6U6hIRJvnNn1sNcTE',
+    googleMapsUrl: 'https://www.google.com/maps/place/%C3%89glise+Saint-Pierre+d\'Auzielle/@43.541706,1.5632668,17z',
     massSchedule: [],
     openingHours: null
   },
@@ -70,6 +71,7 @@ Cette église est très intéressante par sa diversité : styles architecturaux 
     address: 'Église Saint-Jean-Baptiste, 31450 Belberaud',
     coordinates: { lat: 43.500993, lng: 1.5752377 },
     placeId: 'ChIJsW3x7O2U6hIR3cx4P3yDvco',
+    googleMapsUrl: 'https://www.google.com/maps/place/%C3%89glise+Saint-Jean-Baptiste+de+Belberaud/@43.5009969,1.5726628,17z',
     massSchedule: [],
     openingHours: null
   },
@@ -88,6 +90,7 @@ L'église est ouverte du mardi au Samedi de 8 h 30 à 19 h et dimanche de 8 h 30
     address: 'Église Saint-Gervais-et-Saint-Protais, 31320 Castanet-Tolosan',
     coordinates: { lat: 43.516274, lng: 1.49807 },
     placeId: 'ChIJTSi5wUuu6hIRRbgNPmAXmKI',
+    googleMapsUrl: 'https://www.google.com/maps/place/%C3%89glise+Saint-Gervais+et+Saint-Protais+de+Castanet-Tolosan/@43.5162354,1.496766,18z',
     massSchedule: [],
     openingHours: 'Du mardi au samedi de 8h30 à 19h, dimanche de 8h30 à 12h30 (l\'été jusqu\'à 18h)'
   },
@@ -111,6 +114,7 @@ On peut être frappé par le mauvais état de l'intérieur de cette église qui 
     address: 'Église de la Nativité-de-la-Vierge, 31450 Corronsac',
     coordinates: { lat: 43.4736134, lng: 1.4945057 },
     placeId: 'ChIJIWUiM1LB6hIRD96k0g1a6rg',
+    googleMapsUrl: 'https://www.google.com/maps/place/%C3%89glise+de+la+Nativit%C3%A9-de-la-Vierge+de+Corronsac/@43.4742209,1.4923561,17z',
     massSchedule: [],
     openingHours: null
   },
@@ -134,6 +138,7 @@ Pour visiter cette église en dehors des heures d'ouverture, vous pouvez vous ad
     address: 'Église Sainte-Marie-Madeleine, 31450 Deyme',
     coordinates: { lat: 43.4783503, lng: 1.5268817 },
     placeId: 'ChIJnWVtmfuV6hIR7Uov8uwe_xs',
+    googleMapsUrl: 'https://www.google.com/maps/place/%C3%89glise+Sainte-Marie-Madeleine+de+Deyme/@43.4783542,1.5243068,17z',
     massSchedule: [],
     openingHours: null
   },
