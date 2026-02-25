@@ -67,7 +67,7 @@ const NosClochersPage = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
 
         {/* Churches Grid */}
-        <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mb-16">
+        <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mb-12">
           {clochersListData.map((clocher) => (
             <Link
               key={clocher.id}
@@ -103,6 +103,72 @@ const NosClochersPage = () => {
             </Link>
           ))}
         </div>
+
+        {/* Interactive Map Section */}
+        <section className="mb-12" data-testid="map-all-churches">
+          <div className="bg-white rounded-2xl shadow-sm border border-slate-100 overflow-hidden">
+            <div className="p-6 border-b border-slate-100">
+              <div className="flex items-center justify-between flex-wrap gap-4">
+                <div className="flex items-center">
+                  <Map className="w-6 h-6 text-gold mr-3" />
+                  <div>
+                    <h2 className="font-serif text-xl text-slate-deep">Carte des 16 clochers</h2>
+                    <p className="text-slate-500 text-sm">Visualisez l'ensemble de nos églises sur le territoire</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            {/* Map with all churches */}
+            <div className="h-[500px] w-full relative">
+              <iframe
+                title="Carte des 16 clochers de Notre Dame d'Autan"
+                src="https://www.google.com/maps/d/embed?mid=1sKqHvLj_placeholder&z=11"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen=""
+                loading="lazy"
+                className="w-full h-full hidden"
+              ></iframe>
+              {/* Custom map with markers using iframe approach */}
+              <iframe
+                title="Carte des églises"
+                src={`https://maps.google.com/maps?q=Paroisse+Notre+Dame+d'Autan+Castanet-Tolosan&z=11&output=embed`}
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen=""
+                loading="lazy"
+                className="w-full h-full"
+              ></iframe>
+              {/* Overlay with church list */}
+              <div className="absolute top-4 left-4 bg-white/95 backdrop-blur-sm rounded-xl shadow-lg p-4 max-h-[460px] overflow-y-auto w-72 hidden lg:block">
+                <h3 className="font-serif text-sm font-medium text-slate-deep mb-3 sticky top-0 bg-white pb-2 border-b">
+                  Nos 16 clochers
+                </h3>
+                <div className="space-y-2">
+                  {Object.values(clochersData).map((clocher, index) => (
+                    <Link
+                      key={clocher.id}
+                      to={`/nos-clochers/${clocher.id}`}
+                      className="flex items-start gap-2 p-2 rounded-lg hover:bg-gold/10 transition-colors group"
+                    >
+                      <span className="w-5 h-5 rounded-full bg-gold text-white text-xs flex items-center justify-center flex-shrink-0 mt-0.5">
+                        {index + 1}
+                      </span>
+                      <div className="min-w-0">
+                        <p className="text-sm font-medium text-slate-deep group-hover:text-gold truncate">
+                          {clocher.name}
+                        </p>
+                        <p className="text-xs text-slate-500 truncate">{clocher.churchName}</p>
+                      </div>
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
 
         {/* Info Section */}
         <div className="bg-white rounded-2xl p-8 shadow-sm border border-slate-100">
