@@ -1098,7 +1098,110 @@ const ContentPage = ({ section }) => {
         )}
 
         {/* Detailed Content Section - for pages with detailed content like funerailles */}
-        {config.detailedContent && (
+        {config.detailedContent && section === 'funerailles' && (
+          <div className="flex flex-col gap-10 mb-12">
+            
+            {/* Infos Utiles - Contacts & Offrande */}
+            {(config.detailedContent.contacts || config.detailedContent.offrande) && (
+              <div className="bg-white rounded-2xl shadow-md border border-slate-100 overflow-hidden">
+                <div className="px-6 py-4 bg-[#d0ada6]">
+                  <h2 className="font-serif text-xl text-white">Infos utiles</h2>
+                </div>
+                <div className="p-6">
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    {config.detailedContent.contacts && config.detailedContent.contacts.map((contact, idx) => (
+                      <div key={idx} className="bg-gradient-to-br from-gold/10 to-gold/5 rounded-xl p-5 text-center">
+                        <p className="text-sm text-slate-500 mb-1">{contact.sector}</p>
+                        <a 
+                          href={`tel:${contact.phone.replace(/\s/g, '')}`}
+                          className="text-slate-deep font-semibold text-lg flex items-center justify-center gap-2 hover:text-gold transition-colors"
+                        >
+                          <Phone className="w-5 h-5 text-gold" />
+                          {contact.phone}
+                        </a>
+                      </div>
+                    ))}
+                    {config.detailedContent.offrande && (
+                      <div className="bg-gradient-to-br from-slate-50 to-white rounded-xl p-5 text-center border border-slate-100">
+                        <p className="text-sm text-slate-500 mb-1">Offrande à la paroisse</p>
+                        <p className="text-2xl font-serif text-slate-deep">180 €</p>
+                      </div>
+                    )}
+                  </div>
+                  {config.detailedContent.contactNote && (
+                    <p className="text-slate-500 text-sm text-center mt-4 italic">
+                      {config.detailedContent.contactNote}
+                    </p>
+                  )}
+                </div>
+              </div>
+            )}
+
+            {/* Introduction */}
+            {config.detailedContent.intro && (
+              <div className="bg-white rounded-2xl shadow-md border border-slate-100 overflow-hidden">
+                <div className="px-6 py-4 bg-[#d0ada6]">
+                  <h2 className="font-serif text-xl text-white">Les obsèques à l'église</h2>
+                </div>
+                <div className="p-6">
+                  {config.detailedContent.intro.split('\n\n').map((paragraph, idx) => (
+                    <p key={idx} className="text-slate-600 leading-relaxed mb-4 last:mb-0">
+                      {paragraph}
+                    </p>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {/* Contact Info */}
+            {config.detailedContent.contact && (
+              <div className="bg-white rounded-2xl shadow-md border border-slate-100 overflow-hidden">
+                <div className="px-6 py-4 bg-[#d0ada6]">
+                  <h2 className="font-serif text-xl text-white">Prendre contact</h2>
+                </div>
+                <div className="p-6">
+                  <p className="text-slate-600 leading-relaxed">
+                    {config.detailedContent.contact}
+                  </p>
+                </div>
+              </div>
+            )}
+
+            {/* Equipe Tasks */}
+            {config.detailedContent.equipeTitle && (
+              <div className="bg-white rounded-2xl shadow-md border border-slate-100 overflow-hidden">
+                <div className="px-6 py-4 bg-[#d0ada6]">
+                  <h2 className="font-serif text-xl text-white">{config.detailedContent.equipeTitle}</h2>
+                </div>
+                <div className="p-6">
+                  <ul className="space-y-3">
+                    {config.detailedContent.equipeTasks.map((task, idx) => (
+                      <li key={idx} className="flex items-start">
+                        <span className="text-gold mr-3 mt-1">•</span>
+                        <span className="text-slate-600">{task}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            )}
+
+            {/* Important Notice */}
+            {config.detailedContent.important && (
+              <div className="bg-amber-50 rounded-2xl p-6 border border-amber-200">
+                <div className="flex items-start">
+                  <span className="text-amber-600 text-xl mr-3">⚠️</span>
+                  <p className="text-amber-800 leading-relaxed">
+                    {config.detailedContent.important}
+                  </p>
+                </div>
+              </div>
+            )}
+          </div>
+        )}
+
+        {/* Detailed Content Section - for other pages like eveil */}
+        {config.detailedContent && section !== 'funerailles' && (
           <div className="mb-12 space-y-8">
             {/* Phone Contacts - First */}
             {config.detailedContent.contacts && (
