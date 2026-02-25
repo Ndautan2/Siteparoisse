@@ -217,28 +217,16 @@ const ClocherDetailPage = () => {
                     </a>
                   </div>
                 </div>
-                <div className="flex gap-3">
-                  <a
-                    href={getGoogleMapsPlaceUrl()}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center bg-slate-100 hover:bg-slate-200 text-slate-700 px-4 py-2.5 rounded-full text-sm font-medium transition-colors"
-                    data-testid="google-maps-button"
-                  >
-                    <MapPin className="w-4 h-4 mr-2" />
-                    Voir sur Google Maps
-                  </a>
-                  <a
-                    href={getDirectionsUrl()}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center bg-gold hover:bg-gold-dark text-white px-5 py-2.5 rounded-full text-sm font-medium transition-colors shadow-lg hover:shadow-xl"
-                    data-testid="directions-button"
-                  >
-                    <ExternalLink className="w-4 h-4 mr-2" />
-                    Itinéraire
-                  </a>
-                </div>
+                <a
+                  href={getGoogleMapsPlaceUrl()}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center bg-gold hover:bg-gold-dark text-white px-5 py-2.5 rounded-full text-sm font-medium transition-colors shadow-lg hover:shadow-xl"
+                  data-testid="directions-button"
+                >
+                  <ExternalLink className="w-4 h-4 mr-2" />
+                  Itinéraire
+                </a>
               </div>
             </div>
             {/* Google Maps Embed with marker */}
