@@ -222,6 +222,31 @@ const EquipePastoralePage = () => {
                         ))}
                       </div>
                     </div>
+                  ) : member.id === 'diacres' ? (
+                    // Carousel for deacons
+                    <div className="aspect-square overflow-hidden relative">
+                      {deaconImages.map((img, idx) => (
+                        <img 
+                          key={idx}
+                          src={img} 
+                          alt={`Diacre ${idx + 1}`}
+                          className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-500 group-hover:scale-105 ${
+                            idx === currentDeaconIndex ? 'opacity-100' : 'opacity-0'
+                          }`}
+                        />
+                      ))}
+                      {/* Dots indicator */}
+                      <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2 flex gap-1.5">
+                        {deaconImages.map((_, idx) => (
+                          <div 
+                            key={idx} 
+                            className={`w-1.5 h-1.5 rounded-full transition-all ${
+                              idx === currentDeaconIndex ? 'bg-white w-3' : 'bg-white/50'
+                            }`}
+                          />
+                        ))}
+                      </div>
+                    </div>
                   ) : member.images ? (
                     // Multiple photos grid (fallback)
                     <div className="grid grid-cols-3 gap-0.5 bg-slate-100">
@@ -229,7 +254,7 @@ const EquipePastoralePage = () => {
                         <div key={idx} className="aspect-square overflow-hidden">
                           <img 
                             src={img} 
-                            alt={`Prêtre ${idx + 1}`}
+                            alt={`Photo ${idx + 1}`}
                             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                           />
                         </div>
