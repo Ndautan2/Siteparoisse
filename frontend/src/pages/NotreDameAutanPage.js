@@ -210,3 +210,7 @@ const NotreDameAutanPage = () => {
       </div>
       </FadeIn>
     </div>
+  );
+};
+
+export default NotreDameAutanPage;
