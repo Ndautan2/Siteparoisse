@@ -154,7 +154,11 @@ export const NewsSection = () => {
                         </p>
 
                         {/* CTA Button */}
-                        <button className="inline-flex items-center space-x-2 text-gold hover:text-gold-dark text-sm font-medium transition-all duration-300 group/btn mt-auto">
+                        <button 
+                          onClick={() => setSelectedArticle(item)}
+                          className="inline-flex items-center space-x-2 text-gold hover:text-gold-dark text-sm font-medium transition-all duration-300 group/btn mt-auto"
+                          data-testid={`news-read-more-${item.id}`}
+                        >
                           <span>Lire la suite</span>
                           <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
                         </button>
