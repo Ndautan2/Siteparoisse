@@ -294,6 +294,16 @@ const AdminDashboard = () => {
             <Cross className="w-5 h-5" />
             <span>Funérailles</span>
           </button>
+          <button
+            onClick={() => setActiveTab('events')}
+            className={`pb-4 px-4 font-medium transition-colors flex items-center space-x-2 ${
+              activeTab === 'events' ? 'text-gold border-b-2 border-gold' : 'text-slate-600 hover:text-slate-900'
+            }`}
+            data-testid="tab-events"
+          >
+            <Calendar className="w-5 h-5" />
+            <span>Événements</span>
+          </button>
         </div>
 
         {/* NEWS TAB */}
