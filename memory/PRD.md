@@ -12,92 +12,81 @@ Creation et amelioration iterative d'un site web pour la paroisse Notre Dame d'A
 ## Fonctionnalites implementees
 
 ### Equipe pastorale
-- Carousel avec photos
-- Modales de details
-- Styling standardise
+- Carousel avec photos, modales de details
 
 ### Mot du cure (Welcome Message)
-- Composant ajoute sur plusieurs pages
+- Composant sur la page d'accueil
 
 ### Section "Nos Clochers" (16 eglises)
-- Fichier de donnees : `frontend/src/data/clochersData.js`
-- Pages de detail dynamiques : `/nos-clochers/:slug`
-- Carte Leaflet avec marqueurs personnalises (croix dorees)
-- Google Maps iframe sur chaque page de detail
+- Fichier de donnees, pages de detail dynamiques, carte Leaflet, Google Maps iframe
 
 ### Page Secretariat
-- Presentation de Corinne (secretaire)
-- Deux centres paroissiaux avec coordonnees completes
-- Adresses cliquables (liens Google Maps)
-- Horaires de permanence detailles
-- Formulaire de contact fonctionnel (POST /api/contact)
-- Validation frontend + message de confirmation
+- Presentation Corinne, deux centres paroissiaux, adresses cliquables
+- Formulaire de contact fonctionnel (POST /api/contact) avec validation et message de confirmation
 
 ### Pages de contenu (ContentPage.js)
 - Configuration centralisee dans des fichiers *Config.js
 - Modales detaillees pour chaque activite/groupe
-- Espacement standardise (flexbox + gap inline style au lieu de space-y Tailwind)
+- Espacement standardise (flexbox + gap)
 
 ### Corrections mobile (Fev 2026)
-- Vignettes ContentPage: layout responsive (vertical sur mobile, horizontal sur desktop)
-- Icone centree en haut + texte en dessous sur mobile
-- Padding reduit sur mobile (p-4 vs p-6)
-- Tailles de texte adaptees (base/xs mobile, lg/sm desktop)
-- break-words pour eviter debordement texte
-- Vie Economique: 1 carte par ligne sur mobile
-- Derniere vignette impaire centree: flex-wrap justify-center sur mobile
+- Vignettes responsives (vertical mobile, horizontal desktop)
+- Vie Economique: 1 carte/ligne mobile, derniere vignette impaire centree
+- Modales: slide-up depuis le bas, padding adapte, boutons fermeture visibles
+- Menu hamburger ameliore: cibles tactiles agrandies, lien contact, overscroll-contain
 
-### Taches haute priorite (Fev 2026)
-- Formulaire de contact fonctionnel: Backend endpoint POST /api/contact + formulaire interactif avec validation, loader, message de succes
-- Modales mobile: Slide-up depuis le bas sur mobile, padding adapte, boutons fermeture visibles
-- Navigation mobile: Menu hamburger avec accordeons, cibles tactiles agrandies (py-2.5), lien contact rapide, overscroll-contain, pb-24
+### Taches haute priorite (Fev 2026) - TERMINEES
+- Formulaire de contact fonctionnel
+- Modales mobile verificees et corrigees
+- Navigation mobile verificee et amelioree
+
+### Fonctionnalites ajoutees (Fev 2026)
+- **Lire la suite**: Modal pour articles longs dans la section Actualites (image, titre, date, contenu complet, boutons fermeture)
+- **Recherche complete**: 100+ entrees indexees incluant toutes les vignettes et modales de chaque section (Entraide, Groupes, Meditation, Ressources, etc.)
 
 ## Fichiers cles
 - `frontend/src/pages/ContentPage.js` - Page de contenu principale (vignettes, modales)
-- `frontend/src/data/clochersData.js` - Donnees des 16 eglises
-- `frontend/src/pages/ClocherDetailPage.js` - Page detail eglise
-- `frontend/src/components/ClochersMap.jsx` - Carte Leaflet avec croix
-- `frontend/src/pages/Secretariat.js` - Page secretariat + formulaire contact
+- `frontend/src/components/NewsSection.js` - Section actualites avec modal "Lire la suite"
+- `frontend/src/components/Header.js` - Header + navigation mobile + recherche complete
 - `frontend/src/components/ResourceModal.js` - Modal responsive des ressources
-- `frontend/src/components/Header.js` - Header + navigation mobile
+- `frontend/src/pages/Secretariat.js` - Page secretariat + formulaire contact
 - `backend/server.py` - API FastAPI (contact, news, mass-times, funerals)
 
 ## Patterns techniques importants
-- **Espacement**: NE PAS utiliser `space-y-*` de Tailwind (bug avec React conditionnel). Utiliser: `<div style={{ display: 'flex', flexDirection: 'column', gap: '2.5rem' }}>...</div>`
-- **Vignettes mobile**: Layout responsive avec `flex flex-col items-center text-center sm:flex-row sm:items-start sm:text-left sm:space-x-4`
-- **Modales mobile**: `items-end sm:items-center` pour slide-up depuis le bas
+- **Espacement**: NE PAS utiliser `space-y-*` de Tailwind. Utiliser flexbox + gap
+- **Vignettes mobile**: flex flex-col items-center text-center sm:flex-row sm:items-start sm:text-left
+- **Modales mobile**: items-end sm:items-center pour slide-up depuis le bas
 
 ## API Endpoints
 - POST /api/contact - Envoyer un message de contact (public)
 - GET /api/contact - Lister les messages (admin auth requise)
 - POST /api/auth/login - Connexion admin
-- GET/POST/PUT/DELETE /api/news - CRUD actualites
-- GET/POST/PUT/DELETE /api/mass-times - CRUD horaires messes
-- GET/POST/PUT/DELETE /api/funerals - CRUD funerailles
+- CRUD /api/news, /api/mass-times, /api/funerals
 
 ## Backlog priorise
 
 ### P0 - Termine
-- [x] Formulaire de contact fonctionnel (POST /api/contact)
-- [x] Modales mobile verificaton et correction
-- [x] Menu navigation mobile verification et amelioration
+- [x] Formulaire de contact fonctionnel
+- [x] Modales mobile
+- [x] Menu navigation mobile
+- [x] "Lire la suite" pour les actualites
+- [x] Recherche complete (toutes vignettes et modales indexees)
+- [x] Numeros de telephone cliquables (click-to-call)
 
 ### P1 - Priorite moyenne
-- [ ] Fonctionnalite "Lire la suite" pour les actualites longues
-- [ ] Recherche fonctionnelle sur le site
-- [ ] Numeros de telephone cliquables (click-to-call) sur mobile
-
-### P2 - Priorite basse
 - [ ] Reduire hauteur images hero sur mobile (55vh -> 35vh)
 - [ ] Animations fade-in au scroll
 - [ ] Balises title et meta par page pour le SEO
+
+### P2 - Priorite basse
 - [ ] Page Agenda centralisee pour les evenements
-- [ ] Composant ContentWrapper reutilisable pour espacement
+- [ ] Composant ContentWrapper reutilisable
 - [ ] Refactoring ContentPage.js en sous-composants
+- [ ] Newsletter fonctionnelle
 
 ## Etat actuel
-- **Fonctionnel**: Navigation, pages clochers, equipe pastorale, secretariat, toutes les pages de contenu, version mobile, formulaire contact, modales mobile, menu mobile
-- **Non fonctionnel**: Newsletter, "Lire la suite"
+- **Fonctionnel**: Navigation, pages clochers, equipe pastorale, secretariat, formulaire contact, toutes les pages de contenu, version mobile, modales mobile, menu mobile, "Lire la suite", recherche complete
+- **Non fonctionnel**: Newsletter
 - **Placeholder**: Horaires de messe
 
 ## Langue preferee de l'utilisateur
