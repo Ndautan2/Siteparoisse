@@ -55,7 +55,7 @@ export const Header = () => {
     { title: 'Conseil des Finances', path: '/vie-economique', keywords: 'finances gestion budget' },
     { title: 'Commission des Travaux', path: '/vie-economique', keywords: 'travaux entretien églises' },
     { title: "Denier de l'Église", path: '/vie-economique', keywords: 'denier don contribution soutenir' },
-    { title: 'Legs et Donations', path: '/vie-economique', keywords: 'legs donations soutenir héritage' },
+    { title: 'Legs et Donations', path: '/soutenir', keywords: 'legs donations soutenir héritage don testament assurance-vie' },
 
     // Vignettes Services Transverses
     { title: 'Service Communication', path: '/services-transverses', keywords: 'communication site web réseaux sociaux bulletin' },

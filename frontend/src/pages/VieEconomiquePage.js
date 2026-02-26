@@ -90,10 +90,10 @@ const VieEconomiquePage = () => {
               </p>
               <div className="text-center">
                 <Link
-                  to="/secretariat"
+                  to="/soutenir"
                   className="inline-flex items-center bg-gold hover:bg-gold-dark text-white px-8 py-3 rounded-full font-medium shadow-lg hover:shadow-xl transition-all duration-300"
                 >
-                  Nous contacter
+                  En savoir plus
                 </Link>
               </div>
             </div>
