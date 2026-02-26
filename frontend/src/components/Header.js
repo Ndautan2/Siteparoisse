@@ -189,6 +189,7 @@ export const Header = () => {
     { label: 'Me marier à l\'église', path: '/sacrements/mariage' },
     { label: 'Rejoindre Alpha', path: '/alpha-catechumenat' },
     { label: 'Rejoindre un petit groupe', path: '/groupes-partage' },
+    { label: 'Servir dans la paroisse', path: '/servir' },
   ];
 
   const menuItems = [
@@ -199,6 +200,7 @@ export const Header = () => {
       items: [
         { label: 'Secrétariat & Coordonnées', path: '/secretariat' },
         { label: 'Équipe Pastorale', path: '/equipe-pastorale' },
+        { label: 'La Lettre du Père Daniel', path: '/lettre-pere-daniel' },
         { label: 'Vie Économique', path: '/vie-economique' },
         { label: 'Nos Clochers', path: '/nos-clochers' },
         { label: 'Services Transverses', path: '/services-transverses' },
