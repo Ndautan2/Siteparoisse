@@ -1,7 +1,7 @@
 import { Facebook, Instagram } from 'lucide-react';
 
 export const SocialIcons = () => (
-  <div className="absolute bottom-6 right-6 z-20 flex gap-3">
+  <div className="absolute top-4 right-4 md:top-auto md:bottom-6 md:right-6 z-20 flex gap-3">
     <a
       href="https://www.facebook.com/paroisse.saint.orens.castanet/"
       target="_blank"
