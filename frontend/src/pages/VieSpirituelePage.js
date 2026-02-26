@@ -71,6 +71,7 @@ const VieSpirituelePage = () => {
   return (
     <div className="min-h-screen bg-paper py-20" data-testid="vie-spirituelle-page">
       <SEO title="Vie Spirituelle et Sacrements" description="Les sacrements de la paroisse Notre Dame d'Autan - Bapt\u00eame, communion, confirmation, mariage, sacrement des malades." />
+      <FadeIn>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">
@@ -153,6 +154,7 @@ const VieSpirituelePage = () => {
           </Link>
         </div>
       </div>
+      </FadeIn>
     </div>
   );
 };
