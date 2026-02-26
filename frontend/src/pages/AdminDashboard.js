@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Plus, Edit2, Trash2, LogOut, Newspaper, Clock, Cross } from 'lucide-react';
+import { Plus, Edit2, Trash2, LogOut, Newspaper, Clock, Cross, Calendar } from 'lucide-react';
 import axios from 'axios';
 import { toast } from 'sonner';
 import { format } from 'date-fns';
@@ -13,6 +13,7 @@ const AdminDashboard = () => {
   const [news, setNews] = useState([]);
   const [massTimes, setMassTimes] = useState([]);
   const [funerals, setFunerals] = useState([]);
+  const [events, setEvents] = useState([]);
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
@@ -27,6 +28,10 @@ const AdminDashboard = () => {
   // Funerals Form State
   const [funeralForm, setFuneralForm] = useState({ deceased_name: '', funeral_date: '', funeral_time: '', location: '', ceremony_type: 'Messe de funérailles' });
   const [editingFuneral, setEditingFuneral] = useState(null);
+
+  // Events Form State
+  const [eventForm, setEventForm] = useState({ title: '', description: '', date: '', time: '', end_time: '', location: '', category: 'Communauté' });
+  const [editingEvent, setEditingEvent] = useState(null);
 
   useEffect(() => {
     const token = localStorage.getItem('admin_token');
@@ -44,14 +49,16 @@ const AdminDashboard = () => {
   const fetchData = async () => {
     setLoading(true);
     try {
-      const [newsRes, massRes, funeralsRes] = await Promise.all([
+      const [newsRes, massRes, funeralsRes, eventsRes] = await Promise.all([
         axios.get(`${BACKEND_URL}/api/news`),
         axios.get(`${BACKEND_URL}/api/mass-times`),
         axios.get(`${BACKEND_URL}/api/funerals`),
+        axios.get(`${BACKEND_URL}/api/events?include_past=true`),
       ]);
       setNews(newsRes.data);
       setMassTimes(massRes.data);
       setFunerals(funeralsRes.data);
+      setEvents(eventsRes.data);
     } catch (error) {
       toast.error('Erreur lors du chargement des données');
     } finally {
