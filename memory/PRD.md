@@ -64,7 +64,7 @@ Creation et amelioration iterative d'un site web pour la paroisse Notre Dame d'A
 - **Espacement**: NE PAS utiliser `space-y-*` de Tailwind. Utiliser flexbox + gap
 - **Vignettes mobile**: flex flex-col items-center text-center sm:flex-row sm:items-start sm:text-left
 - **Modales mobile**: items-end sm:items-center pour slide-up depuis le bas
-- **Hero responsive**: h-[40vh] sm:h-[55vh] pour sous-pages, min-h-[60vh] sm:min-h-[80vh] pour accueil
+- **Hero responsive**: h-[40vh] sm:h-[55vh] pour sous-pages, min-h-[80vh] pour accueil
 - **Fade-in**: Classe CSS `fade-in-section` + `is-visible` via IntersectionObserver
 
 ## API Endpoints
@@ -84,9 +84,10 @@ Creation et amelioration iterative d'un site web pour la paroisse Notre Dame d'A
 - [x] Numeros de telephone cliquables (click-to-call)
 
 ### P1 - Termine
-- [x] Reduire hauteur images hero sur mobile (40vh sous-pages, 60vh accueil)
+- [x] Reduire hauteur images hero sur mobile (40vh sous-pages, 80vh accueil)
 - [x] Animations fade-in au scroll
 - [x] SEO: lang="fr", balises title et meta par page, alt images en francais
+- [x] sitemap.xml (29 URLs) et robots.txt optimise
 
 ### P2 - Priorite basse
 - [ ] Page Agenda centralisee pour les evenements
