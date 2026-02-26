@@ -243,6 +243,41 @@ const AdminDashboard = () => {
     }
   };
 
+  // LETTERS HANDLERS
+  const handleLetterSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      if (editingLetter) {
+        await axios.put(`${BACKEND_URL}/api/letters/${editingLetter.id}`, letterForm, { headers: getAuthHeaders() });
+        toast.success('Lettre mise à jour');
+        setEditingLetter(null);
+      } else {
+        await axios.post(`${BACKEND_URL}/api/letters`, letterForm, { headers: getAuthHeaders() });
+        toast.success('Lettre publiée');
+      }
+      setLetterForm({ title: '', content: '', date: '' });
+      fetchData();
+    } catch (error) {
+      toast.error("Erreur lors de l'enregistrement");
+    }
+  };
+
+  const handleEditLetter = (item) => {
+    setEditingLetter(item);
+    setLetterForm({ title: item.title, content: item.content, date: item.date });
+  };
+
+  const handleDeleteLetter = async (id) => {
+    if (!window.confirm('Supprimer cette lettre ?')) return;
+    try {
+      await axios.delete(`${BACKEND_URL}/api/letters/${id}`, { headers: getAuthHeaders() });
+      toast.success('Lettre supprimée');
+      fetchData();
+    } catch (error) {
+      toast.error('Erreur lors de la suppression');
+    }
+  };
+
   const formatDate = (dateString) => {
     try {
       return format(new Date(dateString), 'dd/MM/yyyy à HH:mm', { locale: fr });
