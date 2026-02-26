@@ -961,7 +961,7 @@ const ContentPage = ({ section }) => {
             {section === 'entraide' ? (
               <>
                 {/* First row: 3 items */}
-                <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-6">
+                <div className="flex flex-wrap justify-center gap-6 sm:grid sm:grid-cols-2 lg:grid-cols-3 mb-6">
                   {config.items.slice(0, 3).map((item, index) => {
                     const ItemIcon = item.icon;
                     return (
@@ -971,7 +971,7 @@ const ContentPage = ({ section }) => {
                           setSelectedResource(item);
                           setIsModalOpen(true);
                         }}
-                        className="group bg-white rounded-xl p-4 sm:p-6 shadow-sm hover:shadow-md border border-slate-100 hover:border-gold/30 transition-all duration-300 text-left cursor-pointer"
+                        className="w-[calc(50%-0.75rem)] sm:w-auto group bg-white rounded-xl p-4 sm:p-6 shadow-sm hover:shadow-md border border-slate-100 hover:border-gold/30 transition-all duration-300 text-left cursor-pointer"
                         data-testid={`item-card-${index}`}
                       >
                         <div className="flex flex-col items-center text-center sm:flex-row sm:items-start sm:text-left sm:space-x-4">
@@ -993,7 +993,7 @@ const ContentPage = ({ section }) => {
                 </div>
                 
                 {/* Second row: 2 items centered */}
-                <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-2 gap-6 mb-12 lg:max-w-3xl lg:mx-auto">
+                <div className="flex flex-wrap justify-center gap-6 sm:grid sm:grid-cols-2 lg:grid-cols-2 mb-12 lg:max-w-3xl lg:mx-auto">
                   {config.items.slice(3, 5).map((item, idx) => {
                     const index = idx + 3;
                     const ItemIcon = item.icon;
@@ -1004,7 +1004,7 @@ const ContentPage = ({ section }) => {
                           setSelectedResource(item);
                           setIsModalOpen(true);
                         }}
-                        className="group bg-white rounded-xl p-4 sm:p-6 shadow-sm hover:shadow-md border border-slate-100 hover:border-gold/30 transition-all duration-300 text-left cursor-pointer"
+                        className="w-[calc(50%-0.75rem)] sm:w-auto group bg-white rounded-xl p-4 sm:p-6 shadow-sm hover:shadow-md border border-slate-100 hover:border-gold/30 transition-all duration-300 text-left cursor-pointer"
                         data-testid={`item-card-${index}`}
                       >
                         <div className="flex flex-col items-center text-center sm:flex-row sm:items-start sm:text-left sm:space-x-4">
