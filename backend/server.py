@@ -79,6 +79,36 @@ class MassTime(BaseModel):
     location: str
     mass_type: str
 
+class EventCreate(BaseModel):
+    title: str
+    description: Optional[str] = ""
+    date: str  # Format: "YYYY-MM-DD"
+    time: str  # Format: "HH:MM"
+    end_time: Optional[str] = None
+    location: str
+    category: str = "Communauté"
+
+class EventUpdate(BaseModel):
+    title: Optional[str] = None
+    description: Optional[str] = None
+    date: Optional[str] = None
+    time: Optional[str] = None
+    end_time: Optional[str] = None
+    location: Optional[str] = None
+    category: Optional[str] = None
+
+class Event(BaseModel):
+    model_config = ConfigDict(extra="ignore")
+    id: str
+    title: str
+    description: str
+    date: str
+    time: str
+    end_time: Optional[str] = None
+    location: str
+    category: str
+    created_at: str
+
 class ContactMessage(BaseModel):
     name: str
     email: str
