@@ -1341,6 +1341,7 @@ const ContentPage = ({ section }) => {
           </div>
         )}
       </div>
+      </FadeIn>
 
       {/* Resource Modal */}
       <ResourceModal
