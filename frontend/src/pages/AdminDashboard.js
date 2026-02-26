@@ -904,6 +904,118 @@ const AdminDashboard = () => {
             </div>
           </div>
         )}
+
+        {/* LETTERS TAB */}
+        {activeTab === 'letters' && (
+          <div className="space-y-8">
+            <div className="bg-white rounded-xl p-6 shadow-sm border border-slate-100">
+              <h2 className="font-serif text-2xl text-slate-deep mb-6">
+                {editingLetter ? 'Modifier la lettre' : 'Nouvelle lettre'}
+              </h2>
+              <form onSubmit={handleLetterSubmit} className="space-y-4">
+                <div>
+                  <label className="block text-sm font-medium text-slate-700 mb-2">Titre *</label>
+                  <input
+                    type="text"
+                    required
+                    value={letterForm.title}
+                    onChange={(e) => setLetterForm({ ...letterForm, title: e.target.value })}
+                    className="w-full px-4 py-2 border border-slate-200 rounded-lg focus:ring-2 focus:ring-gold"
+                    placeholder="Ex: Carême 2026 - Lettre aux paroissiens"
+                    data-testid="letter-title-input"
+                  />
+                </div>
+                <div>
+                  <label className="block text-sm font-medium text-slate-700 mb-2">Date *</label>
+                  <input
+                    type="date"
+                    required
+                    value={letterForm.date}
+                    onChange={(e) => setLetterForm({ ...letterForm, date: e.target.value })}
+                    className="w-full px-4 py-2 border border-slate-200 rounded-lg focus:ring-2 focus:ring-gold"
+                    data-testid="letter-date-input"
+                  />
+                </div>
+                <div>
+                  <label className="block text-sm font-medium text-slate-700 mb-2">Contenu *</label>
+                  <textarea
+                    required
+                    value={letterForm.content}
+                    onChange={(e) => setLetterForm({ ...letterForm, content: e.target.value })}
+                    rows="10"
+                    className="w-full px-4 py-2 border border-slate-200 rounded-lg focus:ring-2 focus:ring-gold"
+                    placeholder="Chers paroissiens..."
+                    data-testid="letter-content-input"
+                  ></textarea>
+                </div>
+                <div className="flex space-x-4 pt-2">
+                  <button
+                    type="submit"
+                    className="bg-gold hover:bg-gold-dark text-white px-6 py-2 rounded-lg font-medium transition-colors flex items-center space-x-2"
+                    data-testid="letter-submit-button"
+                  >
+                    <Plus className="w-4 h-4" />
+                    <span>{editingLetter ? 'Mettre à jour' : 'Publier'}</span>
+                  </button>
+                  {editingLetter && (
+                    <button
+                      type="button"
+                      onClick={() => {
+                        setEditingLetter(null);
+                        setLetterForm({ title: '', content: '', date: '' });
+                      }}
+                      className="bg-slate-200 hover:bg-slate-300 text-slate-700 px-6 py-2 rounded-lg font-medium transition-colors"
+                      data-testid="letter-cancel-button"
+                    >
+                      Annuler
+                    </button>
+                  )}
+                </div>
+              </form>
+            </div>
+
+            <div className="space-y-4">
+              <h3 className="font-serif text-xl text-slate-deep">Lettres publiées</h3>
+              {loading ? (
+                <p>Chargement...</p>
+              ) : letters.length === 0 ? (
+                <p className="text-slate-500">Aucune lettre publiée</p>
+              ) : (
+                letters.map((item) => (
+                  <div
+                    key={item.id}
+                    className="bg-white rounded-lg p-4 border border-slate-100 flex justify-between items-start"
+                    data-testid={`letter-item-${item.id}`}
+                  >
+                    <div className="flex-1">
+                      <h4 className="font-medium text-slate-900">{item.title}</h4>
+                      <p className="text-sm text-slate-500 mt-1">
+                        {new Date(item.date + 'T00:00:00').toLocaleDateString('fr-FR')}
+                      </p>
+                      <p className="text-sm text-slate-600 mt-1 line-clamp-2">{item.content}</p>
+                    </div>
+                    <div className="flex space-x-2 ml-4">
+                      <button
+                        onClick={() => handleEditLetter(item)}
+                        className="text-slate-600 hover:text-gold transition-colors"
+                        data-testid={`letter-edit-${item.id}`}
+                      >
+                        <Edit2 className="w-4 h-4" />
+                      </button>
+                      <button
+                        onClick={() => handleDeleteLetter(item.id)}
+                        className="text-slate-600 hover:text-red-600 transition-colors"
+                        data-testid={`letter-delete-${item.id}`}
+                      >
+                        <Trash2 className="w-4 h-4" />
+                      </button>
+                    </div>
+                  </div>
+                ))
+              )}
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );
