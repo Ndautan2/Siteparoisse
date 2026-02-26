@@ -66,6 +66,7 @@ const sections = [
 const NotreDameAutanPage = () => {
   return (
     <div className="min-h-screen bg-paper" data-testid="notre-dame-autan-page">
+      <SEO title="Notre Dame d'Autan" description="D\u00e9couvrez l'organisation et la vie de la paroisse Notre Dame d'Autan - Secr\u00e9tariat, \u00e9quipe pastorale, clochers et services." />
       {/* Hero Section */}
       <section className="relative h-[40vh] sm:h-[55vh] flex items-center justify-center">
         {/* Background Image */}
@@ -97,6 +98,7 @@ const NotreDameAutanPage = () => {
         </div>
       </section>
 
+      <FadeIn>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         {/* Sections Grid - Première ligne: 4 colonnes */}
         <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-6">
