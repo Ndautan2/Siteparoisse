@@ -1,5 +1,6 @@
 import { useEffect, useState, useCallback } from 'react';
-import { Calendar, ArrowRight, ChevronLeft, ChevronRight, X } from 'lucide-react';
+import { Calendar, ArrowRight, ChevronLeft, ChevronRight, X, Archive } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import axios from 'axios';
 import { format } from 'date-fns';
 import { fr } from 'date-fns/locale';
