@@ -346,6 +346,16 @@ const AdminDashboard = () => {
             <Calendar className="w-5 h-5" />
             <span>Événements</span>
           </button>
+          <button
+            onClick={() => setActiveTab('letters')}
+            className={`pb-4 px-4 font-medium transition-colors flex items-center space-x-2 ${
+              activeTab === 'letters' ? 'text-gold border-b-2 border-gold' : 'text-slate-600 hover:text-slate-900'
+            }`}
+            data-testid="tab-letters"
+          >
+            <Mail className="w-5 h-5" />
+            <span>Lettres</span>
+          </button>
         </div>
 
         {/* NEWS TAB */}
