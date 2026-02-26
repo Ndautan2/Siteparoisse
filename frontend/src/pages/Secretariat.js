@@ -230,49 +230,94 @@ const Secretariat = () => {
         {/* Contact Form */}
         <div className="bg-white rounded-xl p-8 shadow-sm border border-slate-100">
           <h2 className="font-serif text-2xl md:text-3xl text-slate-deep mb-6">Nous écrire</h2>
-          <form className="space-y-6" data-testid="contact-form">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          
+          {status === 'success' ? (
+            <div className="text-center py-12" data-testid="contact-success-message">
+              <div className="w-16 h-16 rounded-full bg-green-100 flex items-center justify-center mx-auto mb-4">
+                <CheckCircle className="w-8 h-8 text-green-600" />
+              </div>
+              <h3 className="font-serif text-xl text-slate-deep mb-2">Message envoyé !</h3>
+              <p className="text-slate-600 mb-6">Nous vous répondrons dans les meilleurs délais.</p>
+              <button
+                onClick={() => setStatus('idle')}
+                className="text-gold hover:text-gold-dark font-medium transition-colors"
+                data-testid="contact-send-another"
+              >
+                Envoyer un autre message
+              </button>
+            </div>
+          ) : (
+            <form onSubmit={handleSubmit} className="space-y-6" data-testid="contact-form">
+              {status === 'error' && (
+                <div className="bg-red-50 border border-red-200 rounded-lg p-4 text-red-700 text-sm" data-testid="contact-error-message">
+                  {errorMsg}
+                </div>
+              )}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                  <label className="block text-sm font-medium text-slate-700 mb-2">Nom *</label>
+                  <input
+                    type="text"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleChange}
+                    className="w-full px-4 py-2 border border-slate-200 rounded-lg focus:ring-2 focus:ring-gold focus:border-transparent"
+                    data-testid="contact-name-input"
+                    required
+                  />
+                </div>
+                <div>
+                  <label className="block text-sm font-medium text-slate-700 mb-2">Email *</label>
+                  <input
+                    type="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    className="w-full px-4 py-2 border border-slate-200 rounded-lg focus:ring-2 focus:ring-gold focus:border-transparent"
+                    data-testid="contact-email-input"
+                    required
+                  />
+                </div>
+              </div>
               <div>
-                <label className="block text-sm font-medium text-slate-700 mb-2">Nom</label>
+                <label className="block text-sm font-medium text-slate-700 mb-2">Sujet *</label>
                 <input
                   type="text"
+                  name="subject"
+                  value={formData.subject}
+                  onChange={handleChange}
                   className="w-full px-4 py-2 border border-slate-200 rounded-lg focus:ring-2 focus:ring-gold focus:border-transparent"
-                  data-testid="contact-name-input"
+                  data-testid="contact-subject-input"
+                  required
                 />
               </div>
               <div>
-                <label className="block text-sm font-medium text-slate-700 mb-2">Email</label>
-                <input
-                  type="email"
+                <label className="block text-sm font-medium text-slate-700 mb-2">Message *</label>
+                <textarea
+                  rows="5"
+                  name="message"
+                  value={formData.message}
+                  onChange={handleChange}
                   className="w-full px-4 py-2 border border-slate-200 rounded-lg focus:ring-2 focus:ring-gold focus:border-transparent"
-                  data-testid="contact-email-input"
-                />
+                  data-testid="contact-message-input"
+                  required
+                ></textarea>
               </div>
-            </div>
-            <div>
-              <label className="block text-sm font-medium text-slate-700 mb-2">Sujet</label>
-              <input
-                type="text"
-                className="w-full px-4 py-2 border border-slate-200 rounded-lg focus:ring-2 focus:ring-gold focus:border-transparent"
-                data-testid="contact-subject-input"
-              />
-            </div>
-            <div>
-              <label className="block text-sm font-medium text-slate-700 mb-2">Message</label>
-              <textarea
-                rows="5"
-                className="w-full px-4 py-2 border border-slate-200 rounded-lg focus:ring-2 focus:ring-gold focus:border-transparent"
-                data-testid="contact-message-input"
-              ></textarea>
-            </div>
-            <button
-              type="submit"
-              className="bg-gold hover:bg-gold-dark text-white px-8 py-3 rounded-lg font-medium transition-colors"
-              data-testid="contact-submit-button"
-            >
-              Envoyer le message
-            </button>
-          </form>
+              <button
+                type="submit"
+                disabled={status === 'sending'}
+                className="bg-gold hover:bg-gold-dark text-white px-8 py-3 rounded-lg font-medium transition-colors disabled:opacity-60 flex items-center gap-2"
+                data-testid="contact-submit-button"
+              >
+                {status === 'sending' ? (
+                  <>
+                    <Loader2 className="w-4 h-4 animate-spin" />
+                    Envoi en cours...
+                  </>
+                ) : 'Envoyer le message'}
+              </button>
+            </form>
+          )}
         </div>
       </div>
 
