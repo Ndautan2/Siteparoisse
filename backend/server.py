@@ -262,6 +262,34 @@ async def delete_news(news_id: str, username: str = Depends(get_current_user)):
         raise HTTPException(status_code=404, detail="News not found")
     return {"message": "News deleted"}
 
+class BulkDeleteRequest(BaseModel):
+    ids: List[str]
+
+@api_router.post("/news/bulk-delete")
+async def bulk_delete_news(req: BulkDeleteRequest, username: str = Depends(get_current_user)):
+    result = await db.news.delete_many({"id": {"$in": req.ids}})
+    return {"deleted": result.deleted_count}
+
+@api_router.post("/mass-times/bulk-delete")
+async def bulk_delete_mass_times(req: BulkDeleteRequest, username: str = Depends(get_current_user)):
+    result = await db.mass_times.delete_many({"id": {"$in": req.ids}})
+    return {"deleted": result.deleted_count}
+
+@api_router.post("/funerals/bulk-delete")
+async def bulk_delete_funerals(req: BulkDeleteRequest, username: str = Depends(get_current_user)):
+    result = await db.funerals.delete_many({"id": {"$in": req.ids}})
+    return {"deleted": result.deleted_count}
+
+@api_router.post("/events/bulk-delete")
+async def bulk_delete_events(req: BulkDeleteRequest, username: str = Depends(get_current_user)):
+    result = await db.events.delete_many({"id": {"$in": req.ids}})
+    return {"deleted": result.deleted_count}
+
+@api_router.post("/letters/bulk-delete")
+async def bulk_delete_letters(req: BulkDeleteRequest, username: str = Depends(get_current_user)):
+    result = await db.letters.delete_many({"id": {"$in": req.ids}})
+    return {"deleted": result.deleted_count}
+
 # MASS TIMES
 @api_router.get("/mass-times", response_model=List[MassTime])
 async def get_mass_times():
