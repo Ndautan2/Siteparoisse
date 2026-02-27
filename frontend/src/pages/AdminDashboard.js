@@ -265,7 +265,7 @@ const AdminDashboard = () => {
         await axios.post(`${BACKEND_URL}/api/mass-times`, basePayload, { headers: getAuthHeaders() });
         toast.success('Horaire créé');
       }
-      setMassForm({ day: '', time: '10:00', location: '', mass_type: 'Messe Dominicale', date: todayStr });
+      setMassForm({ day: getInitialDay(todayStr), time: '10:00', location: '', mass_type: 'Messe Dominicale', date: todayStr });
       setCustomMassType('');
       setEditingMass(null);
       setRepeatMode('none');
@@ -897,7 +897,7 @@ const AdminDashboard = () => {
                       type="button"
                       onClick={() => {
                         setEditingMass(null);
-                        setMassForm({ day: '', time: '10:00', location: '', mass_type: 'Messe Dominicale', date: todayStr });
+                        setMassForm({ day: getInitialDay(todayStr), time: '10:00', location: '', mass_type: 'Messe Dominicale', date: todayStr });
                         setRepeatMode('none');
                         setRepeatUntil('');
                       }}
