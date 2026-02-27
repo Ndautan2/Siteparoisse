@@ -655,25 +655,27 @@ const AdminDashboard = () => {
                           if (file) handleImageUpload(file);
                         }}
                       >
-                        <img src={newsForm.image_url.startsWith('/api') ? `${BACKEND_URL}${newsForm.image_url}` : newsForm.image_url} alt="Preview" className="w-full h-32 object-cover" />
+                        <img src={newsForm.image_url.startsWith('/api') ? `${BACKEND_URL}${newsForm.image_url}` : newsForm.image_url} alt="Preview" className="w-full h-48 object-contain bg-slate-50" />
                         {Object.values(DEFAULT_CATEGORY_IMAGES).includes(newsForm.image_url) && (
                           <span className="absolute top-2 left-2 bg-gold/90 text-white text-[10px] font-semibold px-2 py-0.5 rounded-full">Image par défaut</span>
                         )}
-                        <div className="absolute top-2 right-2 flex gap-1">
+                        <div className="absolute bottom-2 right-2 flex gap-2">
                           <button
                             type="button"
                             onClick={() => document.getElementById('news-image-file').click()}
-                            className="bg-white/90 text-slate-600 rounded-full w-6 h-6 flex items-center justify-center hover:bg-white text-xs font-bold"
+                            className="bg-white shadow-md text-slate-700 rounded-lg px-3 py-1.5 flex items-center gap-1.5 hover:bg-slate-50 text-xs font-medium border border-slate-200"
                             title="Changer l'image"
                           >
-                            <Edit2 className="w-3 h-3" />
+                            <Edit2 className="w-3.5 h-3.5" />
+                            <span>Modifier</span>
                           </button>
                           <button
                             type="button"
                             onClick={() => setNewsForm({ ...newsForm, image_url: '' })}
-                            className="bg-red-500 text-white rounded-full w-6 h-6 flex items-center justify-center hover:bg-red-600"
+                            className="bg-red-500 shadow-md text-white rounded-lg px-3 py-1.5 flex items-center gap-1.5 hover:bg-red-600 text-xs font-medium"
                           >
-                            <X className="w-4 h-4" />
+                            <X className="w-3.5 h-3.5" />
+                            <span>Supprimer</span>
                           </button>
                         </div>
                         {dragOverImage && (
