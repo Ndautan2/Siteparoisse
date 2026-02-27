@@ -289,7 +289,7 @@ const HorairesMesses = () => {
                 {showDateHeader && (
                   <div className={`flex items-center gap-4 ${idx > 0 ? 'mt-8' : ''} mb-3`}>
                     <div className="h-px flex-1 bg-slate-200"></div>
-                    <span className="text-sm font-semibold text-gold uppercase tracking-wider">
+                    <span className="text-base font-semibold text-gold uppercase tracking-wider">
                       {new Date(mass.date + 'T00:00:00').toLocaleDateString('fr-FR', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' })}
                     </span>
                     <div className="h-px flex-1 bg-slate-200"></div>
