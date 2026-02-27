@@ -714,6 +714,14 @@ const AdminDashboard = () => {
                     </div>
                     <div className="flex space-x-2">
                       <button
+                        onClick={() => handleDuplicateMass(item)}
+                        className="text-slate-600 hover:text-emerald-600 transition-colors"
+                        title="Dupliquer"
+                        data-testid={`mass-duplicate-${item.id}`}
+                      >
+                        <Copy className="w-4 h-4" />
+                      </button>
+                      <button
                         onClick={() => handleEditMass(item)}
                         className="text-slate-600 hover:text-gold transition-colors"
                         data-testid={`mass-edit-${item.id}`}
