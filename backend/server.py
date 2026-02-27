@@ -276,6 +276,20 @@ async def create_mass_time(mass_time: MassTimeCreate, username: str = Depends(ge
     await db.mass_times.insert_one(doc)
     return mass_obj
 
+class MassTimeBulkCreate(BaseModel):
+    items: List[MassTimeCreate]
+
+@api_router.post("/mass-times/bulk", response_model=List[MassTime])
+async def bulk_create_mass_times(bulk: MassTimeBulkCreate, username: str = Depends(get_current_user)):
+    created = []
+    for item in bulk.items:
+        mass_dict = item.model_dump()
+        mass_obj = MassTime(id=str(uuid.uuid4()), **mass_dict)
+        doc = mass_obj.model_dump()
+        await db.mass_times.insert_one(doc)
+        created.append(mass_obj)
+    return created
+
 @api_router.put("/mass-times/{mass_id}", response_model=MassTime)
 async def update_mass_time(mass_id: str, mass_update: MassTimeUpdate, username: str = Depends(get_current_user)):
     existing = await db.mass_times.find_one({"id": mass_id}, {"_id": 0})
