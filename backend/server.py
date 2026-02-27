@@ -293,7 +293,7 @@ async def bulk_delete_letters(req: BulkDeleteRequest, username: str = Depends(ge
 # MASS TIMES
 @api_router.get("/mass-times", response_model=List[MassTime])
 async def get_mass_times():
-    times = await db.mass_times.find({}, {"_id": 0}).to_list(100)
+    times = await db.mass_times.find({}, {"_id": 0}).sort("date", 1).to_list(500)
     return times
 
 @api_router.post("/mass-times", response_model=MassTime)
