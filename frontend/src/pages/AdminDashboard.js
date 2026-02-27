@@ -740,19 +740,34 @@ const AdminDashboard = () => {
                   <div>
                     <label className="block text-sm font-medium text-slate-700 mb-2">Type</label>
                     <select
-                      value={massForm.mass_type}
-                      onChange={(e) => setMassForm({ ...massForm, mass_type: e.target.value })}
+                      value={MASS_TYPES.includes(massForm.mass_type) ? massForm.mass_type : 'Autre'}
+                      onChange={(e) => {
+                        if (e.target.value === 'Autre') {
+                          setMassForm({ ...massForm, mass_type: 'Autre' });
+                          setCustomMassType('');
+                        } else {
+                          setMassForm({ ...massForm, mass_type: e.target.value });
+                          setCustomMassType('');
+                        }
+                      }}
                       className="w-full px-4 py-2 border border-slate-200 rounded-lg focus:ring-2 focus:ring-gold bg-white"
                       data-testid="mass-type-input"
                     >
-                      <option value="Messe">Messe</option>
-                      <option value="Messe anticipée">Messe anticipée</option>
-                      <option value="Vêpres">Vêpres</option>
-                      <option value="Adoration">Adoration</option>
-                      <option value="Confession">Confession</option>
-                      <option value="Laudes">Laudes</option>
-                      <option value="Chapelet">Chapelet</option>
+                      {MASS_TYPES.map((t) => (
+                        <option key={t} value={t}>{t}</option>
+                      ))}
+                      <option value="Autre">Autre...</option>
                     </select>
+                    {(massForm.mass_type === 'Autre' || !MASS_TYPES.includes(massForm.mass_type)) && (
+                      <input
+                        type="text"
+                        value={customMassType || (massForm.mass_type !== 'Autre' ? massForm.mass_type : '')}
+                        onChange={(e) => setCustomMassType(e.target.value)}
+                        placeholder="Tapez le type..."
+                        className="w-full mt-2 px-4 py-2 border border-slate-200 rounded-lg focus:ring-2 focus:ring-gold"
+                        required
+                      />
+                    )}
                   </div>
                 </div>
 
