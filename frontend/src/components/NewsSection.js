@@ -120,9 +120,9 @@ export const NewsSection = () => {
                     <div className="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-500 h-full flex flex-col border border-slate-100/80 cursor-pointer" onClick={() => setSelectedArticle(item)}>
                       {/* Image */}
                       <div className="relative aspect-[16/10] overflow-hidden">
-                        {item.image_url ? (
+                        {(item.image_url || DEFAULT_CATEGORY_IMAGES[item.category]) ? (
                           <img
-                            src={item.image_url}
+                            src={item.image_url || DEFAULT_CATEGORY_IMAGES[item.category]}
                             alt={item.title}
                             className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                           />
