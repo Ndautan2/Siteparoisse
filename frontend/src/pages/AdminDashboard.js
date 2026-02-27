@@ -35,8 +35,79 @@ const AdminDashboard = () => {
   const [editingEvent, setEditingEvent] = useState(null);
 
   // Letters Form State
-  const [letterForm, setLetterForm] = useState({ title: '', content: '', date: '' });
+  const [letterForm, setLetterForm] = useState({ title: '', content: '', date: '', file_url: '' });
   const [editingLetter, setEditingLetter] = useState(null);
+
+  // File upload states
+  const [uploadingImage, setUploadingImage] = useState(false);
+  const [uploadingFile, setUploadingFile] = useState(false);
+  const [dragOverImage, setDragOverImage] = useState(false);
+  const [dragOverFile, setDragOverFile] = useState(false);
+
+  const NEWS_CATEGORIES = [
+    'Actualité',
+    'Liturgie',
+    'Communauté',
+    'Événement',
+    'Annonce',
+    'Vie paroissiale',
+    'Solidarité',
+    'Formation',
+  ];
+
+  const uploadFile = async (file, type = 'image') => {
+    const formData = new FormData();
+    formData.append('file', file);
+    const res = await axios.post(`${BACKEND_URL}/api/upload`, formData, {
+      headers: { ...getAuthHeaders(), 'Content-Type': 'multipart/form-data' },
+    });
+    return res.data.file_url;
+  };
+
+  const handleImageUpload = async (file) => {
+    if (!file) return;
+    const allowed = ['image/jpeg', 'image/png', 'image/gif', 'image/webp'];
+    if (!allowed.includes(file.type)) {
+      toast.error('Format non supporté. Utilisez JPG, PNG, GIF ou WebP.');
+      return;
+    }
+    if (file.size > 10 * 1024 * 1024) {
+      toast.error('Image trop volumineuse (max 10 Mo)');
+      return;
+    }
+    setUploadingImage(true);
+    try {
+      const url = await uploadFile(file, 'image');
+      setNewsForm(prev => ({ ...prev, image_url: url }));
+      toast.success('Image uploadée');
+    } catch (err) {
+      toast.error("Erreur lors de l'upload de l'image");
+    } finally {
+      setUploadingImage(false);
+    }
+  };
+
+  const handleLetterFileUpload = async (file) => {
+    if (!file) return;
+    if (file.type !== 'application/pdf') {
+      toast.error('Seuls les fichiers PDF sont acceptés.');
+      return;
+    }
+    if (file.size > 10 * 1024 * 1024) {
+      toast.error('Fichier trop volumineux (max 10 Mo)');
+      return;
+    }
+    setUploadingFile(true);
+    try {
+      const url = await uploadFile(file, 'pdf');
+      setLetterForm(prev => ({ ...prev, file_url: url }));
+      toast.success('Fichier PDF uploadé');
+    } catch (err) {
+      toast.error("Erreur lors de l'upload du fichier");
+    } finally {
+      setUploadingFile(false);
+    }
+  };
 
   useEffect(() => {
     const token = localStorage.getItem('admin_token');
