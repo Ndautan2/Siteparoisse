@@ -1462,29 +1462,39 @@ const AdminDashboard = () => {
               ) : letters.length === 0 ? (
                 <p className="text-slate-500">Aucune lettre publiée</p>
               ) : (
-                letters.map((item) => (
+                <>
+                <BulkBar selected={selectedLetters} setSelected={setSelectedLetters} items={letters} endpoint="letters" label="lettres" />
+                {letters.map((item) => (
                   <div
                     key={item.id}
-                    className="bg-white rounded-lg p-4 border border-slate-100 flex justify-between items-start"
+                    className={`bg-white rounded-lg p-4 border flex justify-between items-start ${selectedLetters.includes(item.id) ? 'border-gold bg-gold/5' : 'border-slate-100'}`}
                     data-testid={`letter-item-${item.id}`}
                   >
-                    <div className="flex-1">
-                      <h4 className="font-medium text-slate-900">{item.title}</h4>
-                      <p className="text-sm text-slate-500 mt-1">
-                        {new Date(item.date + 'T00:00:00').toLocaleDateString('fr-FR')}
-                      </p>
-                      {item.file_url && (
-                        <a
-                          href={item.file_url.startsWith('/api') ? `${BACKEND_URL}${item.file_url}` : item.file_url}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="inline-flex items-center gap-1 text-sm text-gold hover:text-gold-dark mt-1"
-                        >
-                          <FileText className="w-3 h-3" />
-                          Voir le PDF
-                        </a>
-                      )}
-                      {item.content && <p className="text-sm text-slate-600 mt-1 line-clamp-2">{item.content}</p>}
+                    <div className="flex items-start gap-3 flex-1">
+                      <input
+                        type="checkbox"
+                        checked={selectedLetters.includes(item.id)}
+                        onChange={() => toggleSelect(item.id, selectedLetters, setSelectedLetters)}
+                        className="mt-1 w-4 h-4 rounded border-slate-300 text-gold focus:ring-gold"
+                      />
+                      <div className="flex-1">
+                        <h4 className="font-medium text-slate-900">{item.title}</h4>
+                        <p className="text-sm text-slate-500 mt-1">
+                          {new Date(item.date + 'T00:00:00').toLocaleDateString('fr-FR')}
+                        </p>
+                        {item.file_url && (
+                          <a
+                            href={item.file_url.startsWith('/api') ? `${BACKEND_URL}${item.file_url}` : item.file_url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-1 text-sm text-gold hover:text-gold-dark mt-1"
+                          >
+                            <FileText className="w-3 h-3" />
+                            Voir le PDF
+                          </a>
+                        )}
+                        {item.content && <p className="text-sm text-slate-600 mt-1 line-clamp-2">{item.content}</p>}
+                      </div>
                     </div>
                     <div className="flex space-x-2 ml-4">
                       <button
@@ -1503,7 +1513,8 @@ const AdminDashboard = () => {
                       </button>
                     </div>
                   </div>
-                ))
+                ))}
+                </>
               )}
             </div>
           </div>
