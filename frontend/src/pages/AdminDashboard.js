@@ -710,19 +710,29 @@ const AdminDashboard = () => {
               ) : news.length === 0 ? (
                 <p className="text-slate-500">Aucune actualité</p>
               ) : (
-                news.map((item) => (
+                <>
+                <BulkBar selected={selectedNews} setSelected={setSelectedNews} items={news} endpoint="news" label="actualités" />
+                {news.map((item) => (
                   <div
                     key={item.id}
-                    className="bg-white rounded-lg p-4 border border-slate-100 flex justify-between items-start"
+                    className={`bg-white rounded-lg p-4 border flex justify-between items-start ${selectedNews.includes(item.id) ? 'border-gold bg-gold/5' : 'border-slate-100'}`}
                     data-testid={`news-item-${item.id}`}
                   >
-                    <div className="flex-1">
-                      <h4 className="font-medium text-slate-900 mb-1">{item.title}</h4>
-                      <p className="text-sm text-slate-600 mb-2 line-clamp-2">{item.content}</p>
-                      <div className="flex items-center space-x-2 text-xs text-slate-500">
-                        <span>{formatDate(item.created_at)}</span>
-                        <span>•</span>
-                        <span className="text-gold">{item.category}</span>
+                    <div className="flex items-start gap-3 flex-1">
+                      <input
+                        type="checkbox"
+                        checked={selectedNews.includes(item.id)}
+                        onChange={() => toggleSelect(item.id, selectedNews, setSelectedNews)}
+                        className="mt-1 w-4 h-4 rounded border-slate-300 text-gold focus:ring-gold"
+                      />
+                      <div className="flex-1">
+                        <h4 className="font-medium text-slate-900 mb-1">{item.title}</h4>
+                        <p className="text-sm text-slate-600 mb-2 line-clamp-2">{item.content}</p>
+                        <div className="flex items-center space-x-2 text-xs text-slate-500">
+                          <span>{formatDate(item.created_at)}</span>
+                          <span>•</span>
+                          <span className="text-gold">{item.category}</span>
+                        </div>
                       </div>
                     </div>
                     <div className="flex space-x-2 ml-4">
@@ -742,7 +752,8 @@ const AdminDashboard = () => {
                       </button>
                     </div>
                   </div>
-                ))
+                ))}
+                </>
               )}
             </div>
           </div>
