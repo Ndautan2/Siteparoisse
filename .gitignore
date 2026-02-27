@@ -84,3 +84,7 @@ chainlit.md
 # Test results (Emergent-specific)
 test_result.md
 test_reports/
+-e 
+# Environment files
+*.env
+*.env.*
