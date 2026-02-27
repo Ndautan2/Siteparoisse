@@ -521,15 +521,35 @@ const AdminDashboard = () => {
                   <div>
                     <label className="block text-sm font-medium text-slate-700 mb-2">Catégorie</label>
                     <select
-                      value={newsForm.category}
-                      onChange={(e) => setNewsForm({ ...newsForm, category: e.target.value })}
+                      value={NEWS_CATEGORIES.includes(newsForm.category) ? newsForm.category : 'Autre'}
+                      onChange={(e) => {
+                        if (e.target.value === 'Autre') {
+                          setNewsForm({ ...newsForm, category: 'Autre' });
+                          setCustomCategory('');
+                        } else {
+                          setNewsForm({ ...newsForm, category: e.target.value });
+                          setCustomCategory('');
+                        }
+                      }}
                       className="w-full px-4 py-2 border border-slate-200 rounded-lg focus:ring-2 focus:ring-gold bg-white"
                       data-testid="news-category-input"
                     >
                       {NEWS_CATEGORIES.map((cat) => (
                         <option key={cat} value={cat}>{cat}</option>
                       ))}
+                      <option value="Autre">Autre...</option>
                     </select>
+                    {(newsForm.category === 'Autre' || !NEWS_CATEGORIES.includes(newsForm.category)) && (
+                      <input
+                        type="text"
+                        value={customCategory || (newsForm.category !== 'Autre' ? newsForm.category : '')}
+                        onChange={(e) => setCustomCategory(e.target.value)}
+                        placeholder="Tapez votre catégorie..."
+                        className="w-full mt-2 px-4 py-2 border border-slate-200 rounded-lg focus:ring-2 focus:ring-gold"
+                        required
+                        data-testid="news-custom-category-input"
+                      />
+                    )}
                   </div>
                   <div>
                     <label className="block text-sm font-medium text-slate-700 mb-2">Image (optionnel)</label>
