@@ -16,7 +16,7 @@ const DEFAULT_CATEGORY_IMAGES = {
   'Formation': 'https://customer-assets.emergentagent.com/job_9a3ee4fd-0a90-44f7-b4d0-970fb3b3dfaf/artifacts/3qrxsfae_Formation-d%C3%A9faut.png',
   'Solidarité': 'https://customer-assets.emergentagent.com/job_9a3ee4fd-0a90-44f7-b4d0-970fb3b3dfaf/artifacts/vj7uvn3t_Solidarit%C3%A9-d%C3%A9faut.png',
   'Vie paroissiale': 'https://customer-assets.emergentagent.com/job_9a3ee4fd-0a90-44f7-b4d0-970fb3b3dfaf/artifacts/qiitewn6_Vie-paroissiale-d%C3%A9faut.png',
-  'Autre': 'https://customer-assets.emergentagent.com/job_9a3ee4fd-0a90-44f7-b4d0-970fb3b3dfaf/artifacts/9ntbz7ti_Autre-d%C3%A9faut.jpg',
+  'Autre': 'https://customer-assets.emergentagent.com/job_9a3ee4fd-0a90-44f7-b4d0-970fb3b3dfaf/artifacts/rise721e_Autre-d%C3%A9faut.png',
 };
 
 export const NewsSection = () => {
