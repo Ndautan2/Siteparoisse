@@ -1117,17 +1117,34 @@ const AdminDashboard = () => {
                   <div className="md:col-span-2">
                     <label className="block text-sm font-medium text-slate-700 mb-2">Catégorie</label>
                     <select
-                      value={eventForm.category}
-                      onChange={(e) => setEventForm({ ...eventForm, category: e.target.value })}
+                      value={EVENT_CATEGORIES.includes(eventForm.category) ? eventForm.category : 'Autre'}
+                      onChange={(e) => {
+                        if (e.target.value === 'Autre') {
+                          setEventForm({ ...eventForm, category: 'Autre' });
+                          setCustomEventCategory('');
+                        } else {
+                          setEventForm({ ...eventForm, category: e.target.value });
+                          setCustomEventCategory('');
+                        }
+                      }}
                       className="w-full px-4 py-2 border border-slate-200 rounded-lg focus:ring-2 focus:ring-gold"
                       data-testid="event-category-select"
                     >
-                      <option value="Liturgie">Liturgie</option>
-                      <option value="Communauté">Communauté</option>
-                      <option value="Jeunesse">Jeunesse</option>
-                      <option value="Solidarité">Solidarité</option>
-                      <option value="Formation">Formation</option>
+                      {EVENT_CATEGORIES.map((cat) => (
+                        <option key={cat} value={cat}>{cat}</option>
+                      ))}
+                      <option value="Autre">Autre...</option>
                     </select>
+                    {(eventForm.category === 'Autre' || !EVENT_CATEGORIES.includes(eventForm.category)) && (
+                      <input
+                        type="text"
+                        value={customEventCategory || (eventForm.category !== 'Autre' ? eventForm.category : '')}
+                        onChange={(e) => setCustomEventCategory(e.target.value)}
+                        placeholder="Tapez la catégorie..."
+                        className="w-full mt-2 px-4 py-2 border border-slate-200 rounded-lg focus:ring-2 focus:ring-gold"
+                        required
+                      />
+                    )}
                   </div>
                 </div>
                 <div className="flex space-x-4 pt-2">
