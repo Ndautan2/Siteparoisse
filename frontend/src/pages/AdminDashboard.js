@@ -1269,22 +1269,32 @@ const AdminDashboard = () => {
               ) : events.length === 0 ? (
                 <p className="text-slate-500">Aucun événement</p>
               ) : (
-                events.map((item) => (
+                <>
+                <BulkBar selected={selectedEvents} setSelected={setSelectedEvents} items={events} endpoint="events" label="événements" />
+                {events.map((item) => (
                   <div
                     key={item.id}
-                    className="bg-white rounded-lg p-4 border border-slate-100 flex justify-between items-start"
+                    className={`bg-white rounded-lg p-4 border flex justify-between items-start ${selectedEvents.includes(item.id) ? 'border-gold bg-gold/5' : 'border-slate-100'}`}
                     data-testid={`event-item-${item.id}`}
                   >
-                    <div className="flex-1">
-                      <div className="flex items-center gap-2 mb-1">
-                        <h4 className="font-medium text-slate-900">{item.title}</h4>
-                        <span className="text-xs bg-gold/10 text-gold px-2 py-0.5 rounded-full">{item.category}</span>
+                    <div className="flex items-start gap-3 flex-1">
+                      <input
+                        type="checkbox"
+                        checked={selectedEvents.includes(item.id)}
+                        onChange={() => toggleSelect(item.id, selectedEvents, setSelectedEvents)}
+                        className="mt-1 w-4 h-4 rounded border-slate-300 text-gold focus:ring-gold"
+                      />
+                      <div className="flex-1">
+                        <div className="flex items-center gap-2 mb-1">
+                          <h4 className="font-medium text-slate-900">{item.title}</h4>
+                          <span className="text-xs bg-gold/10 text-gold px-2 py-0.5 rounded-full">{item.category}</span>
+                        </div>
+                        {item.description && <p className="text-sm text-slate-600 mb-1 line-clamp-2">{item.description}</p>}
+                        <p className="text-sm text-slate-500">
+                          {new Date(item.date + 'T00:00:00').toLocaleDateString('fr-FR')} à {item.time}
+                          {item.end_time ? ` - ${item.end_time}` : ''} • {item.location}
+                        </p>
                       </div>
-                      {item.description && <p className="text-sm text-slate-600 mb-1 line-clamp-2">{item.description}</p>}
-                      <p className="text-sm text-slate-500">
-                        {new Date(item.date + 'T00:00:00').toLocaleDateString('fr-FR')} à {item.time}
-                        {item.end_time ? ` - ${item.end_time}` : ''} • {item.location}
-                      </p>
                     </div>
                     <div className="flex space-x-2 ml-4">
                       <button
@@ -1303,7 +1313,8 @@ const AdminDashboard = () => {
                       </button>
                     </div>
                   </div>
-                ))
+                ))}
+                </>
               )}
             </div>
           </div>
