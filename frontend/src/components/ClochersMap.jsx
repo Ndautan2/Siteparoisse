@@ -45,7 +45,7 @@ const ClochersMap = ({ clochers, height = "500px" }) => {
         >
           <Popup>
             <div className="text-center min-w-[180px]">
-              <img 
+              <img loading="lazy" 
                 src={clocher.image} 
                 alt={clocher.churchName}
                 className="w-full h-24 object-cover rounded-lg mb-2"

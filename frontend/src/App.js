@@ -1,3 +1,4 @@
+import { lazy, Suspense } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Toaster } from 'sonner';
 import { DarkModeProvider } from '@/contexts/DarkModeContext';
@@ -5,33 +6,39 @@ import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import { FloatingButtons } from '@/components/FloatingButtons';
 import { ScrollToTop } from '@/components/ScrollToTop';
+
+// Eagerly loaded: critical path
 import HomePage from '@/pages/HomePage';
-import HorairesMesses from '@/pages/HorairesMesses';
-import Secretariat from '@/pages/Secretariat';
-import AdminLogin from '@/pages/AdminLogin';
-import AdminDashboard from '@/pages/AdminDashboard';
-import ContentPage from '@/pages/ContentPage';
 
-// New pillar pages with cards
-import NotreDameAutanPage from '@/pages/NotreDameAutanPage';
-import FamillesJeunessePage from '@/pages/FamillesJeunessePage';
-import VieSpirituelePage from '@/pages/VieSpirituelePage';
-import GrandirFoiPage from '@/pages/GrandirFoiPage';
-import SolidaritePage from '@/pages/SolidaritePage';
-import VieEconomiquePage from '@/pages/VieEconomiquePage';
+// Lazy-loaded pages (code splitting)
+const HorairesMesses = lazy(() => import('@/pages/HorairesMesses'));
+const Secretariat = lazy(() => import('@/pages/Secretariat'));
+const AdminLogin = lazy(() => import('@/pages/AdminLogin'));
+const AdminDashboard = lazy(() => import('@/pages/AdminDashboard'));
+const ContentPage = lazy(() => import('@/pages/ContentPage'));
+const NotreDameAutanPage = lazy(() => import('@/pages/NotreDameAutanPage'));
+const FamillesJeunessePage = lazy(() => import('@/pages/FamillesJeunessePage'));
+const VieSpirituelePage = lazy(() => import('@/pages/VieSpirituelePage'));
+const GrandirFoiPage = lazy(() => import('@/pages/GrandirFoiPage'));
+const SolidaritePage = lazy(() => import('@/pages/SolidaritePage'));
+const VieEconomiquePage = lazy(() => import('@/pages/VieEconomiquePage'));
+const EquipePastoralePage = lazy(() => import('@/pages/EquipePastoralePage'));
+const NosClochersPage = lazy(() => import('@/pages/NosClochersPage'));
+const ClocherDetailPage = lazy(() => import('@/pages/ClocherDetailPage'));
+const DemanderSacrementPage = lazy(() => import('@/pages/DemanderSacrementPage'));
+const SacrementDetailPage = lazy(() => import('@/pages/SacrementDetailPage'));
+const JeSuisNouveauPage = lazy(() => import('@/pages/JeSuisNouveauPage'));
+const AgendaPage = lazy(() => import('@/pages/AgendaPage'));
+const ActualitesPage = lazy(() => import('@/pages/ActualitesPage'));
+const LettrePereDanielPage = lazy(() => import('@/pages/LettrePereDanielPage'));
+const ServirPage = lazy(() => import('@/pages/ServirPage'));
+const LegsEtDonsPage = lazy(() => import('@/pages/LegsEtDonsPage'));
 
-// Sub-pages with cards
-import EquipePastoralePage from '@/pages/EquipePastoralePage';
-import NosClochersPage from '@/pages/NosClochersPage';
-import ClocherDetailPage from '@/pages/ClocherDetailPage';
-import DemanderSacrementPage from '@/pages/DemanderSacrementPage';
-import SacrementDetailPage from '@/pages/SacrementDetailPage';
-import JeSuisNouveauPage from '@/pages/JeSuisNouveauPage';
-import AgendaPage from '@/pages/AgendaPage';
-import ActualitesPage from '@/pages/ActualitesPage';
-import LettrePereDanielPage from '@/pages/LettrePereDanielPage';
-import ServirPage from '@/pages/ServirPage';
-import LegsEtDonsPage from '@/pages/LegsEtDonsPage';
+const PageLoader = () => (
+  <div className="flex items-center justify-center min-h-[60vh]">
+    <div className="w-10 h-10 border-3 border-gold/30 border-t-gold rounded-full animate-spin" />
+  </div>
+);
 
 function App() {
   return (
@@ -42,8 +49,8 @@ function App() {
         <div className="flex flex-col min-h-screen bg-offwhite dark:bg-slate-900 transition-colors duration-300">
           <Routes>
             {/* Admin routes without header/footer */}
-            <Route path="/admin/login" element={<AdminLogin />} />
-            <Route path="/admin/dashboard" element={<AdminDashboard />} />
+            <Route path="/admin/login" element={<Suspense fallback={<PageLoader />}><AdminLogin /></Suspense>} />
+            <Route path="/admin/dashboard" element={<Suspense fallback={<PageLoader />}><AdminDashboard /></Suspense>} />
 
             {/* Public routes with header/footer */}
             <Route
@@ -53,6 +60,7 @@ function App() {
                   <Header />
                   <FloatingButtons />
                   <main className="flex-grow">
+                    <Suspense fallback={<PageLoader />}>
                     <Routes>
                       <Route path="/" element={<HomePage />} />
                       <Route path="/horaires-messes" element={<HorairesMesses />} />
@@ -104,6 +112,7 @@ function App() {
                       <Route path="/visite-malades" element={<ContentPage section="malades" />} />
                       <Route path="/entraide" element={<ContentPage section="entraide" />} />
                     </Routes>
+                    </Suspense>
                   </main>
                   <Footer />
                 </>

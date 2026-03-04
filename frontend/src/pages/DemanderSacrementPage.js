@@ -78,7 +78,7 @@ const DemanderSacrementPage = () => {
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
           <img
-            src="https://customer-assets.emergentagent.com/job_scroll-donate-pages/artifacts/b0vmxtgf_Demander-sacrement.png"
+loading="lazy"             src="https://customer-assets.emergentagent.com/job_scroll-donate-pages/artifacts/b0vmxtgf_Demander-sacrement.png"
             alt="Demander un sacrement \u00e0 la paroisse Notre Dame d'Autan"
             className="w-full h-full object-cover object-[center_30%]"
           />
@@ -121,7 +121,7 @@ const DemanderSacrementPage = () => {
                   {/* Image with overlay */}
                   <div className="relative aspect-[16/10] overflow-hidden">
                     <img
-                      src={sacrement.image}
+loading="lazy"                       src={sacrement.image}
                       alt={sacrement.title}
                       className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                       style={sacrement.imageStyle || {}}

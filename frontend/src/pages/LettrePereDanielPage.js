@@ -67,7 +67,7 @@ const LettrePereDanielPage = () => {
       <section className="relative h-[40vh] md:h-[45vh] flex items-center justify-center">
         <div className="absolute inset-0 z-0">
           <img
-            src="https://customer-assets.emergentagent.com/job_c3efae68-56d0-4924-8ecf-4f7502ce3630/artifacts/54f2vm3r_Eglise-Castanet-Tolosan.jpg"
+loading="lazy"             src="https://customer-assets.emergentagent.com/job_c3efae68-56d0-4924-8ecf-4f7502ce3630/artifacts/54f2vm3r_Eglise-Castanet-Tolosan.jpg"
             alt="Vue de l'église de Castanet-Tolosan"
             className="w-full h-full object-cover"
           />
@@ -93,7 +93,7 @@ const LettrePereDanielPage = () => {
           <div className="bg-gradient-to-r from-gold/10 to-gold/5 rounded-2xl p-8 border border-gold/20 mb-12" data-testid="newsletter-subscribe-section">
             <div className="flex flex-col md:flex-row items-center gap-6">
               <div className="w-16 h-16 rounded-full overflow-hidden border-2 border-gold/30 flex-shrink-0">
-                <img src={CURE_IMG} alt="Père Daniel Brouard-Derval" className="w-full h-full object-cover" />
+                <img loading="lazy" src={CURE_IMG} alt="Père Daniel Brouard-Derval" className="w-full h-full object-cover" />
               </div>
               <div className="flex-1 text-center md:text-left">
                 <h2 className="font-serif text-xl text-slate-deep dark:text-slate-100 mb-1">Recevez la Lettre par email</h2>

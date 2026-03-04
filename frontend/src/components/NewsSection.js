@@ -138,6 +138,7 @@ export const NewsSection = () => {
                           <img
                             src={item.image_url || DEFAULT_CATEGORY_IMAGES[item.category]}
                             alt={item.title}
+                            loading="lazy"
                             className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                           />
                         ) : (
@@ -276,6 +277,7 @@ export const NewsSection = () => {
                   <img
                     src={selectedArticle.image_url || DEFAULT_CATEGORY_IMAGES[selectedArticle.category]}
                     alt={selectedArticle.title}
+                    loading="lazy"
                     className="w-full h-full object-cover"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />

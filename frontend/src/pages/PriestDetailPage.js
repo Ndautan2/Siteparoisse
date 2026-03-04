@@ -65,7 +65,7 @@ const PriestDetailPage = ({ type }) => {
               {/* Photo */}
               <div className="md:w-1/3">
                 <div className="aspect-square md:h-full">
-                  <img 
+                  <img loading="lazy" 
                     src={cureData.image} 
                     alt={cureData.name}
                     className="w-full h-full object-cover"
@@ -161,7 +161,7 @@ const PriestDetailPage = ({ type }) => {
                   {/* Photo */}
                   <div className="md:w-1/3">
                     <div className="aspect-square md:h-full">
-                      <img 
+                      <img loading="lazy" 
                         src={priest.image} 
                         alt={priest.name}
                         className="w-full h-full object-cover"

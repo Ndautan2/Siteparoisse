@@ -10,12 +10,9 @@ export const FloatingButtons = () => {
       {/* Dark mode toggle */}
       <button
         onClick={toggleDarkMode}
-        className={`flex items-center justify-center rounded-full w-11 h-11 transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-0.5 border-2 ${
-          isDark
-            ? 'bg-slate-700 border-slate-600 text-amber-300 hover:bg-slate-600'
-            : 'bg-white/90 backdrop-blur-sm border-slate-200 text-slate-600 hover:bg-slate-100'
-        }`}
+        className="flex items-center justify-center rounded-full w-11 h-11 transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-0.5 border-2 bg-gold border-gold text-white hover:bg-gold-dark hover:border-gold-dark"
         title={isDark ? 'Mode clair' : 'Mode sombre'}
+        data-testid="floating-dark-mode-toggle"
       >
         {isDark ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
       </button>

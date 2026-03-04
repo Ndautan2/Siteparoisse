@@ -268,7 +268,7 @@ const SacrementDetailPage = () => {
       {/* Hero Section */}
       <div className="relative h-[45vh] min-h-[350px]">
         <img
-          src={sacrement.image}
+loading="lazy"           src={sacrement.image}
           alt={sacrement.title}
           className="w-full h-full object-cover"
         />

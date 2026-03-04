@@ -646,7 +646,7 @@ const AdminDashboard = () => {
         <div className="p-5 border-b border-slate-100 dark:border-slate-700">
           <div className="flex items-center gap-3">
             <img
-              src="https://customer-assets.emergentagent.com/job_c3efae68-56d0-4924-8ecf-4f7502ce3630/artifacts/34n0n91l_Notre-Dame-d-Autan.png"
+loading="lazy"               src="https://customer-assets.emergentagent.com/job_c3efae68-56d0-4924-8ecf-4f7502ce3630/artifacts/34n0n91l_Notre-Dame-d-Autan.png"
               alt="Notre Dame d'Autan"
               className="h-9 w-auto"
             />
@@ -935,7 +935,7 @@ const AdminDashboard = () => {
                           if (file) handleImageUpload(file);
                         }}
                       >
-                        <img src={newsForm.image_url.startsWith('/api') ? `${BACKEND_URL}${newsForm.image_url}` : newsForm.image_url} alt="Preview" className="w-full h-48 object-contain bg-slate-50" />
+                        <img loading="lazy" src={newsForm.image_url.startsWith('/api') ? `${BACKEND_URL}${newsForm.image_url}` : newsForm.image_url} alt="Preview" className="w-full h-48 object-contain bg-slate-50" />
                         {Object.values(DEFAULT_CATEGORY_IMAGES).includes(newsForm.image_url) && (
                           <span className="absolute top-2 left-2 bg-gold/90 text-white text-[10px] font-semibold px-2 py-0.5 rounded-full">Image par défaut</span>
                         )}
@@ -1059,7 +1059,7 @@ const AdminDashboard = () => {
                 <div className="bg-white rounded-2xl max-w-2xl w-full max-h-[80vh] overflow-y-auto shadow-2xl" onClick={e => e.stopPropagation()}>
                   <div className="relative">
                     {newsForm.image_url && (
-                      <img src={newsForm.image_url.startsWith('/api') ? `${BACKEND_URL}${newsForm.image_url}` : newsForm.image_url} alt="" className="w-full h-48 object-cover rounded-t-2xl" />
+                      <img loading="lazy" src={newsForm.image_url.startsWith('/api') ? `${BACKEND_URL}${newsForm.image_url}` : newsForm.image_url} alt="" className="w-full h-48 object-cover rounded-t-2xl" />
                     )}
                     <div className="absolute top-3 right-3">
                       <button onClick={() => setPreviewNews(false)} className="bg-white/90 rounded-full p-1.5 hover:bg-white shadow"><X className="w-4 h-4" /></button>
