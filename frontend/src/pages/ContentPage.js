@@ -400,15 +400,15 @@ Dans la foi en la résurrection du Christ, nous exprimons notre espérance de pa
     ]
   },
   meditation: {
-    title: 'Méditation Chrétienne',
+    title: 'Prière Chrétienne',
     subtitle: 'Silence & prière',
     description: 'Entrer dans le silence et la prière contemplative.',
     icon: Sparkles,
     heroImage: 'https://customer-assets.emergentagent.com/job_5e9a982a-920d-4533-b39d-5b30481bb0da/artifacts/v8c5x8z1_Meditation.png',
     items: [
       { 
-        title: 'Méditation silencieuse', 
-        description: 'Temps de silence hebdomadaire', 
+        title: 'Prière silencieuse', 
+        description: 'Temps de silence et de paix', 
         icon: Sparkles,
         modalTitle: 'Le Silence en Partage : Un Espace pour Soi',
         modalDescription: 'Dans le tourbillon de nos vies quotidiennes, où trouver un refuge pour simplement respirer ? Notre église vous ouvre ses portes pour une parenthèse de paix : une invitation à la méditation silencieuse.',

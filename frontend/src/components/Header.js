@@ -45,7 +45,7 @@ export const Header = () => {
     { title: 'Grandir dans la Foi', path: '/grandir-foi', keywords: 'foi formation spiritualité' },
     { title: 'Parcours Alpha & Catéchuménat', path: '/alpha-catechumenat', keywords: 'alpha catéchuménat découvrir foi' },
     { title: 'Groupes de partage et de prière', path: '/groupes-partage', keywords: 'groupes partage fraternité prière' },
-    { title: 'Méditation chrétienne', path: '/meditation', keywords: 'méditation prière silence' },
+    { title: 'Prière chrétienne', path: '/meditation', keywords: 'prière méditation silence' },
     { title: 'Ressources', path: '/ressources', keywords: 'ressources livres médias' },
     { title: 'Solidarité & Écoute', path: '/solidarite', keywords: 'solidarité écoute entraide' },
     { title: "Service d'écoute", path: '/service-ecoute', keywords: 'écoute accompagnement Louis Zélie' },
@@ -113,8 +113,8 @@ export const Header = () => {
     { title: 'Prière du Chapelet', path: '/groupes-partage', keywords: 'chapelet rosaire Marie mystères' },
     { title: 'Équipes du Rosaire', path: '/groupes-partage', keywords: 'rosaire équipes prière missionnaire quartier Dominicains' },
 
-    // Vignettes Méditation
-    { title: 'Méditation silencieuse', path: '/meditation', keywords: 'méditation silence hebdomadaire église paix' },
+    // Vignettes Prière
+    { title: 'Prière silencieuse', path: '/meditation', keywords: 'prière silence paix église' },
     { title: 'Lectio Divina', path: '/meditation', keywords: 'lectio divina méditation Parole Bible lecture' },
     { title: 'Adoration eucharistique', path: '/meditation', keywords: 'adoration eucharistique Saint-Sacrement Castanet Saint-Orens' },
 
@@ -243,7 +243,7 @@ export const Header = () => {
       items: [
         { label: 'Parcours Alpha & Catéchuménat', path: '/alpha-catechumenat' },
         { label: 'Groupes de partage et de prière', path: '/groupes-partage' },
-        { label: 'Méditation chrétienne', path: '/meditation' },
+        { label: 'Prière chrétienne', path: '/meditation' },
         { label: 'Ressources', path: '/ressources' },
       ],
     },

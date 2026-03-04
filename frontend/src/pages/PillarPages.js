@@ -150,7 +150,7 @@ const pillarData = {
         color: "bg-orange-50",
       },
       {
-        title: "Méditation Chrétienne",
+        title: "Prière Chrétienne",
         description: "Temps de silence et de prière",
         icon: Sparkles,
         path: "/meditation",

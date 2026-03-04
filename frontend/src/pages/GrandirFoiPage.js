@@ -25,7 +25,7 @@ const sections = [
   },
   {
     id: 'meditation',
-    title: 'Méditation Chrétienne',
+    title: 'Prière Chrétienne',
     subtitle: 'Silence & prière',
     description: 'Entrer dans le silence et la prière contemplative',
     icon: Sparkles,
