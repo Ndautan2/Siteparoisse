@@ -6,6 +6,7 @@ import { fr } from 'date-fns/locale';
 import { SocialIcons } from '@/components/SocialIcons';
 import { SEO } from '@/components/SEO';
 import { FadeIn } from '@/components/FadeIn';
+import { processRichText } from '@/lib/richText';
 
 const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
 
@@ -182,7 +183,7 @@ const LettrePereDanielPage = () => {
                   {selectedLetter?.id === letter.id && (
                     <div className="px-5 pb-5 border-t border-slate-100 dark:border-slate-700 pt-4" onClick={(e) => e.stopPropagation()}>
                       <div className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed prose prose-sm max-w-none break-words overflow-hidden"
-                        dangerouslySetInnerHTML={{ __html: letter.content }}
+                        dangerouslySetInnerHTML={{ __html: processRichText(letter.content) }}
                       />
                       <p className="text-right text-slate-500 text-sm italic mt-4">
                         Père Daniel Brouard-Derval

@@ -23,6 +23,7 @@ Site web paroissial pour Notre Dame d'Autan (Castanet-Tolosan, Saint-Orens et en
 - **Code splitting** : React.lazy + Suspense pour 22 composants de pages (seul HomePage est chargé eagerly)
 - **Composant LazyImage** : Composant réutilisable avec IntersectionObserver
 - **Fix z-index carte Leaflet** : La carte des clochers (page + footer) ne passe plus au-dessus du header, des dropdowns et des modales (`isolation: isolate` + wrapper z-index)
+- **Liens dans l'éditeur CMS** : Dialogue personnalisé avec champs Texte du bouton + URL. Les liens sont rendus comme des boutons rose poudré (#d0ada6) dans le contenu public, s'ouvrent dans un nouvel onglet
 
 ## Backlog priorisé
 

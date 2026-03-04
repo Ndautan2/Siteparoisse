@@ -1,6 +1,6 @@
-import { useEffect, useState, useCallback, useMemo } from 'react';
+import { useEffect, useState, useCallback, useMemo, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Plus, Edit2, Trash2, LogOut, Newspaper, Clock, Calendar, Mail, Upload, Copy, X, FileText, Repeat, LayoutDashboard, Users, Download, Eye, EyeOff, MessageSquare, Search, Menu, ChevronRight, Home, Sun, Moon } from 'lucide-react';
+import { Plus, Edit2, Trash2, LogOut, Newspaper, Clock, Calendar, Mail, Upload, Copy, X, FileText, Repeat, LayoutDashboard, Users, Download, Eye, EyeOff, MessageSquare, Search, Menu, ChevronRight, Home, Sun, Moon, Link2 } from 'lucide-react';
 import axios from 'axios';
 import { toast } from 'sonner';
 import { format, addWeeks, addMonths, addDays } from 'date-fns';
@@ -79,6 +79,54 @@ const AdminDashboard = () => {
   // Preview state
   const [previewNews, setPreviewNews] = useState(false);
   const [previewEvent, setPreviewEvent] = useState(false);
+
+  // Link dialog state
+  const [linkDialog, setLinkDialog] = useState({ open: false, url: '', text: '', target: null });
+  const quillNewsRef = useRef(null);
+  const quillEventRef = useRef(null);
+  const quillLetterRef = useRef(null);
+
+  const openLinkDialog = (quillRef) => {
+    const editor = quillRef.current?.getEditor();
+    if (!editor) return;
+    const range = editor.getSelection();
+    const selectedText = range && range.length > 0 ? editor.getText(range.index, range.length) : '';
+    setLinkDialog({ open: true, url: '', text: selectedText, target: quillRef });
+  };
+
+  const insertLink = () => {
+    const editor = linkDialog.target?.current?.getEditor();
+    if (!editor) return;
+    const range = editor.getSelection(true);
+    const text = linkDialog.text || linkDialog.url;
+    if (range && range.length > 0) {
+      editor.deleteText(range.index, range.length);
+    }
+    editor.insertText(range?.index || 0, text, 'link', linkDialog.url);
+    setLinkDialog({ open: false, url: '', text: '', target: null });
+  };
+
+  const makeQuillModules = useCallback((quillRef) => ({
+    toolbar: {
+      container: [
+        [{ 'header': [1, 2, 3, false] }],
+        ['bold', 'italic', 'underline'],
+        [{ 'list': 'ordered' }, { 'list': 'bullet' }],
+        ['link-btn'],
+        ['clean']
+      ],
+      handlers: {
+        'link-btn': () => openLinkDialog(quillRef)
+      }
+    }
+  }), []);
+
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  const quillModulesNews = useMemo(() => makeQuillModules(quillNewsRef), [makeQuillModules]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  const quillModulesEvent = useMemo(() => makeQuillModules(quillEventRef), [makeQuillModules]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  const quillModulesLetter = useMemo(() => makeQuillModules(quillLetterRef), [makeQuillModules]);
 
   const NEWS_CATEGORIES = [
     'Actualité',
@@ -631,6 +679,7 @@ const AdminDashboard = () => {
   const currentTabLabel = sidebarTabs.find(t => t.id === activeTab)?.label || 'Tableau de bord';
 
   return (
+    <>
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-stone-50 dark:from-slate-900 dark:via-slate-900 dark:to-slate-900 flex transition-colors duration-300" data-testid="admin-dashboard">
       {/* Mobile overlay */}
       {sidebarOpen && (
@@ -871,18 +920,11 @@ const AdminDashboard = () => {
                 <div>
                   <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">Contenu</label>
                   <ReactQuill
+                    ref={quillNewsRef}
                     theme="snow"
                     value={newsForm.content}
                     onChange={(value) => setNewsForm({ ...newsForm, content: value })}
-                    modules={{
-                      toolbar: [
-                        [{ 'header': [1, 2, 3, false] }],
-                        ['bold', 'italic', 'underline'],
-                        [{ 'list': 'ordered'}, { 'list': 'bullet' }],
-                        ['link'],
-                        ['clean']
-                      ]
-                    }}
+                    modules={quillModulesNews}
                     placeholder="Écrivez le contenu de l'actualité..."
                     data-testid="news-content-input"
                   />
@@ -1556,18 +1598,11 @@ const AdminDashboard = () => {
                 <div>
                   <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">Description</label>
                   <ReactQuill
+                    ref={quillEventRef}
                     theme="snow"
                     value={eventForm.description}
                     onChange={(value) => setEventForm({ ...eventForm, description: value })}
-                    modules={{
-                      toolbar: [
-                        [{ 'header': [1, 2, 3, false] }],
-                        ['bold', 'italic', 'underline'],
-                        [{ 'list': 'ordered'}, { 'list': 'bullet' }],
-                        ['link'],
-                        ['clean']
-                      ]
-                    }}
+                    modules={quillModulesEvent}
                     placeholder="Détails de l'événement..."
                     data-testid="event-description-input"
                   />
@@ -1872,18 +1907,11 @@ const AdminDashboard = () => {
                 <div>
                   <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">Description (optionnel)</label>
                   <ReactQuill
+                    ref={quillLetterRef}
                     theme="snow"
                     value={letterForm.content}
                     onChange={(value) => setLetterForm({ ...letterForm, content: value })}
-                    modules={{
-                      toolbar: [
-                        [{ 'header': [1, 2, 3, false] }],
-                        ['bold', 'italic', 'underline'],
-                        [{ 'list': 'ordered'}, { 'list': 'bullet' }],
-                        ['link'],
-                        ['clean']
-                      ]
-                    }}
+                    modules={quillModulesLetter}
                     placeholder="Brève description de la lettre..."
                     data-testid="letter-content-input"
                   />
@@ -2095,6 +2123,64 @@ const AdminDashboard = () => {
         </main>
       </div>
     </div>
+
+    {/* Link Dialog Modal */}
+    {linkDialog.open && (
+      <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-[100] flex items-center justify-center p-4" onClick={() => setLinkDialog({ ...linkDialog, open: false })}>
+        <div className="bg-white dark:bg-slate-800 rounded-2xl shadow-2xl w-full max-w-md p-6" onClick={e => e.stopPropagation()} data-testid="link-dialog">
+          <div className="flex items-center gap-3 mb-5">
+            <div className="w-10 h-10 rounded-full bg-gold/10 flex items-center justify-center">
+              <Link2 className="w-5 h-5 text-gold" />
+            </div>
+            <h3 className="font-serif text-lg text-slate-800 dark:text-slate-100">Insérer un lien</h3>
+          </div>
+          <div className="space-y-4">
+            <div>
+              <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1">Texte du bouton *</label>
+              <input
+                type="text"
+                value={linkDialog.text}
+                onChange={e => setLinkDialog({ ...linkDialog, text: e.target.value })}
+                placeholder="Ex : S'inscrire, En savoir plus..."
+                className="w-full px-4 py-2.5 rounded-lg border border-slate-300 dark:border-slate-600 focus:border-gold focus:ring-2 focus:ring-gold/20 outline-none text-slate-700 dark:text-slate-200 bg-white dark:bg-slate-700"
+                autoFocus
+                data-testid="link-dialog-text"
+              />
+            </div>
+            <div>
+              <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1">URL du lien *</label>
+              <input
+                type="url"
+                value={linkDialog.url}
+                onChange={e => setLinkDialog({ ...linkDialog, url: e.target.value })}
+                placeholder="https://www.helloasso.com/..."
+                className="w-full px-4 py-2.5 rounded-lg border border-slate-300 dark:border-slate-600 focus:border-gold focus:ring-2 focus:ring-gold/20 outline-none text-slate-700 dark:text-slate-200 bg-white dark:bg-slate-700"
+                data-testid="link-dialog-url"
+              />
+            </div>
+            <p className="text-xs text-slate-500 dark:text-slate-400">Le lien s'ouvrira dans un nouvel onglet pour les visiteurs.</p>
+          </div>
+          <div className="flex justify-end gap-3 mt-6">
+            <button
+              onClick={() => setLinkDialog({ ...linkDialog, open: false })}
+              className="px-5 py-2 rounded-lg border border-slate-300 dark:border-slate-600 text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors text-sm font-medium"
+              data-testid="link-dialog-cancel"
+            >
+              Annuler
+            </button>
+            <button
+              onClick={insertLink}
+              disabled={!linkDialog.url}
+              className="px-5 py-2 rounded-lg bg-gold hover:bg-gold-dark text-white transition-colors text-sm font-medium disabled:opacity-50 disabled:cursor-not-allowed"
+              data-testid="link-dialog-insert"
+            >
+              Insérer le lien
+            </button>
+          </div>
+        </div>
+      </div>
+    )}
+    </>
   );
 };
 

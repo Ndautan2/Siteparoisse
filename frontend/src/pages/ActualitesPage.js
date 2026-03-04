@@ -5,6 +5,7 @@ import { format } from 'date-fns';
 import { fr } from 'date-fns/locale';
 import { SEO } from '@/components/SEO';
 import { FadeIn } from '@/components/FadeIn';
+import { processRichText } from '@/lib/richText';
 
 const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
 
@@ -204,7 +205,7 @@ const ActualitesPage = () => {
 
             <div className="flex-1 overflow-y-auto overflow-x-hidden p-4 sm:p-6">
               <div className="text-slate-600 dark:text-slate-400 leading-relaxed prose prose-sm max-w-none"
-                dangerouslySetInnerHTML={{ __html: selectedArticle.content.replace(/&nbsp;/g, ' ') }}
+                dangerouslySetInnerHTML={{ __html: processRichText(selectedArticle.content) }}
               />
             </div>
 

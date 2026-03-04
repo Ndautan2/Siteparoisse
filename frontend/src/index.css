@@ -166,6 +166,30 @@ div[style*="position: fixed"][style*="bottom"],
 .ql-editor {
     min-height: 120px;
 }
+/* Custom link button in Quill toolbar */
+.ql-toolbar .ql-link-btn::before {
+    content: 'Lien';
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #d0ada6;
+    padding: 2px 8px;
+    border: 1.5px solid #d0ada6;
+    border-radius: 6px;
+    display: inline-block;
+    line-height: 1.4;
+}
+.ql-toolbar .ql-link-btn:hover::before {
+    background: #d0ada6;
+    color: white;
+}
+.dark .ql-toolbar .ql-link-btn::before {
+    color: #d0ada6;
+    border-color: #d0ada6;
+}
+.dark .ql-toolbar .ql-link-btn:hover::before {
+    background: #d0ada6;
+    color: white;
+}
 .dark .ql-toolbar {
     background: #1e293b;
     border-color: #334155;
@@ -239,7 +263,29 @@ div[style*="position: fixed"][style*="bottom"],
 .prose ul { list-style-type: disc; padding-left: 1.5em; margin: 0.4em 0; }
 .prose ol { list-style-type: decimal; padding-left: 1.5em; margin: 0.4em 0; }
 .prose li { margin: 0.2em 0; }
-.prose a { color: #d0ada6; text-decoration: underline; word-break: break-all; }
+.prose a {
+    display: inline-block;
+    color: white;
+    background-color: #d0ada6;
+    padding: 0.4em 1.2em;
+    border-radius: 9999px;
+    font-weight: 500;
+    font-size: 0.875em;
+    text-decoration: none;
+    transition: background-color 0.2s, transform 0.2s;
+    word-break: normal;
+}
+.prose a:hover {
+    background-color: #c09990;
+    transform: translateY(-1px);
+}
+.dark .prose a {
+    color: white;
+    background-color: #d0ada6;
+}
+.dark .prose a:hover {
+    background-color: #c09990;
+}
 .prose strong { font-weight: 600; }
 .prose em { font-style: italic; }
 .prose img { max-width: 100%; height: auto; }

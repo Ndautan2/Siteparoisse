@@ -6,6 +6,7 @@ import axios from 'axios';
 import { format, parseISO } from 'date-fns';
 import { fr } from 'date-fns/locale';
 import LocationLink from '@/components/LocationLink';
+import { processRichText } from '@/lib/richText';
 
 const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
 
@@ -165,7 +166,7 @@ export const UpcomingEvents = () => {
               {/* Description */}
               {selectedEvent.description ? (
                 <div className="text-slate-600 dark:text-slate-400 leading-relaxed prose prose-sm max-w-none break-words"
-                  dangerouslySetInnerHTML={{ __html: selectedEvent.description.replace(/&nbsp;/g, ' ') }}
+                  dangerouslySetInnerHTML={{ __html: processRichText(selectedEvent.description) }}
                 />
               ) : (
                 <p className="text-slate-400 italic text-sm">Pas de description disponible.</p>
